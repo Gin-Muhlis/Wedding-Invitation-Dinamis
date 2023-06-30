@@ -11,7 +11,7 @@ class Theme extends Model
     use HasFactory;
     use Searchable;
 
-    protected $fillable = ['theme_name', 'theme_code', 'catgory_id'];
+    protected $fillable = ['theme_name', 'theme_code', 'catgory_id', 'type'];
 
     protected $searchableFields = ['*'];
 

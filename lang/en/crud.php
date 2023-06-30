@@ -144,20 +144,6 @@ return [
         ],
     ],
 
-    'themes' => [
-        'name' => 'Themes',
-        'index_title' => 'Themes List',
-        'new_title' => 'New Theme',
-        'create_title' => 'Create Theme',
-        'edit_title' => 'Edit Theme',
-        'show_title' => 'Show Theme',
-        'inputs' => [
-            'theme_name' => 'Nama Tema',
-            'theme_code' => 'Kode Tema',
-            'catgory_id' => 'Catgory',
-        ],
-    ],
-
     'users' => [
         'name' => 'Users',
         'index_title' => 'Users List',
@@ -260,6 +246,80 @@ return [
         'inputs' => [
             'name' => 'Name',
             'id' => 'Id',
+        ],
+    ],
+
+    'fiturs' => [
+        'name' => 'Fiturs',
+        'index_title' => 'Fiturs List',
+        'new_title' => 'New Fitur',
+        'create_title' => 'Create Fitur',
+        'edit_title' => 'Edit Fitur',
+        'show_title' => 'Show Fitur',
+        'inputs' => [
+            'name' => 'Nama Fitur',
+            'icon' => 'Icon',
+        ],
+    ],
+
+    'websites' => [
+        'name' => 'Websites',
+        'index_title' => 'Websites List',
+        'new_title' => 'New Website',
+        'create_title' => 'Create Website',
+        'edit_title' => 'Edit Website',
+        'show_title' => 'Show Website',
+        'inputs' => [
+            'website_name' => 'Nama Website',
+            'email' => 'Email',
+            'whatsapp_number' => 'No Whatsapp',
+            'link_instagram' => 'Link Instagram',
+            'link_fb' => 'Link Facebook',
+            'description' => 'Deskripsi Website',
+            'website_logo' => 'Logo Website',
+        ],
+    ],
+
+    'faqs' => [
+        'name' => 'Faqs',
+        'index_title' => 'Faqs List',
+        'new_title' => 'New Faq',
+        'create_title' => 'Create Faq',
+        'edit_title' => 'Edit Faq',
+        'show_title' => 'Show Faq',
+        'inputs' => [
+            'question' => 'Pertanyaan',
+            'answer' => 'Jawaban',
+        ],
+    ],
+
+    'testimonies' => [
+        'name' => 'Testimonies',
+        'index_title' => 'Testimonies List',
+        'new_title' => 'New Testimony',
+        'create_title' => 'Create Testimony',
+        'edit_title' => 'Edit Testimony',
+        'show_title' => 'Show Testimony',
+        'inputs' => [
+            'name' => 'Nama',
+            'image' => 'Gambar',
+            'rating' => 'Rating',
+            'review' => 'Review',
+        ],
+    ],
+
+    'themes' => [
+        'name' => 'Themes',
+        'index_title' => 'Themes List',
+        'new_title' => 'New Theme',
+        'create_title' => 'Create Theme',
+        'edit_title' => 'Edit Theme',
+        'show_title' => 'Show Theme',
+        'inputs' => [
+            'theme_name' => 'Nama Tema',
+            'theme_code' => 'Kode Tema',
+            'catgory_id' => 'Catgory',
+            'type' => 'Tipe',
         ],
     ],
 

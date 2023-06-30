@@ -26,6 +26,10 @@
                         >{{ optional($theme->catgory)->category ?? '-' }}</span
                     >
                 </div>
+                <div class="mb-4">
+                    <h5>@lang('crud.themes.inputs.type')</h5>
+                    <span>{{ $theme->type ?? '-' }}</span>
+                </div>
             </div>
 
             <div class="mt-4">

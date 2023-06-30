@@ -115,6 +115,7 @@ class ThemeControllerTest extends TestCase
         $data = [
             'theme_name' => $this->faker->name(),
             'theme_code' => $this->faker->text(255),
+            'type' => 'pakai foto',
             'catgory_id' => $catgory->id,
         ];
 

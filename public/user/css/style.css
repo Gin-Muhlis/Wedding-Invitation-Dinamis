@@ -1,0 +1,134 @@
+/* NAVBAR */
+.brand-web {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    font-size: 1.1em;
+}
+
+.navbar {
+    z-index: 9999;
+}
+
+.nav-item {
+    margin-inline: 15px;
+}
+
+.nav-item .nav-link {
+    color: #ffffff;
+    font-family: "Open Sans", sans-serif;
+    position: relative;
+    display: inline-block;
+}
+
+@media screen and (max-width: 992px) {
+    .navbar-nav {
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(7px);
+        padding-block: 10px;
+        border-radius: 5px;
+    }
+}
+
+.nav-item .nav-link::after {
+    content: "";
+    width: 100%;
+    height: 3px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%) scale(0);
+    transition: 0.7s;
+    transform-origin: center;
+    opacity: 0;
+}
+
+.nav-item .nav-link:hover::after {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+}
+
+/* HERO */
+.hero-section {
+    height: 100vh;
+    background-image: linear-gradient(
+        135deg,
+        rgb(255, 103, 222) 11.2%,
+        rgb(255, 170, 59) 91.1%
+    );
+    overflow: hidden;
+}
+
+.custom-shape-divider-bottom-1688124164 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-bottom-1688124164 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 100px;
+}
+
+.custom-shape-divider-bottom-1688124164 .shape-fill {
+    fill: #ffffff;
+}
+
+.shape1 {
+    position: absolute;
+    right: -20%;
+    top: 10%;
+    opacity: 0.13;
+}
+
+.shape2 {
+    position: absolute;
+    left: -20%;
+    top: 10%;
+    opacity: 0.13;
+}
+
+.shape3 {
+    position: absolute;
+    left: -20%;
+    top: -10%;
+    opacity: 0.13;
+}
+
+.text-hero-title {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    font-size: clamp(4rem, 7vmax, 8vmax);
+    opacity: 0.4;
+}
+
+.text-hero-subtitle {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1em, 4vmax, 6vmax);
+    margin-top: -25px;
+}
+
+@media screen and (max-width: 500px) {
+    .text-hero-subtitle {
+        margin-top: -20px;
+    }
+}
+
+.paragraph-hero {
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 1.1em;
+    color: rgb(255, 255, 255);
+    margin-bottom: 30px;
+}
+
+.btn-pesan {
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 600;
+}

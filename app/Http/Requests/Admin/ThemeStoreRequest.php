@@ -27,6 +27,7 @@ class ThemeStoreRequest extends FormRequest
             'theme_name' => ['required', 'max:255', 'string'],
             'theme_code' => ['required', 'max:255', 'string'],
             'catgory_id' => ['required', 'exists:catgories,id'],
+            'type' => ['required', 'in:pakai foto,tanpa foto'],
         ];
     }
 }

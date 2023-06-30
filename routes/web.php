@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\FaqController;
+use App\Http\Controllers\Admin\FiturController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\GiftController;
@@ -13,6 +15,8 @@ use App\Http\Controllers\Admin\ThemeController;
 use App\Http\Controllers\Admin\CatgoryController;
 use App\Http\Controllers\Admin\CommentController;
 use App\Http\Controllers\Admin\VisitorController;
+use App\Http\Controllers\Admin\WebsiteController;
+use App\Http\Controllers\Admin\TestimonyController;
 use App\Http\Controllers\Admin\BridegroomController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\WeddingDataController;
@@ -20,6 +24,7 @@ use App\Http\Controllers\Admin\GiftPaymentController;
 use App\Http\Controllers\Admin\InvitedGuestController;
 use App\Http\Controllers\Admin\WeddingCeremonyController;
 use App\Http\Controllers\Admin\WeddingReceptionController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,15 +39,15 @@ use App\Http\Controllers\Admin\WeddingReceptionController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-Route::prefix('/')
-    ->middleware('auth')
+Route::prefix('/super/admin')
+    ->middleware(['auth', 'superAdmin'])
     ->group(function () {
+        Route::get('/home', [HomeController::class, 'index'])->name('home');
         Route::resource('roles', RoleController::class);
         Route::resource('permissions', PermissionController::class);
 
@@ -54,7 +59,6 @@ Route::prefix('/')
         Route::resource('orders', OrderController::class);
         Route::resource('quotes', QuoteController::class);
         Route::resource('stories', StoryController::class);
-        Route::resource('themes', ThemeController::class);
         Route::resource('users', UserController::class);
         Route::resource('visitors', VisitorController::class);
         Route::resource('wedding-ceremonies', WeddingCeremonyController::class);
@@ -93,4 +97,9 @@ Route::prefix('/')
         );
         Route::resource('gifts', GiftController::class);
         Route::resource('gift-payments', GiftPaymentController::class);
+        Route::resource('fiturs', FiturController::class);
+        Route::resource('websites', WebsiteController::class);
+        Route::resource('faqs', FaqController::class);
+        Route::resource('testimonies', TestimonyController::class);
+        Route::resource('themes', ThemeController::class);
     });

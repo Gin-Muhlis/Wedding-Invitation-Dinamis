@@ -96,14 +96,6 @@
                                 </a>
                             </li>
                             @endcan
-                            @can('view-any', App\Models\Theme::class)
-                            <li class="nav-item">
-                                <a href="{{ route('themes.index') }}" class="nav-link">
-                                    <i class="nav-icon icon ion-md-radio-button-off"></i>
-                                    <p>Themes</p>
-                                </a>
-                            </li>
-                            @endcan
                             @can('view-any', App\Models\User::class)
                             <li class="nav-item">
                                 <a href="{{ route('users.index') }}" class="nav-link">
@@ -157,6 +149,46 @@
                                 <a href="{{ route('gift-payments.index') }}" class="nav-link">
                                     <i class="nav-icon icon ion-md-radio-button-off"></i>
                                     <p>Gift Payments</p>
+                                </a>
+                            </li>
+                            @endcan
+                            @can('view-any', App\Models\Fitur::class)
+                            <li class="nav-item">
+                                <a href="{{ route('fiturs.index') }}" class="nav-link">
+                                    <i class="nav-icon icon ion-md-radio-button-off"></i>
+                                    <p>Fiturs</p>
+                                </a>
+                            </li>
+                            @endcan
+                            @can('view-any', App\Models\Website::class)
+                            <li class="nav-item">
+                                <a href="{{ route('websites.index') }}" class="nav-link">
+                                    <i class="nav-icon icon ion-md-radio-button-off"></i>
+                                    <p>Websites</p>
+                                </a>
+                            </li>
+                            @endcan
+                            @can('view-any', App\Models\Faq::class)
+                            <li class="nav-item">
+                                <a href="{{ route('faqs.index') }}" class="nav-link">
+                                    <i class="nav-icon icon ion-md-radio-button-off"></i>
+                                    <p>Faqs</p>
+                                </a>
+                            </li>
+                            @endcan
+                            @can('view-any', App\Models\Testimony::class)
+                            <li class="nav-item">
+                                <a href="{{ route('testimonies.index') }}" class="nav-link">
+                                    <i class="nav-icon icon ion-md-radio-button-off"></i>
+                                    <p>Testimonies</p>
+                                </a>
+                            </li>
+                            @endcan
+                            @can('view-any', App\Models\Theme::class)
+                            <li class="nav-item">
+                                <a href="{{ route('themes.index') }}" class="nav-link">
+                                    <i class="nav-icon icon ion-md-radio-button-off"></i>
+                                    <p>Themes</p>
                                 </a>
                             </li>
                             @endcan

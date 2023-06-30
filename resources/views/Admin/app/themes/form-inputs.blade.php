@@ -7,7 +7,7 @@
             label="Nama Tema"
             :value="old('theme_name', ($editing ? $theme->theme_name : ''))"
             maxlength="255"
-            placeholder="Nama Tema"
+            placeholder="Pertanyaan"
             required
         ></x-inputs.text>
     </x-inputs.group>
@@ -30,6 +30,14 @@
             @foreach($catgories as $value => $label)
             <option value="{{ $value }}" {{ $selected == $value ? 'selected' : '' }} >{{ $label }}</option>
             @endforeach
+        </x-inputs.select>
+    </x-inputs.group>
+
+    <x-inputs.group class="col-sm-12">
+        <x-inputs.select name="type" label="Tipe">
+            @php $selected = old('type', ($editing ? $theme->type : '')) @endphp
+            <option value="pakai foto" {{ $selected == 'pakai foto' ? 'selected' : '' }} >Pakai foto</option>
+            <option value="tanpa foto" {{ $selected == 'tanpa foto' ? 'selected' : '' }} >Tanpa foto</option>
         </x-inputs.select>
     </x-inputs.group>
 </div>

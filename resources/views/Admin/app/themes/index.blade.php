@@ -53,6 +53,9 @@
                             <th class="text-left">
                                 @lang('crud.themes.inputs.catgory_id')
                             </th>
+                            <th class="text-left">
+                                @lang('crud.themes.inputs.type')
+                            </th>
                             <th class="text-center">
                                 @lang('crud.common.actions')
                             </th>
@@ -66,6 +69,7 @@
                             <td>
                                 {{ optional($theme->catgory)->category ?? '-' }}
                             </td>
+                            <td>{{ $theme->type ?? '-' }}</td>
                             <td class="text-center" style="width: 134px;">
                                 <div
                                     role="group"
@@ -114,7 +118,7 @@
                         </tr>
                         @empty
                         <tr>
-                            <td colspan="4">
+                            <td colspan="5">
                                 @lang('crud.common.no_items_found')
                             </td>
                         </tr>
@@ -122,7 +126,7 @@
                     </tbody>
                     <tfoot>
                         <tr>
-                            <td colspan="4">{!! $themes->render() !!}</td>
+                            <td colspan="5">{!! $themes->render() !!}</td>
                         </tr>
                     </tfoot>
                 </table>

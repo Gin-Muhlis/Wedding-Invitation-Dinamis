@@ -21,6 +21,30 @@ class PermissionsSeeder extends Seeder
         Permission::create(['name' => 'update albums']);
         Permission::create(['name' => 'delete albums']);
 
+        Permission::create(['name' => 'list faqs']);
+        Permission::create(['name' => 'view faqs']);
+        Permission::create(['name' => 'create faqs']);
+        Permission::create(['name' => 'update faqs']);
+        Permission::create(['name' => 'delete faqs']);
+
+        Permission::create(['name' => 'list fiturs']);
+        Permission::create(['name' => 'view fiturs']);
+        Permission::create(['name' => 'create fiturs']);
+        Permission::create(['name' => 'update fiturs']);
+        Permission::create(['name' => 'delete fiturs']);
+
+        Permission::create(['name' => 'list testimonies']);
+        Permission::create(['name' => 'view testimonies']);
+        Permission::create(['name' => 'create testimonies']);
+        Permission::create(['name' => 'update testimonies']);
+        Permission::create(['name' => 'delete testimonies']);
+
+        Permission::create(['name' => 'list websites']);
+        Permission::create(['name' => 'view websites']);
+        Permission::create(['name' => 'create websites']);
+        Permission::create(['name' => 'update websites']);
+        Permission::create(['name' => 'delete websites']);
+
         Permission::create(['name' => 'list bridegrooms']);
         Permission::create(['name' => 'view bridegrooms']);
         Permission::create(['name' => 'create bridegrooms']);
@@ -134,10 +158,13 @@ class PermissionsSeeder extends Seeder
         $adminRole = Role::create(['name' => 'super-admin']);
         $adminRole->givePermissionTo($allPermissions);
 
+        $superRole = Role::create(['name' => 'super']);
+
         $user = \App\Models\User::whereEmail('admin@admin.com')->first();
 
         if ($user) {
             $user->assignRole($adminRole);
+            $user->assignRole($superRole);
         }
     }
 }
