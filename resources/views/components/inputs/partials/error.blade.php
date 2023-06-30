@@ -1,0 +1,1 @@
+<p class="text-danger" role="alert">{{ $message }}</p>
