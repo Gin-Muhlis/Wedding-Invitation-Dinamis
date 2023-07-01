@@ -5,14 +5,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Wedding Invitation</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Source+Sans+3:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600&family=Source+Sans+3:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+
+    <script src="https://kit.fontawesome.com/64f5e4ae10.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <link rel="stylesheet" href="{{ asset('user/css/style.css') }}">
 </head>
 
@@ -44,6 +51,9 @@
                             <a class="nav-link" href="#">Harga</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="#">Katalog</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="#">Testimoni</a>
                         </li>
                         <li class="nav-item">
@@ -58,15 +68,15 @@
         </nav>
 
         {{-- ---------> TEXT <--------- --}}
-        <div class="container py-3 mt-5">
-            <div class="row justify-content-center align-items-center g-2">
+        <div class="container py-3 mt-5 text-section">
+            <div class="row justify-content-center align-items-center gap-2">
                 <div class="col">
                     <h1 class="text-white text-hero-title">WEDDING</h1>
                     <p class="text-white text-hero-subtitle">Invitation</p>
                     <p class="paragraph-hero">
                         Undang teman, kerabat, atau sahabatmu ke pernikahan anda menggunakan undangan digital dan modern
                         dengan fitur-fitur yang memudahkan anda hanya di <span class="paragraph-hero-title">Wedding
-                            Invitation</span>
+                            Invitation!</span>
                     </p>
                     <a href="#tema" class="btn btn-light btn-pesan">Pesan Sekarang</a>
                 </div>
@@ -121,9 +131,695 @@
         </svg>
     </div>
 
+    {{-- ---------> FITUR <--------- --}}
+    <div class="container my-5 py-3">
+        <div class="text-center mb-5">
+            <p class="title-fitur mb-3">Fitur Yang Kami Sediakan</p>
+            <p class="description-fitur">Beragam fitur yang dapat anda manfaatkan untuk meningkatkan dan mempercantik
+                informasi undangan digital
+                yang
+                Anda.</p>
+        </div>
+        <div class="row row-cols-lg-5 px-5 gap-3 justify-content-center">
+            <div
+                class="col-md-2 px-2 rounded shadow-lg text-center d-flex align-items-center justify-content-center flex-col gap-2 col-fitur">
+                <i class="fa-solid fa-paper-plane fs-4" style="color: #ffffff;"></i>
+                <p class="text-white text-fitur">Bagikan Sepuasnya</p>
+            </div>
+            <div
+                class="col-md-2 px-2 rounded shadow-lg text-center d-flex align-items-center justify-content-center flex-col gap-2 col-fitur">
+                <i class="fa-solid fa-paper-plane fs-4" style="color: #ffffff;"></i>
+                <p class="text-white text-fitur">Bagikan Sepuasnya</p>
+            </div>
+            <div
+                class="col-md-2 px-2 rounded shadow-lg text-center d-flex align-items-center justify-content-center flex-col gap-2 col-fitur">
+                <i class="fa-solid fa-paper-plane fs-4" style="color: #ffffff;"></i>
+                <p class="text-white text-fitur">Bagikan Sepuasnya</p>
+            </div>
+            <div
+                class="col-md-2 px-2 rounded shadow-lg text-center d-flex align-items-center justify-content-center flex-col gap-2 col-fitur">
+                <i class="fa-solid fa-paper-plane fs-4" style="color: #ffffff;"></i>
+                <p class="text-white text-fitur">Bagikan Sepuasnya</p>
+            </div>
+            <div
+                class="col-md-2 px-2 rounded shadow-lg text-center d-flex align-items-center justify-content-center flex-col gap-2 col-fitur">
+                <i class="fa-solid fa-paper-plane fs-4" style="color: #ffffff;"></i>
+                <p class="text-white text-fitur">Bagikan Sepuasnya</p>
+            </div>
+            <div
+                class="col-md-2 px-2 rounded shadow-lg text-center d-flex align-items-center justify-content-center flex-col gap-2 col-fitur">
+                <i class="fa-solid fa-paper-plane fs-4" style="color: #ffffff;"></i>
+                <p class="text-white text-fitur">Bagikan Sepuasnya</p>
+            </div>
+            <div
+                class="col-md-2 px-2 rounded shadow-lg text-center d-flex align-items-center justify-content-center flex-col gap-2 col-fitur">
+                <i class="fa-solid fa-paper-plane fs-4" style="color: #ffffff;"></i>
+                <p class="text-white text-fitur">Bagikan Sepuasnya</p>
+            </div>
+            <div
+                class="col-md-2 px-2 rounded shadow-lg text-center d-flex align-items-center justify-content-center flex-col gap-2 col-fitur">
+                <i class="fa-solid fa-paper-plane fs-4" style="color: #ffffff;"></i>
+                <p class="text-white text-fitur">Bagikan Sepuasnya</p>
+            </div>
+            <div
+                class="col-md-2 px-2 rounded shadow-lg text-center d-flex align-items-center justify-content-center flex-col gap-2 col-fitur">
+                <i class="fa-solid fa-paper-plane fs-4" style="color: #ffffff;"></i>
+                <p class="text-white text-fitur">Bagikan Sepuasnya</p>
+            </div>
+            <div
+                class="col-md-2 px-2 rounded shadow-lg text-center d-flex align-items-center justify-content-center flex-col gap-2 col-fitur">
+                <i class="fa-solid fa-paper-plane fs-4" style="color: #ffffff;"></i>
+                <p class="text-white text-fitur">Bagikan Sepuasnya</p>
+            </div>
+            <div
+                class="col-md-2 px-2 rounded shadow-lg text-center d-flex align-items-center justify-content-center flex-col gap-2 col-fitur">
+                <i class="fa-solid fa-paper-plane fs-4" style="color: #ffffff;"></i>
+                <p class="text-white text-fitur">Bagikan Sepuasnya</p>
+            </div>
+            <div
+                class="col-md-2 px-2 rounded shadow-lg text-center d-flex align-items-center justify-content-center flex-col gap-2 col-fitur">
+                <i class="fa-solid fa-paper-plane fs-4" style="color: #ffffff;"></i>
+                <p class="text-white text-fitur">Bagikan Sepuasnya</p>
+            </div>
+
+        </div>
+    </div>
+
+    {{-- ---------> HARGA <--------- --}}
+    <div class="container my-5 py-5 px-5">
+        <div class="text-center mb-5">
+            <p class="title-price">Harga</p>
+            <p class="description-price">Kami memberikan harga-harga terbaik untuk anda dapat membuat undangan digital
+                dengan mudah</p>
+        </div>
+        <div class="row gap-5 justify-content-center">
+            <div class="col-md-3 p-0 shadow basic categories">
+
+                <div class="top w-100 d-flex flex-column align-items-start justify-content-start gap-3">
+                    <div class="px-4 pt-3">
+                        <h3 class="d-flex align-items-center justify-content-start gap-1 fs-4 title-category">
+                            <i class="fa-solid fa-globe" style="color: #ffffff;"></i>
+                            <span class="title-category text-white">BASIC</span>
+                        </h3>
+                    </div>
+                    <div class="price bg-white">
+                        <p class="total-price price-basic fs-3 m-0">30.000 IDR</p>
+                        <span class="month price-basic fs-6">/Month</span>
+                    </div>
+                    <div
+                        class="fiturs-category text-white px-4 d-flex flex-column align-items-start justify-content-start gap-1">
+                        <p class="m-0 d-flex align-items-center justify-content-start gap-1">
+                            <i class="fa-solid fa-check" style="color: #ffffff;"></i>
+                            <span>Bagikan sepuasnya</span>
+                        </p>
+                        <p class="m-0 d-flex align-items-center justify-content-start gap-1">
+                            <i class="fa-solid fa-check" style="color: #ffffff;"></i>
+                            <span>Bagikan sepuasnya</span>
+                        </p>
+                        <p class="m-0 d-flex align-items-center justify-content-start gap-1">
+                            <i class="fa-solid fa-check" style="color: #ffffff;"></i>
+                            <span>Bagikan sepuasnya</span>
+                        </p>
+                        <p class="m-0 d-flex align-items-center justify-content-start gap-1">
+                            <i class="fa-solid fa-check" style="color: #ffffff;"></i>
+                            <span>Bagikan sepuasnya</span>
+                        </p>
+                    </div>
+                    <div class="line"></div>
+                </div>
+                <div class="bottom w-100 pb-4 d-flex justify-content-center">
+                    <a href="#tema"
+                        class="text-decoration-none text-white py-2 px-4 border border-light order-button">Order
+                        Now</a>
+                </div>
+            </div>
+            <div class="col-md-3 p-0 shadow standard categories">
+
+                <div class="top w-100 d-flex flex-column align-items-start justify-content-start gap-3">
+                    <div class="px-4 pt-3">
+                        <h3 class="d-flex align-items-center justify-content-start gap-1 fs-4 title-category">
+                            <i class="fa-solid fa-globe" style="color: #ffffff;"></i>
+                            <span class="title-category text-white">STANDARD</span>
+                        </h3>
+                    </div>
+                    <div class="price bg-white">
+                        <p class="total-price price-standard fs-3 m-0">30.000 IDR</p>
+                        <span class="month price-standard fs-6">/Month</span>
+                    </div>
+                    <div
+                        class="fiturs-category text-white px-4 d-flex flex-column align-items-start justify-content-start gap-1">
+                        <p class="m-0 d-flex align-items-center justify-content-start gap-1">
+                            <i class="fa-solid fa-check" style="color: #ffffff;"></i>
+                            <span>Bagikan sepuasnya</span>
+                        </p>
+                        <p class="m-0 d-flex align-items-center justify-content-start gap-1">
+                            <i class="fa-solid fa-check" style="color: #ffffff;"></i>
+                            <span>Bagikan sepuasnya</span>
+                        </p>
+                        <p class="m-0 d-flex align-items-center justify-content-start gap-1">
+                            <i class="fa-solid fa-check" style="color: #ffffff;"></i>
+                            <span>Bagikan sepuasnya</span>
+                        </p>
+                        <p class="m-0 d-flex align-items-center justify-content-start gap-1">
+                            <i class="fa-solid fa-check" style="color: #ffffff;"></i>
+                            <span>Bagikan sepuasnya</span>
+                        </p>
+                        <p class="m-0 d-flex align-items-center justify-content-start gap-1">
+                            <i class="fa-solid fa-check" style="color: #ffffff;"></i>
+                            <span>Bagikan sepuasnya</span>
+                        </p>
+                    </div>
+                    <div class="line"></div>
+                </div>
+                <div class="bottom w-100 pb-4 d-flex justify-content-center">
+                    <a href="#tema"
+                        class="text-decoration-none text-white py-2 px-4 border border-light order-button">Order
+                        Now</a>
+                </div>
+            </div>
+            <div class="col-md-3 p-0 shadow premium categories">
+
+                <div class="top w-100 d-flex flex-column align-items-start justify-content-start gap-3">
+                    <div class="px-4 pt-3">
+                        <h3 class="d-flex align-items-center justify-content-start gap-1 fs-4 title-category">
+                            <i class="fa-solid fa-globe" style="color: #ffffff;"></i>
+                            <span class="title-category text-white">PREMIUM</span>
+                        </h3>
+                    </div>
+                    <div class="price bg-white">
+                        <p class="total-price price-premium fs-3 m-0">30.000 IDR</p>
+                        <span class="month price-premium fs-6">/Month</span>
+                    </div>
+                    <div
+                        class="fiturs-category text-white px-4 d-flex flex-column align-items-start justify-content-start gap-1">
+                        <p class="m-0 d-flex align-items-center justify-content-start gap-1">
+                            <i class="fa-solid fa-check" style="color: #ffffff;"></i>
+                            <span>Bagikan sepuasnya</span>
+                        </p>
+                        <p class="m-0 d-flex align-items-center justify-content-start gap-1">
+                            <i class="fa-solid fa-check" style="color: #ffffff;"></i>
+                            <span>Bagikan sepuasnya</span>
+                        </p>
+                        <p class="m-0 d-flex align-items-center justify-content-start gap-1">
+                            <i class="fa-solid fa-check" style="color: #ffffff;"></i>
+                            <span>Bagikan sepuasnya</span>
+                        </p>
+                        <p class="m-0 d-flex align-items-center justify-content-start gap-1">
+                            <i class="fa-solid fa-check" style="color: #ffffff;"></i>
+                            <span>Bagikan sepuasnya</span>
+                        </p>
+                        <p class="m-0 d-flex align-items-center justify-content-start gap-1">
+                            <i class="fa-solid fa-check" style="color: #ffffff;"></i>
+                            <span>Bagikan sepuasnya</span>
+                        </p>
+                        <p class="m-0 d-flex align-items-center justify-content-start gap-1">
+                            <i class="fa-solid fa-check" style="color: #ffffff;"></i>
+                            <span>Bagikan sepuasnya</span>
+                        </p>
+                        <p class="m-0 d-flex align-items-center justify-content-start gap-1">
+                            <i class="fa-solid fa-check" style="color: #ffffff;"></i>
+                            <span>Bagikan sepuasnya</span>
+                        </p>
+                    </div>
+                    <div class="line"></div>
+                </div>
+                <div class="bottom w-100 pb-4 d-flex justify-content-center">
+                    <a href="#tema"
+                        class="text-decoration-none text-white py-2 px-4 border border-light order-button">Order
+                        Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{-- ---------> KATALOG <--------- --}}
+    <div class="container my-5 py-5 px-5">
+        <div class="text-center mb-5">
+            <p class="title-katalog">Katalog</p>
+            <p class="description-katalog">Terdapat beragam tema yang telah disediakan, sehingga Anda dapat memilih
+                sesuai dengan preferensi Anda.</p>
+        </div>
+        <div class="row row-cols-1">
+            <div class="col">
+
+                <div id="carouselExampleIndicators" class="carousel slide">
+                    <div class="d-flex justify-content-center align-items-center gap-2">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                            class="active btn-pakai-foto btn-indicators" aria-current="true" aria-label="Slide 1">
+                            <div class="bg-indicators"></div>
+                            <span class="text-katalog">Pakai
+                                Foto</span>
+                        </button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                            class="btn-tanpa-foto btn-indicators" aria-label="Slide 2">
+                            <div class="bg-indicators"></div>
+                            <span class="text-katalog">Pakai
+                                Foto</span>
+                        </button>
+                    </div>
+                    <div class="carousel-inner mt-4">
+                        <div class="carousel-item active">
+                            <div class="row">
+                                <div class="col-md-4 mb-4">
+                                    <div class="card">
+                                        <div class="card-header">
+
+                                        </div>
+                                        <div
+                                            class="card-body py-4 d-flex align-items-center justify-content-center gap-2 w-100">
+                                            <a href="#"
+                                                class="btn text-light text-decoration-none text-white btn-theme">
+                                                <i class="fa-solid fa-eye"></i>
+                                                <span>Preview</span>
+                                            </a>
+                                            <a href="#"
+                                                class="btn text-light text-decoration-none text-white btn-theme">
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                                <span>Order</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-4">
+                                    <div class="card">
+                                        <div class="card-header">
+
+                                        </div>
+                                        <div
+                                            class="card-body py-4 d-flex align-items-center justify-content-center gap-2 w-100">
+                                            <a href="#"
+                                                class="btn text-light text-decoration-none text-white btn-theme">
+                                                <i class="fa-solid fa-eye"></i>
+                                                <span>Preview</span>
+                                            </a>
+                                            <a href="#"
+                                                class="btn text-light text-decoration-none text-white btn-theme">
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                                <span>Order</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-4">
+                                    <div class="card">
+                                        <div class="card-header">
+
+                                        </div>
+                                        <div
+                                            class="card-body py-4 d-flex align-items-center justify-content-center gap-2 w-100">
+                                            <a href="#"
+                                                class="btn text-light text-decoration-none text-white btn-theme">
+                                                <i class="fa-solid fa-eye"></i>
+                                                <span>Preview</span>
+                                            </a>
+                                            <a href="#"
+                                                class="btn text-light text-decoration-none text-white btn-theme">
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                                <span>Order</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-4">
+                                    <div class="card">
+                                        <div class="card-header">
+
+                                        </div>
+                                        <div
+                                            class="card-body py-4 d-flex align-items-center justify-content-center gap-2 w-100">
+                                            <a href="#"
+                                                class="btn text-light text-decoration-none text-white btn-theme">
+                                                <i class="fa-solid fa-eye"></i>
+                                                <span>Preview</span>
+                                            </a>
+                                            <a href="#"
+                                                class="btn text-light text-decoration-none text-white btn-theme">
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                                <span>Order</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-4">
+                                    <div class="card">
+                                        <div class="card-header">
+
+                                        </div>
+                                        <div
+                                            class="card-body py-4 d-flex align-items-center justify-content-center gap-2 w-100">
+                                            <a href="#"
+                                                class="btn text-light text-decoration-none text-white btn-theme">
+                                                <i class="fa-solid fa-eye"></i>
+                                                <span>Preview</span>
+                                            </a>
+                                            <a href="#"
+                                                class="btn text-light text-decoration-none text-white btn-theme">
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                                <span>Order</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-4">
+                                    <div class="card">
+                                        <div class="card-header">
+
+                                        </div>
+                                        <div
+                                            class="card-body py-4 d-flex align-items-center justify-content-center gap-2 w-100">
+                                            <a href="#"
+                                                class="btn text-light text-decoration-none text-white btn-theme">
+                                                <i class="fa-solid fa-eye"></i>
+                                                <span>Preview</span>
+                                            </a>
+                                            <a href="#"
+                                                class="btn text-light text-decoration-none text-white btn-theme">
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                                <span>Order</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-md-4 mb-4">
+                                    <div class="card">
+                                        <div class="card-header">
+
+                                        </div>
+                                        <div
+                                            class="card-body py-4 d-flex align-items-center justify-content-center gap-2 w-100">
+                                            <a href="#"
+                                                class="btn text-light text-decoration-none text-white btn-theme">
+                                                <i class="fa-solid fa-eye"></i>
+                                                <span>Preview</span>
+                                            </a>
+                                            <a href="#"
+                                                class="btn text-light text-decoration-none text-white btn-theme">
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                                <span>Order</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-4">
+                                    <div class="card">
+                                        <div class="card-header">
+
+                                        </div>
+                                        <div
+                                            class="card-body py-4 d-flex align-items-center justify-content-center gap-2 w-100">
+                                            <a href="#"
+                                                class="btn text-light text-decoration-none text-white btn-theme">
+                                                <i class="fa-solid fa-eye"></i>
+                                                <span>Preview</span>
+                                            </a>
+                                            <a href="#"
+                                                class="btn text-light text-decoration-none text-white btn-theme">
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                                <span>Order</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-4">
+                                    <div class="card">
+                                        <div class="card-header">
+
+                                        </div>
+                                        <div
+                                            class="card-body py-4 d-flex align-items-center justify-content-center gap-2 w-100">
+                                            <a href="#"
+                                                class="btn text-light text-decoration-none text-white btn-theme">
+                                                <i class="fa-solid fa-eye"></i>
+                                                <span>Preview</span>
+                                            </a>
+                                            <a href="#"
+                                                class="btn text-light text-decoration-none text-white btn-theme">
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                                <span>Order</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-4">
+                                    <div class="card">
+                                        <div class="card-header">
+
+                                        </div>
+                                        <div
+                                            class="card-body py-4 d-flex align-items-center justify-content-center gap-2 w-100">
+                                            <a href="#"
+                                                class="btn text-light text-decoration-none text-white btn-theme">
+                                                <i class="fa-solid fa-eye"></i>
+                                                <span>Preview</span>
+                                            </a>
+                                            <a href="#"
+                                                class="btn text-light text-decoration-none text-white btn-theme">
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                                <span>Order</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-4">
+                                    <div class="card">
+                                        <div class="card-header">
+
+                                        </div>
+                                        <div
+                                            class="card-body py-4 d-flex align-items-center justify-content-center gap-2 w-100">
+                                            <a href="#"
+                                                class="btn text-light text-decoration-none text-white btn-theme">
+                                                <i class="fa-solid fa-eye"></i>
+                                                <span>Preview</span>
+                                            </a>
+                                            <a href="#"
+                                                class="btn text-light text-decoration-none text-white btn-theme">
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                                <span>Order</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-4">
+                                    <div class="card">
+                                        <div class="card-header">
+
+                                        </div>
+                                        <div
+                                            class="card-body py-4 d-flex align-items-center justify-content-center gap-2 w-100">
+                                            <a href="#"
+                                                class="btn text-light text-decoration-none text-white btn-theme">
+                                                <i class="fa-solid fa-eye"></i>
+                                                <span>Preview</span>
+                                            </a>
+                                            <a href="#"
+                                                class="btn text-light text-decoration-none text-white btn-theme">
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                                <span>Order</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{-- ---------> TESTIMONI <--------- --}}
+    <div class="container my-5 py-5 px-5">
+        <div class="text-center mb-5">
+            <p class="title-testimoni">Apa Yang Mereka Katakan?</p>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="owl-carousel position-relative testimonies-carousel text-center">
+                    <div class="box-area">
+                        <div class="img-area">
+
+                        </div>
+                        <p class="name-person">Person name</p>
+                        <div class="rating">
+                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                        </div>
+                        <p class="review">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem suscipit totam nisi id
+                            tempora libero quas alias error magnam impedit.
+                        </p>
+                    </div>
+                    <div class="box-area">
+                        <div class="img-area">
+
+                        </div>
+                        <p class="name-person">Person name</p>
+                        <div class="rating">
+                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                        </div>
+                        <p class="review">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem suscipit totam nisi id
+                            tempora libero quas alias error magnam impedit.
+                        </p>
+                    </div>
+                    <div class="box-area">
+                        <div class="img-area">
+
+                        </div>
+                        <p class="name-person">Person name</p>
+                        <div class="rating">
+                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                        </div>
+                        <p class="review">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem suscipit totam nisi id
+                            tempora libero quas alias error magnam impedit.
+                        </p>
+                    </div>
+                    <div class="box-area">
+                        <div class="img-area">
+
+                        </div>
+                        <p class="name-person">Person name</p>
+                        <div class="rating">
+                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                        </div>
+                        <p class="review">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem suscipit totam nisi id
+                            tempora libero quas alias error magnam impedit.
+                        </p>
+                    </div>
+                    <div class="box-area">
+                        <div class="img-area">
+
+                        </div>
+                        <p class="name-person">Person name</p>
+                        <div class="rating">
+                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                        </div>
+                        <p class="review">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem suscipit totam nisi id
+                            tempora libero quas alias error magnam impedit.
+                        </p>
+                    </div>
+                    <div class="box-area">
+                        <div class="img-area">
+
+                        </div>
+                        <p class="name-person">Person name</p>
+                        <div class="rating">
+                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                        </div>
+                        <p class="review">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem suscipit totam nisi id
+                            tempora libero quas alias error magnam impedit.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{-- ---------> FAQ <--------- --}}
+    <div class="container my-5 py-5 px-5">
+        <div class="mb-5">
+            <p class="title-faq">FAQ</p>
+        </div>
+        <div class="row faqs">
+            <div class="col-md-12 box-faq py-3">
+                <div class="header-faq mb-3 d-flex align-items-center justify-content-between">
+                    <p class="question m-0 fs-5 fw-bold">
+                        Bagaimana cara order undangan?
+                    </p>
+                    <i class="fa-solid fa-angle-down" style="color: #17191c;"></i>
+                </div>
+                <div class="body-faq">
+                    <p class="answer fs-6">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident ratione sapiente vitae
+                        ducimus unde atque quidem temporibus modi consectetur ea voluptas dignissimos omnis esse
+                        veritatis asperiores accusantium, in dicta laborum.0
+                    </p>
+                </div>
+                <div class="line-faq"></div>
+            </div>
+        </div>
+    </div>
+
     {{-- ---------> SCRIPTS <--------- --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
+    </script>
+
+    {{-- ---------> SCRIPT BUTTON INDICATORS KATALOG <--------- --}}
+    <script>
+        $(document).ready(function() {
+            $(".btn-pakai-foto").on("click", function() {
+                $(this).addClass("active");
+                $(".btn-tanpa-foto").removeClass("active");
+            })
+            $(".btn-tanpa-foto").on("click", function() {
+                $(this).addClass("active");
+                $(".btn-pakai-foto").removeClass("active");
+            })
+        })
+    </script>
+
+    {{-- ---------> SCRIPT TESTIMONIES <--------- --}}
+    <script>
+        $(document).ready(function() {
+            $(".testimonies-carousel").owlCarousel({
+                autoplay: true,
+                slideSpeed: 3000,
+                items: 3,
+                nav: true,
+                navText: [`<i class="fa-solid fa-chevron-left"></i>`,
+                    `<i class="fa-solid fa-chevron-right"></i>`
+                ],
+                margin: 30,
+                dots: false,
+                responsive: {
+                    360: {
+                        items: 1
+                    },
+                    768: {
+                        items: 2
+                    },
+                    992: {
+                        items: 3
+                    },
+                    1024: {
+                        items: 3
+                    }
+                }
+            })
+        })
     </script>
 </body>
 

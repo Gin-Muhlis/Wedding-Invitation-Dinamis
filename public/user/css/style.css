@@ -85,6 +85,7 @@
     right: -20%;
     top: 10%;
     opacity: 0.13;
+    z-index: 10;
 }
 
 .shape2 {
@@ -92,6 +93,7 @@
     left: -20%;
     top: 10%;
     opacity: 0.13;
+    z-index: 10;
 }
 
 .shape3 {
@@ -99,6 +101,7 @@
     left: -20%;
     top: -10%;
     opacity: 0.13;
+    z-index: 10;
 }
 
 .text-hero-title {
@@ -128,7 +131,331 @@
     margin-bottom: 30px;
 }
 
+.paragraph-hero-title {
+    font-weight: 700;
+}
+
 .btn-pesan {
     font-family: "Source Sans 3", sans-serif;
     font-weight: 600;
+    cursor: pointer;
+    z-index: 9999;
+    text-decoration: none;
+    position: relative;
+}
+
+/* FITUR */
+.title-fitur,
+.title-price,
+.title-katalog,
+.title-testimoni,
+.title-faq {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 800;
+    font-size: clamp(1.5rem, 2.5vmax, 3rem);
+    color: #9336b4;
+}
+
+.title-faq {
+    letter-spacing: 1px;
+}
+
+.description-fitur,
+.description-price,
+.description-katalog {
+    font-family: "Source Sans 3", sans-serif;
+    margin-inline: auto;
+    width: 60%;
+    font-size: clamp(0.9em, 1.2vmax, 2em);
+    line-height: 1.7;
+}
+
+@media screen and (max-width: 500px) {
+    .description-fitur,
+    .description-price {
+        width: 100%;
+    }
+}
+
+.col-fitur {
+    background-image: linear-gradient(
+        135deg,
+        rgb(255, 103, 222) 11.2%,
+        rgb(255, 170, 59) 91.1%
+    );
+    overflow: hidden;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    position: relative;
+}
+
+.col-fitur::after {
+    content: "";
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    position: absolute;
+    right: -15px;
+    bottom: -15px;
+}
+
+.text-fitur {
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 500;
+    margin: 0;
+    position: relative;
+    z-index: 10;
+}
+
+/* HAGRA */
+.categories {
+    height: 500px;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 100%;
+    justify-content: start;
+    align-content: space-between;
+}
+.basic {
+    background-image: linear-gradient(
+        45deg,
+        rgb(31, 106, 136) 23.3%,
+        rgb(60, 218, 212) 84.7%
+    );
+}
+
+.standard {
+    background-image: linear-gradient(
+        -135deg,
+        rgb(209, 0, 116) 11.2%,
+        rgba(110, 44, 107, 1) 91.1%
+    );
+}
+
+.premium {
+    background-image: radial-gradient(
+        circle farthest-corner at 100% 20%,
+        rgba(247, 87, 0, 1) 0%,
+        rgba(249, 0, 0, 1) 90.1%
+    );
+}
+
+.order-button {
+    border-radius: 50px;
+}
+
+.price {
+    width: 80%;
+    border-radius: 0 50px 50px 0;
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 1.5rem;
+    box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.1);
+}
+
+.title-category {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+}
+
+.total-price {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.price-basic {
+    color: rgb(60, 218, 212);
+}
+
+.price-standard {
+    color: rgb(209, 0, 116);
+}
+
+.price-premium {
+    color: rgba(247, 87, 0, 1);
+}
+
+.fiturs-category p {
+    font-size: 0.9rem;
+}
+
+.line {
+    width: 70%;
+    height: 2px;
+    border-radius: 10px;
+    background: #ffffff;
+    margin-inline: auto;
+}
+
+.button-order {
+    justify-self: end;
+}
+
+/* KATALOG */
+.btn-indicators {
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    border: none;
+    position: relative;
+    transition: 0.7s;
+    background: transparent;
+}
+
+.text-katalog {
+    color: #9336b4;
+    font-family: "Sans Source 3", sans-serif;
+    font-weight: 600;
+    position: relative;
+    z-index: 10;
+}
+
+.bg-indicators {
+    content: "";
+    width: 100%;
+    height: 3px;
+    background: #9336b4;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: 0.7s;
+    z-index: 2;
+}
+
+.btn-indicators.active .text-katalog {
+    color: #ffffff;
+}
+
+.btn-indicators.active .bg-indicators {
+    height: 100%;
+}
+
+.card-header {
+    height: 300px;
+    background: #9336b4;
+}
+
+.btn-theme {
+    background: #9336b4;
+    border: none;
+    font-size: 0.9rem;
+}
+
+/* TESTIMONI */
+.testimonies-carousel {
+    font-family: "Source Sans 3", sans-serif;
+}
+
+.owl-stage-outer {
+    padding-block: 50px;
+}
+
+.box-area {
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35);
+    padding: 20px;
+    position: relative;
+}
+
+.img-area {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 2px solid #9336b4;
+    position: absolute;
+    left: 50%;
+    top: -25px;
+    transform: translateX(-50%);
+    z-index: 1;
+    box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.img-area img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+.name-person {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    font-size: 0.9rem;
+    margin-block: 10px;
+}
+
+.review {
+    font-size: 0.9rem;
+    line-height: 20px;
+    margin-bottom: 0;
+}
+
+.testimonies-carousel .owl-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+}
+
+.testimonies-carousel.owl-carousel .owl-nav button.owl-prev,
+.testimonies-carousel.owl-carousel .owl-nav button.owl-next {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #ffffff;
+    background: #9336b4;
+    border-radius: 50%;
+    position: absolute;
+    top: -20px;
+}
+
+.testimonies-carousel.owl-carousel .owl-nav button.owl-prev {
+    left: -60px;
+}
+
+.testimonies-carousel.owl-carousel .owl-nav button.owl-next {
+    right: -60px;
+}
+
+@media screen and (max-width: 992px) {
+    .testimonies-carousel .owl-nav {
+        display: none;
+    }
+}
+
+/* FAQ */
+.faqs {
+    font-family: "Source Sans 3", sans-serif;
+}
+
+.body-faq {
+    height: 0;
+    overflow: hidden;
+}
+
+.line-faq {
+    height: 2px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    width: 100%;
 }
