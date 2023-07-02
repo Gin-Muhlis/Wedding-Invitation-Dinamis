@@ -60,7 +60,7 @@
                             <a class="nav-link" href="#">FAQ</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
+                            <a class="nav-link" href="#">Kontak</a>
                         </li>
                     </ul>
                 </div>
@@ -749,7 +749,7 @@
 
     {{-- ---------> FAQ <--------- --}}
     <div class="container my-5 py-5 px-5">
-        <div class="mb-5">
+        <div class="mb-2">
             <p class="title-faq">FAQ</p>
         </div>
         <div class="row faqs">
@@ -758,7 +758,23 @@
                     <p class="question m-0 fs-5 fw-bold">
                         Bagaimana cara order undangan?
                     </p>
-                    <i class="fa-solid fa-angle-down" style="color: #17191c;"></i>
+                    <i class="fa-solid fa-angle-down faq-toggler" style="color: #17191c;"></i>
+                </div>
+                <div class="body-faq">
+                    <p class="answer fs-6">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident ratione sapiente vitae
+                        ducimus unde atque quidem temporibus modi consectetur ea voluptas dignissimos omnis esse
+                        veritatis asperiores accusantium, in dicta laborum.0
+                    </p>
+                </div>
+                <div class="line-faq"></div>
+            </div>
+            <div class="col-md-12 box-faq py-3">
+                <div class="header-faq mb-3 d-flex align-items-center justify-content-between">
+                    <p class="question m-0 fs-5 fw-bold">
+                        Bagaimana cara order undangan?
+                    </p>
+                    <i class="fa-solid fa-angle-down faq-toggler" style="color: #17191c;"></i>
                 </div>
                 <div class="body-faq">
                     <p class="answer fs-6">
@@ -771,6 +787,67 @@
             </div>
         </div>
     </div>
+
+    {{-- ---------> FOOTER <--------- --}}
+    <footer>
+        <div class="container mt-5 pt-5 pb-4">
+            <div class="row justify-content-between mb-5">
+                <div class="col-md-6 mb-4 mb-sm-0">
+                    <div class="logo-area mb-3 d-flex align-items-center justify-content-start gap-1">
+                        <img src="{{ asset('user/image/icon.png') }}" alt="Logo" width="40" height="40"
+                            class="d-inline-block align-text-top">
+                        <span class="brand-web fs-4 text-white">Wedding Invitation</span>
+                    </div>
+                    <p class="text-footer m-0">
+                        Undang teman, kerabat, atau sahabatmu ke pernikahan anda menggunakan undangan digital dan modern
+                        dengan fitur-fitur yang memudahkan anda hanya di <span class="paragraph-hero-title">Wedding
+                            Invitation!
+                    </p>
+                </div>
+                <div class="col-md-3 mb-4 mb-sm-0">
+                    <h3 class="text-white mb-3">Hubungi Kami</h3>
+                    <div class="menus d-flex flex-column align-items-start justify-content-start gap-2">
+                        <p class="m-0 text-white fs-6 d-flex align-items-center jusitfy-content-start gap-1">
+                            <i class="fa-solid fa-envelope" style="color: #ffffff;"></i>
+                            <span>weddinginvitation@gmail.com</span>
+                        </p>
+                        <p class="m-0 text-white fs-6 d-flex align-items-center jusitfy-content-start gap-1">
+                            <i class="fa-solid fa-phone" style="color: #ffffff;"></i>
+                            <span>0895325722289</span>
+                        </p>
+                        <p class="m-0 text-white fs-6 d-flex align-items-center jusitfy-content-start gap-1">
+                            <i class="fa-solid fa-location-dot" style="color: #ffffff;"></i>
+                            <span>Jl. Gatot Mangkupraja 77</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <h3 class="text-white mb-4">Sosial Media</h3>
+                    <div class="d-flex align-items-start justify-content-start gap-4">
+                        <a href="https://instagram.com" target="_blank" class="fs-4">
+                            <i class="fa-brands fa-instagram" style="color: #ffffff;"></i>
+                        </a>
+                        <a href="https://facebook.com" target="_blank" class="fs-4">
+                            <i class="fa-brands fa-facebook" style="color: #ffffff;"></i>
+                        </a>
+                        <a href="https://twitter.com" target="_blank" class="fs-4">
+                            <i class="fa-brands fa-twitter" style="color: #ffffff;"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            <p class="text-center fs-5 text-white m-0">Copyright &copy; {{ date('Y') }} <span
+                    class="fw-bold">Wedding
+                    Invitation</span></p>
+        </div>
+
+    </footer>
+
+    {{-- ---------> BUTTON TO TOP <--------- --}}
+    <a href="#" class="btn-to-top">
+        <i class="fa-solid fa-arrow-up" style="color: #ffffff;"></i>
+    </a>
 
     {{-- ---------> SCRIPTS <--------- --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
@@ -821,6 +898,19 @@
             })
         })
     </script>
+    {{-- ---------> SCRIPT FAQ <--------- --}}
+    <script>
+        $(document).ready(function() {
+            let faqs = Array.from($(".box-faq"))
+
+            faqs.forEach(item => {
+                $(item).on("click", () => {
+                    $(item).toggleClass("show")
+                })
+            })
+        })
+    </script>
+
 </body>
 
 </html>
