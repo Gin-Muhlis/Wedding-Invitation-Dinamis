@@ -47,11 +47,6 @@ class Order extends Model
         return $this->hasMany(Bridegroom::class);
     }
 
-    public function comments()
-    {
-        return $this->hasMany(Comment::class);
-    }
-
     public function weddingCeremonies()
     {
         return $this->hasMany(WeddingCeremony::class);
@@ -85,5 +80,10 @@ class Order extends Model
     public function gifts()
     {
         return $this->hasMany(Gift::class);
+    }
+
+    public function rsvps()
+    {
+        return $this->hasMany(Rsvp::class);
     }
 }

@@ -13,10 +13,6 @@
 
             <div class="mt-4">
                 <div class="mb-4">
-                    <h5>@lang('crud.gifts.inputs.gift_payment_id')</h5>
-                    <span>{{ optional($gift->giftPayment)->name ?? '-' }}</span>
-                </div>
-                <div class="mb-4">
                     <h5>@lang('crud.gifts.inputs.owner_name')</h5>
                     <span>{{ $gift->owner_name ?? '-' }}</span>
                 </div>

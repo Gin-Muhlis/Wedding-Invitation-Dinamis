@@ -26,7 +26,7 @@
 <body>
 
     {{-- ---------> HERO <--------- --}}
-    <div class="container-fluid border border-danger py-2 position-relative border hero-section">
+    <div class="container-fluid py-2 position-relative border hero-section">
         {{-- ---------> NAVBAR <--------- --}}
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container">
@@ -898,6 +898,7 @@
             })
         })
     </script>
+
     {{-- ---------> SCRIPT FAQ <--------- --}}
     <script>
         $(document).ready(function() {
@@ -907,6 +908,21 @@
                 $(item).on("click", () => {
                     $(item).toggleClass("show")
                 })
+            })
+        })
+    </script>
+
+    {{-- ---------> SCRIPT BUTTON TO TOP <--------- --}}
+    <script>
+        $(document).ready(function() {
+            $(window).scroll(function() {
+
+                if ($(this).scrollTop() > 100) {
+                    $(".btn-to-top").addClass("appear")
+
+                } else {
+                    $(".btn-to-top").removeClass("appear")
+                }
             })
         })
     </script>

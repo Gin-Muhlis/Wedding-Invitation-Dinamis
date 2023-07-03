@@ -19,4 +19,9 @@ class Catgory extends Model
     {
         return $this->hasMany(Theme::class);
     }
+
+    public function fiturCategories()
+    {
+        return $this->belongsToMany(FiturCategory::class);
+    }
 }

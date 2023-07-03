@@ -26,6 +26,7 @@ class CatgoryUpdateRequest extends FormRequest
         return [
             'category' => ['required', 'max:255', 'string'],
             'price' => ['required'],
+            'fiturCategories' => ['array'],
         ];
     }
 }

@@ -25,7 +25,7 @@ class FiturUpdateRequest extends FormRequest
     {
         return [
             'name' => ['required', 'max:255', 'string'],
-            'icon' => ['image', 'max:2048', 'required'],
+            'icon' => ['string', 'max:255', 'required'],
         ];
     }
 }

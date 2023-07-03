@@ -48,10 +48,6 @@ class FiturController extends Controller
         $this->authorize('create', Fitur::class);
 
         $validated = $request->validated();
-        if ($request->hasFile('icon')) {
-            $validated['icon'] = $request->file('icon')->store('public');
-        }
-
         $fitur = Fitur::create($validated);
 
         return redirect()
@@ -93,14 +89,6 @@ class FiturController extends Controller
         $this->authorize('update', $fitur);
 
         $validated = $request->validated();
-        if ($request->hasFile('icon')) {
-            if ($fitur->icon) {
-                Storage::delete($fitur->icon);
-            }
-
-            $validated['icon'] = $request->file('icon')->store('public');
-        }
-
         $fitur->update($validated);
 
         return redirect()
@@ -116,10 +104,6 @@ class FiturController extends Controller
     public function destroy(Request $request, Fitur $fitur)
     {
         $this->authorize('delete', $fitur);
-
-        if ($fitur->icon) {
-            Storage::delete($fitur->icon);
-        }
 
         $fitur->delete();
 

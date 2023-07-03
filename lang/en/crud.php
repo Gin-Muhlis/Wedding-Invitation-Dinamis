@@ -68,20 +68,6 @@ return [
         ],
     ],
 
-    'comments' => [
-        'name' => 'Comments',
-        'index_title' => 'Comments List',
-        'new_title' => 'New Comment',
-        'create_title' => 'Create Comment',
-        'edit_title' => 'Edit Comment',
-        'show_title' => 'Show Comment',
-        'inputs' => [
-            'name' => 'Nama',
-            'comment' => 'Komen',
-            'order_id' => 'Order',
-        ],
-    ],
-
     'invited_guests' => [
         'name' => 'Invited Guests',
         'index_title' => 'InvitedGuests List',
@@ -229,7 +215,6 @@ return [
         'edit_title' => 'Edit Gift',
         'show_title' => 'Show Gift',
         'inputs' => [
-            'gift_payment_id' => 'Payment Pemberian',
             'owner_name' => 'Nama Pemilik',
             'no_data' => 'No Data Pembayaran',
             'order_id' => 'Order',
@@ -320,6 +305,33 @@ return [
             'theme_code' => 'Kode Tema',
             'catgory_id' => 'Catgory',
             'type' => 'Tipe',
+        ],
+    ],
+
+    'fitur_categories' => [
+        'name' => 'Fitur Categories',
+        'index_title' => 'FiturCategories List',
+        'new_title' => 'New Fitur category',
+        'create_title' => 'Create FiturCategory',
+        'edit_title' => 'Edit FiturCategory',
+        'show_title' => 'Show FiturCategory',
+        'inputs' => [
+            'name' => 'Name',
+        ],
+    ],
+
+    'rsvps' => [
+        'name' => 'Rsvps',
+        'index_title' => 'Rsvps List',
+        'new_title' => 'New Rsvp',
+        'create_title' => 'Create Rsvp',
+        'edit_title' => 'Edit Rsvp',
+        'show_title' => 'Show Rsvp',
+        'inputs' => [
+            'name' => 'Name',
+            'comment' => 'Comment',
+            'kehadiran' => 'Kehadiran',
+            'order_id' => 'Order',
         ],
     ],
 

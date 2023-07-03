@@ -50,6 +50,8 @@ class GiftTest extends TestCase
 
         $response = $this->postJson(route('api.gifts.store'), $data);
 
+        unset($data['gift_payment_id']);
+
         $this->assertDatabaseHas('gifts', $data);
 
         $response->assertStatus(201)->assertJsonFragment($data);
@@ -62,17 +64,19 @@ class GiftTest extends TestCase
     {
         $gift = Gift::factory()->create();
 
-        $giftPayment = GiftPayment::factory()->create();
         $order = Order::factory()->create();
+        $giftPayment = GiftPayment::factory()->create();
 
         $data = [
             'owner_name' => $this->faker->text(255),
             'no_data' => $this->faker->randomNumber,
-            'gift_payment_id' => $giftPayment->id,
             'order_id' => $order->id,
+            'gift_payment_id' => $giftPayment->id,
         ];
 
         $response = $this->putJson(route('api.gifts.update', $gift), $data);
+
+        unset($data['gift_payment_id']);
 
         $data['id'] = $gift->id;
 

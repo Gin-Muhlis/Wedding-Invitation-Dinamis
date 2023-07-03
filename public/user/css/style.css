@@ -505,11 +505,15 @@ footer {
         rgb(255, 103, 222) 11.2%,
         rgb(255, 170, 59) 91.1%
     );
-    display: flex;
     align-items: center;
     justify-content: center;
     position: fixed;
     right: 30px;
     bottom: 30px;
     font-size: 1.1rem;
+    display: none;
+}
+
+.btn-to-top.appear {
+    display: flex;
 }

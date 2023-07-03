@@ -1,0 +1,724 @@
+/*---------------------------
+  Fonts
+----------------------------*/
+
+/* font untuk nama,dll */
+@font-face{
+  font-family: "Just";
+  src: url("../fonts/JustAnotherHand.ttf") format("truetype");
+}
+/* font untuk judul => ex: Acara,Album,Cerita,Dll */
+@font-face{
+  font-family: "Great Vibes";
+  src: url("../fonts/GreatVibes.ttf") format("truetype");
+}
+/* font untuk text biasa */
+@font-face{
+  font-family: "Poppins";
+  src: url("../fonts/Poppins.ttf") format("truetype");
+}
+
+/* ========= COLOR PALLETE =========
+primary : #428aba;
+secondary : #ecf0f1;
+background : #ecf0f1;
+
+*/
+
+
+html {
+    /*position: relative;*/
+    /*overflow: hidden;*/
+    height: 100%;
+}
+body {
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    /*color:#000;*/
+    /* height: 100%; */
+    min-height: 100vh;
+    /*padding-top:30px;*/
+    display: flex;
+    flex-direction: column;
+    /*padding-bottom: 50px; */
+    font-family: "Poppins";
+    background: #ecf0f1;  /* ganti background global*/
+}
+
+img {
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #2f2f2f;
+}
+
+.section-title h2, .section-title-s2 h2 {
+  font-family: "Great Vibes", cursive;
+  font-size: 3rem;
+  color: #428aba;
+  margin: 0;
+  padding-top: 30px;
+  text-transform: capitalize;
+  position: relative;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.mobile-bottom-nav2 {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: #ecf0f1;
+}
+
+
+.mobile-bottom-nav__item {
+  -webkit-box-flex: 1;
+          flex-grow: 1;
+  text-align: center;
+  font-size: 12px;
+  display: -webkit-box;
+  display: flex;
+  color: #428aba;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-pack: center;
+          justify-content: center;
+}
+.mobile-bottom-nav__item--active {
+  color: #535c68;
+}
+.mobile-bottom-nav__item-content {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+}
+
+.rotate {
+  transform: rotate(180deg);
+  -ms-transform: rotate(180deg); /* IE 9 
+  -moz-transform: rotate(180deg); /* Firefox */
+  -webkit-transform: rotate(180deg); /* Safari and Chrome */
+  -o-transform: rotate(180deg); /* Opera */
+  transition-duration:0.7s;
+}
+
+#konten{
+  display: flex;
+  flex-grow: 1;
+  flex-direction: row;
+}
+
+.konten {
+    text-align: center;
+    background-size: contain;
+    background-position: center;   
+    flex: 1;            
+}
+
+.mdi.navbar-icon{
+  font-size: 22px;
+}
+
+
+/* ============ DEKORASI ============*/
+
+.dekorasi-all-bawah{
+  margin-bottom: 60px
+}
+
+.dekorasi-sampul-bawah{
+  margin-bottom: 60px;
+}
+
+.imgbawah{
+  width: 100%;
+  max-height: 25px;
+}
+
+.imgbawah-kanan{
+  width:100px;
+  float: right;
+}
+
+.imgbawah-kiri{
+  width:80px;
+}
+
+.imgatas{
+  width: 100%;
+  max-height: 25px;
+}
+
+.imgatas-kanan{
+  width:80px;
+  right: 0;
+  position: absolute;
+}
+
+.imgatas-kiri{
+  width:100px;
+  left: 0;
+  position: absolute;
+}
+
+
+/* ============ THE BEGINING ============*/
+
+.thebegining{
+    background : #ecf0f1;
+    z-index: 999999;
+    /*height: 100vh;*/
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    text-align: center;
+}
+
+.content-thebegining{
+  margin: 30px 20px;
+  text-align: center;
+}
+
+.salam{
+  position: absolute; 
+  left: 0; 
+  right: 0;
+  top : 0;
+  bottom: 0;
+  height: 200px;
+  margin: auto; 
+}
+
+
+/* ============ SAMPUL KONTEN ============*/
+
+
+.cover-foto{
+  height: 230px;
+  width: 230px;
+  border-radius: 100%;
+  -webkit-filter: grayscale(20%);
+  -moz-filter: grayscale(20%);
+  -o-filter: grayscale(20%);
+  -ms-filter: grayscale(20%);
+  filter: grayscale(20%);
+  object-fit: cover;
+  position: relative;
+  background: #ecf0f1;
+  padding: 5px;
+}
+
+.cover-border{
+  height: 275px;
+  width: 285px;
+  margin-left: -255px;
+  margin-top: -20px;
+  position: absolute;
+}
+
+#sampul-konten{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 50px;
+  top: 0;
+  margin: auto;
+  align-items: center;
+  display: flex;
+  background: #428aba; /* ganti background khusus sampul, set 'transparent' jika tidak diguunakan*/
+  background-size: cover;
+}
+
+.sampul-dan{
+  font-family: "Great Vibes", cursive;
+  font-size: 3rem;
+  color: #2f3640;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.nama-mempelai{
+  font-family: "Just" ;
+  font-size: 5rem;
+  /* margin-top: 0px;
+  margin-bottom: 0px; */
+  color: #fffa65;
+  text-transform: uppercase;
+  /* border-top: 4px solid #ecf0f1;
+  border-bottom: 4px solid #ecf0f1;  */
+  /* display: inline;
+  padding-top: 5px; */
+}
+
+.the-wedding{
+    font-family: "Just" ;
+    font-size: 2rem;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: #ecf0f1;
+    padding: 5px;
+}
+
+.tanggal-weddingnya{
+  font-family: "Just" ;
+  font-size: 2rem;
+  display: block;
+  color: #fffa65;
+  /* background:#ecf0f1; */
+  /* padding:5px;
+  border-radius:5px;
+  display: inline;
+  padding: 5px 10px 3px 10px; */
+}
+
+
+/*========== Mempelai Konten ===========*/
+
+.dengan{
+  color:#000;
+  font-size:18px;
+  margin-top: 5px;
+  margin-bottom:15px;
+  font-family: 'Great Vibes';
+}
+
+.mempelai-salam-pembuka{
+  width: 120px;
+  margin-top: 30px;
+}
+
+.mempelai-intermezzo{
+  font-size:13px;
+  color:#000;
+  margin-bottom: 25px;
+  margin-top: 10px;
+  white-space: pre-line;
+}
+
+
+.mempelai-wanita-nama{
+  font-family: "Just";
+  font-size: 3rem;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  color:#428aba;
+  text-transform: uppercase;
+  /*font-weight: bold;*/
+}
+
+.mempelai-wanita-ortu{
+  color:#000;
+  font-size: 13px;
+}
+
+.mempelai-img{
+  -webkit-filter: grayscale(30%);
+  -moz-filter: grayscale(30%);
+  -o-filter: grayscale(30%);
+  -ms-filter: grayscale(30%);
+  filter: grayscale(30%);
+  border-radius: 80px;
+  width: 80px; 
+  height: 80px; 
+  object-fit: contain;
+  padding: 4px;
+  background: #428aba;
+  box-shadow: 0 1px 8px 0 #428aba, 0 1px 8px 0 #428aba;
+}
+
+.mempelai-pria-nama{
+  font-family: "Just";
+  font-size: 3rem;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  color:#428aba;
+  text-transform: uppercase;
+  /*font-weight: bold;*/
+}
+
+.mempelai-pria-ortu{
+  color:#000;
+  font-size: 13px;
+}
+
+/*================ Gallery Konten =====================*/
+
+
+.gallery-section {
+  padding-top: 15px;
+  padding-bottom: 0;
+}
+
+.youtube {
+  padding: 0px 8px 0px 8px;
+  margin-bottom: 25px;
+  /*width: 360px;*/
+}
+
+.gallery-section .gallery-grids .grid {
+  width: calc(25% - 15px);
+  margin: 0 7.5px 15px;
+  float: left;
+  overflow: hidden;
+  position: relative;
+}
+
+@media (max-width: 991px) {
+  .gallery-section .gallery-grids .grid {
+    width: calc(33.33% - 15px);
+  }
+}
+
+@media (max-width: 767px) {
+  .gallery-section .gallery-grids .grid {
+    width: calc(50% - 15px);
+    margin: 0 7.5px 15px;
+  }
+}
+
+.gallery-section .grid img {
+  -webkit-filter: grayscale(50%);
+  -moz-filter: grayscale(50%);
+  -o-filter: grayscale(50%);
+  -ms-filter: grayscale(50%);
+  filter: grayscale(50%);
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  object-position: center;
+  object-fit: cover;
+  width: 200px;
+  height: 150px;
+}
+
+.gallery-section .grid:hover img {
+  -webkit-filter: grayscale(0%);
+  -moz-filter: grayscale(0%);
+  -o-filter: grayscale(0%);
+  -ms-filter: grayscale(0%);
+  filter: grayscale(0%);
+  -webkit-transform: scale(1.2) rotate(-3deg);
+  -moz-transform: scale(1.2) rotate(-3deg);
+  -o-transform: scale(1.2) rotate(-3deg);
+  -ms-transform: scale(1.2) rotate(-3deg);
+  transform: scale(1.2) rotate(-3deg);
+}
+
+.gallery-section .video-play-btn i {
+  width: 45px;
+  height: 45px;
+  background: #428aba;
+  display: inline-block;
+  text-align: center;
+  line-height: 45px;
+  border-radius: 50%;
+  color: white;
+  font-size: 18px;
+  position: absolute;
+  left: calc(50% - 22.5px);
+  top: calc(50% - 22.5px);
+}
+
+
+/*========== PETA ===========*/
+
+  .maps {
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    max-width: 800px;
+    padding: 10px;
+  }
+
+  @media (max-width: 575.98px) {
+  
+    .maps iframe{
+      width: 100%;
+      height: 350px;
+    }
+   }
+  
+  
+  @media (min-width: 576px) {
+  
+    .maps iframe{
+       width: 100%;
+       height: 350px;
+     }
+   }
+  
+  @media (min-width: 768px) {
+  
+    .maps iframe{
+      width: 100%;
+      height: 450px;
+    }
+  }
+  
+  @media (min-width: 992px) {
+  
+     .maps iframe{
+       width: 100%;
+       height: 500px;
+     }
+  }
+
+
+  /* ======== START MENU CERITA ======= */
+
+
+.main-timeline{
+    position: relative;
+    transition: all 0.4s ease 0s;
+    margin-left: 15px;
+    margin-right: 10px;
+    margin-bottom: 15px;
+}
+
+.main-timeline:before{
+    content: "";
+    width: 2px;
+    height: 100%;
+    background: #d1d8e0;
+    position: absolute;
+    top: 0;
+    left: 50%;
+}
+
+.main-timeline .timeline{
+    position: relative;
+}
+
+.main-timeline .timeline:before,
+.main-timeline .timeline:after{
+    content: "";
+    display: block;
+    width: 100%;
+    clear: both;
+}
+
+.main-timeline .timeline-icon{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #fffcf5;
+    border: 2px solid #428aba;
+    position: absolute;
+    top: 0;
+    left: 1px;
+    right: 0;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.main-timeline .timeline-content{
+    width: 45%;
+    padding: 15px 15px 10px 0px;
+    border-radius: 1px;
+    text-align: right;
+    -webkit-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
+    -ms-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+}
+
+.main-timeline .date{
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 300;
+    color: #fff;
+    padding: 10px 20px;
+    background: #428aba;
+    border-radius: 18px;
+}
+
+.main-timeline .title{
+    font-size: 20px;
+    font-weight: 500;
+    color: #5c5151;
+    margin-top: 15px;
+}
+
+.main-timeline .description{
+    font-size: 14 px;
+    color: #606060;
+    line-height: 2;
+    text-align: justify;
+}
+
+.main-timeline .timeline-content.right{
+    float: right;
+    text-align: left;
+}
+
+@media only screen and (max-width: 767px){
+    .main-timeline:before{
+        left: 0;
+    }
+    .main-timeline .timeline-icon{
+        left: -8px;
+        margin: 0;
+    }
+    .main-timeline .timeline-content{
+        width: 90%;
+        float: right;
+        text-align: left;
+    }
+}
+
+
+/*========== MENU UCAPAN =============*/
+#ucapan-konten{
+  margin : 10px 25px;
+}
+
+.ucapan-field{
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.komen-netizen{
+  margin-bottom: 15px;
+  margin-top: 15px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.komen{
+  display:none;
+  padding: 10px;
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-bottom: 10px;
+  background-color: #f1f1f1;
+}
+
+#submitKomen{
+   margin-top: 15px;
+    padding: 5px;
+    text-align: center;
+    background-color: #428aba;
+    color: #fff;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #428aba;
+    /*box-shadow: 0 1px 1px #ccc;*/
+    transition: all 600ms ease-in-out;
+    -webkit-transition: all 600ms ease-in-out;
+    -moz-transition: all 600ms ease-in-out;
+    -o-transition: all 600ms ease-in-out;
+}
+#submitKomen:hover{
+   background-color: #fff;
+    color: #428aba;
+}
+
+#loadMore {
+    margin-bottom: 10px;
+    margin-top: 15px;
+    padding: 5px;
+    text-align: center;
+    background-color: #fff;
+    color: #428aba;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #428aba;
+    /*box-shadow: 0 1px 1px #ccc;*/
+    transition: all 600ms ease-in-out;
+    -webkit-transition: all 600ms ease-in-out;
+    -moz-transition: all 600ms ease-in-out;
+    -o-transition: all 600ms ease-in-out;
+}
+#loadMore:hover {
+    background-color: #428aba;
+    color: #fff;
+}
+
+.komen-nama{
+  color: #428aba;
+  font-weight: bold;
+}
+
+.komen-isi{
+  color: #2f3640;
+}
+
+
+/*============== ACARA =============*/
+
+.acaranya{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.icon-acara{
+  font-size: 14px;
+  color: #2f3640;
+}
+
+.acara-title{
+  text-align: center;
+  color: #428aba;
+  font-size: 2.5rem;
+  font-family: 'Just';
+}
+
+.tb-acara > tbody > tr > th{
+    padding: 4px;
+    line-height: 1.42857143;
+    vertical-align: top;
+}
+
+.tb-acara > thead > tr > th {
+    padding: 10px;
+    line-height: 1.42857143;
+}
+
+.tb-acara{
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.tb-ic-acara{
+  width: 30px;
+  text-align: center;
+}
+
+.tb-ket-acara{
+  width: 70px;
+  text-align: left;
+}
+
+.tb-isi-acara{
+  text-align: left;
+}
+
+.tb-anu-acara{
+  width: 5px;
+  text-align: left;
+}
+

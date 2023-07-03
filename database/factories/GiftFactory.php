@@ -25,8 +25,8 @@ class GiftFactory extends Factory
         return [
             'owner_name' => $this->faker->text(255),
             'no_data' => $this->faker->randomNumber,
-            'gift_payment_id' => \App\Models\GiftPayment::factory(),
             'order_id' => \App\Models\Order::factory(),
+            'gift_payment_id' => \App\Models\GiftPayment::factory(),
         ];
     }
 }

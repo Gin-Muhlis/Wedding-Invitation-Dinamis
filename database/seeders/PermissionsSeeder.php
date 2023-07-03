@@ -33,6 +33,12 @@ class PermissionsSeeder extends Seeder
         Permission::create(['name' => 'update fiturs']);
         Permission::create(['name' => 'delete fiturs']);
 
+        Permission::create(['name' => 'list rsvps']);
+        Permission::create(['name' => 'view rsvps']);
+        Permission::create(['name' => 'create rsvps']);
+        Permission::create(['name' => 'update rsvps']);
+        Permission::create(['name' => 'delete rsvps']);
+
         Permission::create(['name' => 'list testimonies']);
         Permission::create(['name' => 'view testimonies']);
         Permission::create(['name' => 'create testimonies']);
@@ -51,17 +57,17 @@ class PermissionsSeeder extends Seeder
         Permission::create(['name' => 'update bridegrooms']);
         Permission::create(['name' => 'delete bridegrooms']);
 
+        Permission::create(['name' => 'list fiturcategories']);
+        Permission::create(['name' => 'view fiturcategories']);
+        Permission::create(['name' => 'create fiturcategories']);
+        Permission::create(['name' => 'update fiturcategories']);
+        Permission::create(['name' => 'delete fiturcategories']);
+
         Permission::create(['name' => 'list catgories']);
         Permission::create(['name' => 'view catgories']);
         Permission::create(['name' => 'create catgories']);
         Permission::create(['name' => 'update catgories']);
         Permission::create(['name' => 'delete catgories']);
-
-        Permission::create(['name' => 'list comments']);
-        Permission::create(['name' => 'view comments']);
-        Permission::create(['name' => 'create comments']);
-        Permission::create(['name' => 'update comments']);
-        Permission::create(['name' => 'delete comments']);
 
         Permission::create(['name' => 'list gifts']);
         Permission::create(['name' => 'view gifts']);

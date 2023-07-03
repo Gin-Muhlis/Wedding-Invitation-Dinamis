@@ -24,7 +24,6 @@ class GiftUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'gift_payment_id' => ['required', 'exists:gift_payments,id'],
             'owner_name' => ['required', 'max:255', 'string'],
             'no_data' => ['required'],
             'order_id' => ['required', 'exists:orders,id'],

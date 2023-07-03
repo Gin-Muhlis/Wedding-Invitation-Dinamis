@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Catgory;
 use Illuminate\Http\Request;
+use App\Models\FiturCategory;
 use App\Http\Requests\Admin\CatgoryStoreRequest;
 use App\Http\Requests\Admin\CatgoryUpdateRequest;
 
@@ -79,7 +80,12 @@ class CatgoryController extends Controller
     {
         $this->authorize('update', $catgory);
 
-        return view('Admin.app.catgories.edit', compact('catgory'));
+        $fiturCategories = FiturCategory::get();
+
+        return view(
+            'Admin.app.catgories.edit',
+            compact('catgory', 'fiturCategories')
+        );
     }
 
     /**
@@ -92,6 +98,7 @@ class CatgoryController extends Controller
         $this->authorize('update', $catgory);
 
         $validated = $request->validated();
+        $catgory->fiturCategories()->sync($request->fiturCategories);
 
         $catgory->update($validated);
 

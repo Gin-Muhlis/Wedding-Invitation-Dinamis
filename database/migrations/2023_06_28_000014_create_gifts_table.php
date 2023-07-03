@@ -14,10 +14,10 @@ return new class extends Migration {
     {
         Schema::create('gifts', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('gift_payment_id');
             $table->string('owner_name');
             $table->bigInteger('no_data');
             $table->unsignedBigInteger('order_id');
+            $table->unsignedBigInteger('gift_payment_id');
 
             $table->timestamps();
         });

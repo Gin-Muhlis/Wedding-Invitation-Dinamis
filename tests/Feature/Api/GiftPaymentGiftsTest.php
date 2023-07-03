@@ -59,6 +59,8 @@ class GiftPaymentGiftsTest extends TestCase
             $data
         );
 
+        unset($data['gift_payment_id']);
+
         $this->assertDatabaseHas('gifts', $data);
 
         $response->assertStatus(201)->assertJsonFragment($data);

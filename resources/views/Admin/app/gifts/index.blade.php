@@ -45,9 +45,6 @@
                     <thead>
                         <tr>
                             <th class="text-left">
-                                @lang('crud.gifts.inputs.gift_payment_id')
-                            </th>
-                            <th class="text-left">
                                 @lang('crud.gifts.inputs.owner_name')
                             </th>
                             <th class="text-left">
@@ -64,9 +61,6 @@
                     <tbody>
                         @forelse($gifts as $gift)
                         <tr>
-                            <td>
-                                {{ optional($gift->giftPayment)->name ?? '-' }}
-                            </td>
                             <td>{{ $gift->owner_name ?? '-' }}</td>
                             <td>{{ $gift->no_data ?? '-' }}</td>
                             <td>
@@ -116,7 +110,7 @@
                         </tr>
                         @empty
                         <tr>
-                            <td colspan="5">
+                            <td colspan="4">
                                 @lang('crud.common.no_items_found')
                             </td>
                         </tr>
@@ -124,7 +118,7 @@
                     </tbody>
                     <tfoot>
                         <tr>
-                            <td colspan="5">{!! $gifts->render() !!}</td>
+                            <td colspan="4">{!! $gifts->render() !!}</td>
                         </tr>
                     </tfoot>
                 </table>

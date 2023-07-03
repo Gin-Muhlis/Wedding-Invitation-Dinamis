@@ -7,13 +7,14 @@ use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\GiftController;
 use App\Http\Controllers\Admin\RoleController;
+use App\Http\Controllers\Admin\RsvpController;
+use App\Http\Controllers\Admin\FiturCategoryController;
 use App\Http\Controllers\Admin\AlbumController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\QuoteController;
 use App\Http\Controllers\Admin\StoryController;
 use App\Http\Controllers\Admin\ThemeController;
 use App\Http\Controllers\Admin\CatgoryController;
-use App\Http\Controllers\Admin\CommentController;
 use App\Http\Controllers\Admin\VisitorController;
 use App\Http\Controllers\Admin\WebsiteController;
 use App\Http\Controllers\Admin\TestimonyController;
@@ -41,7 +42,9 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
-Auth::routes();
+Route::prefix('/super/admin')->group(function () {
+    Auth::routes();
+});
 
 
 Route::prefix('/super/admin')
@@ -102,4 +105,6 @@ Route::prefix('/super/admin')
         Route::resource('faqs', FaqController::class);
         Route::resource('testimonies', TestimonyController::class);
         Route::resource('themes', ThemeController::class);
+        Route::resource('fitur-categories', FiturCategoryController::class);
+        Route::resource('rsvps', RsvpController::class);
     });

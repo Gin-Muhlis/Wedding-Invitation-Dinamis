@@ -12,21 +12,21 @@ class Gift extends Model
     use Searchable;
 
     protected $fillable = [
-        'gift_payment_id',
         'owner_name',
         'no_data',
         'order_id',
+        'gift_payment_id',
     ];
 
     protected $searchableFields = ['*'];
 
-    public function giftPayment()
-    {
-        return $this->belongsTo(GiftPayment::class);
-    }
-
     public function order()
     {
         return $this->belongsTo(Order::class);
+    }
+
+    public function giftPayment()
+    {
+        return $this->belongsTo(GiftPayment::class);
     }
 }
