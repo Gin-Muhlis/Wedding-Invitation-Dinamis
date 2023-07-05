@@ -27,10 +27,12 @@ class WebsiteStoreRequest extends FormRequest
             'website_name' => ['required', 'max:255', 'string'],
             'email' => ['required', 'email'],
             'whatsapp_number' => ['required', 'max:255', 'string'],
+            'address' => ['required', 'max:255', 'string'],
             'link_instagram' => ['required', 'max:255', 'string'],
             'link_fb' => ['required', 'max:255', 'string'],
+            'link_twitter' => ['required', 'max:255', 'string'],
             'description' => ['required', 'max:255', 'string'],
-            'website_logo' => ['image', 'max:2048', 'required'],
+            'website_logo' => ['image', 'max:1024', 'required'],
         ];
     }
 }

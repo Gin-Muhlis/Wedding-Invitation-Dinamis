@@ -106,6 +106,17 @@
     </x-inputs.group>
 
     <x-inputs.group class="col-sm-12">
+        <x-inputs.text
+            name="music"
+            label="Musik"
+            :value="old('music', ($editing ? $weddingData->music : ''))"
+            maxlength="255"
+            placeholder="Musik"
+            required
+        ></x-inputs.text>
+    </x-inputs.group>
+
+    <x-inputs.group class="col-sm-12">
         <x-inputs.select name="order_id" label="Order" required>
             @php $selected = old('order_id', ($editing ? $weddingData->order_id : '')) @endphp
             <option disabled {{ empty($selected) ? 'selected' : '' }}>Please select the Order</option>

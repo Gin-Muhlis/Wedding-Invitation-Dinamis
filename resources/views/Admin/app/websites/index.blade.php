@@ -57,10 +57,16 @@
                                 @lang('crud.websites.inputs.whatsapp_number')
                             </th>
                             <th class="text-left">
+                                @lang('crud.websites.inputs.address')
+                            </th>
+                            <th class="text-left">
                                 @lang('crud.websites.inputs.link_instagram')
                             </th>
                             <th class="text-left">
                                 @lang('crud.websites.inputs.link_fb')
+                            </th>
+                            <th class="text-left">
+                                @lang('crud.websites.inputs.link_twitter')
                             </th>
                             <th class="text-left">
                                 @lang('crud.websites.inputs.description')
@@ -79,8 +85,10 @@
                             <td>{{ $website->website_name ?? '-' }}</td>
                             <td>{{ $website->email ?? '-' }}</td>
                             <td>{{ $website->whatsapp_number ?? '-' }}</td>
+                            <td>{{ $website->address ?? '-' }}</td>
                             <td>{{ $website->link_instagram ?? '-' }}</td>
                             <td>{{ $website->link_fb ?? '-' }}</td>
+                            <td>{{ $website->link_twitter ?? '-' }}</td>
                             <td>{{ $website->description ?? '-' }}</td>
                             <td>
                                 <x-partials.thumbnail
@@ -135,7 +143,7 @@
                         </tr>
                         @empty
                         <tr>
-                            <td colspan="8">
+                            <td colspan="10">
                                 @lang('crud.common.no_items_found')
                             </td>
                         </tr>
@@ -143,7 +151,7 @@
                     </tbody>
                     <tfoot>
                         <tr>
-                            <td colspan="8">{!! $websites->render() !!}</td>
+                            <td colspan="10">{!! $websites->render() !!}</td>
                         </tr>
                     </tfoot>
                 </table>

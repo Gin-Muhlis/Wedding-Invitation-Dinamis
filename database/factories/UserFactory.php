@@ -26,6 +26,7 @@ class UserFactory extends Factory
             'name' => $this->faker->name(),
             'email' => $this->faker->unique->email,
             'phone_number' => $this->faker->phoneNumber,
+            'key' => $this->faker->text,
             'password' => \Hash::make('password'),
             'email_verified_at' => now(),
             'remember_token' => Str::random(10),

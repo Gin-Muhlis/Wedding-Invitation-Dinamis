@@ -18,8 +18,10 @@ return new class extends Migration {
             $table->string('website_logo');
             $table->string('email');
             $table->string('whatsapp_number');
+            $table->string('address');
             $table->string('link_instagram');
             $table->string('link_fb');
+            $table->string('link_twitter');
             $table->text('description');
 
             $table->timestamps();

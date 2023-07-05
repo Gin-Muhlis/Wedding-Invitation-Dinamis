@@ -32,6 +32,7 @@ class UserUpdateRequest extends FormRequest
                 'email',
             ],
             'phone_number' => ['required', 'max:255', 'string'],
+            'key' => ['required', 'max:255', 'string'],
             'password' => ['nullable'],
             'roles' => 'array',
         ];

@@ -22,6 +22,6 @@ class Catgory extends Model
 
     public function fiturCategories()
     {
-        return $this->belongsToMany(FiturCategory::class);
+        return $this->belongsToMany(FiturCategory::class, 'catgory_fitur_category');
     }
 }

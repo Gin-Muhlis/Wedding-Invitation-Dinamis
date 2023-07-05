@@ -28,6 +28,7 @@ class WeddingDataStoreRequest extends FormRequest
             'female_image' => ['image', 'max:1024', 'required'],
             'wedding_coordinate' => ['required', 'max:255', 'string'],
             'greeting' => ['required', 'max:255', 'string'],
+            'music' => ['required', 'max:255', 'string'],
             'order_id' => ['required', 'exists:orders,id'],
         ];
     }

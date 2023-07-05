@@ -4,10 +4,10 @@
     <x-inputs.group class="col-sm-12">
         <x-inputs.text
             name="website_name"
-            label="Nama Website"
+            label="Website Name"
             :value="old('website_name', ($editing ? $website->website_name : ''))"
             maxlength="255"
-            placeholder="Nama Website"
+            placeholder="Website Name"
             required
         ></x-inputs.text>
     </x-inputs.group>
@@ -26,10 +26,21 @@
     <x-inputs.group class="col-sm-12">
         <x-inputs.text
             name="whatsapp_number"
-            label="No Whatsapp"
+            label="Whatsapp Number"
             :value="old('whatsapp_number', ($editing ? $website->whatsapp_number : ''))"
             maxlength="255"
-            placeholder="No Whatsapp"
+            placeholder="Whatsapp Number"
+            required
+        ></x-inputs.text>
+    </x-inputs.group>
+
+    <x-inputs.group class="col-sm-12">
+        <x-inputs.text
+            name="address"
+            label="Alamat"
+            :value="old('address', ($editing ? $website->address : ''))"
+            maxlength="255"
+            placeholder="Alamat"
             required
         ></x-inputs.text>
     </x-inputs.group>
@@ -48,10 +59,21 @@
     <x-inputs.group class="col-sm-12">
         <x-inputs.text
             name="link_fb"
-            label="Link Facebook"
+            label="Link Fb"
             :value="old('link_fb', ($editing ? $website->link_fb : ''))"
             maxlength="255"
-            placeholder="Link Facebook"
+            placeholder="Link Fb"
+            required
+        ></x-inputs.text>
+    </x-inputs.group>
+
+    <x-inputs.group class="col-sm-12">
+        <x-inputs.text
+            name="link_twitter"
+            label="Link Twitter"
+            :value="old('link_twitter', ($editing ? $website->link_twitter : ''))"
+            maxlength="255"
+            placeholder="Link Twitter"
             required
         ></x-inputs.text>
     </x-inputs.group>
@@ -59,7 +81,7 @@
     <x-inputs.group class="col-sm-12">
         <x-inputs.textarea
             name="description"
-            label="Deskripsi Website"
+            label="Description"
             maxlength="255"
             required
             >{{ old('description', ($editing ? $website->description : ''))
@@ -73,7 +95,7 @@
         >
             <x-inputs.partials.label
                 name="website_logo"
-                label="Logo Website"
+                label="Website Logo"
             ></x-inputs.partials.label
             ><br />
 

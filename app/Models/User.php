@@ -16,7 +16,7 @@ class User extends Authenticatable
     use HasFactory;
     use Searchable;
 
-    protected $fillable = ['name', 'email', 'phone_number', 'password'];
+    protected $fillable = ['name', 'email', 'phone_number', 'key', 'password'];
 
     protected $searchableFields = ['*'];
 

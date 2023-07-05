@@ -20,6 +20,7 @@ return new class extends Migration {
             $table->text('greeting');
             $table->string('giff_address');
             $table->unsignedBigInteger('order_id');
+            $table->string('music');
 
             $table->timestamps();
         });

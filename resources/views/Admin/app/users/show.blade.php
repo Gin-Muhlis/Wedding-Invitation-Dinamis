@@ -24,6 +24,10 @@
                     <h5>@lang('crud.users.inputs.phone_number')</h5>
                     <span>{{ $user->phone_number ?? '-' }}</span>
                 </div>
+                <div class="mb-4">
+                    <h5>@lang('crud.users.inputs.key')</h5>
+                    <span>{{ $user->key ?? '-' }}</span>
+                </div>
             </div>
 
             <div class="mt-4">

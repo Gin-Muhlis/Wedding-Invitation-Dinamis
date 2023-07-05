@@ -62,6 +62,9 @@
                                 @lang('crud.all_wedding_data.inputs.greeting')
                             </th>
                             <th class="text-left">
+                                @lang('crud.all_wedding_data.inputs.music')
+                            </th>
+                            <th class="text-left">
                                 @lang('crud.all_wedding_data.inputs.order_id')
                             </th>
                             <th class="text-center">
@@ -86,6 +89,7 @@
                                 {{ $weddingData->wedding_coordinate ?? '-' }}
                             </td>
                             <td>{{ $weddingData->greeting ?? '-' }}</td>
+                            <td>{{ $weddingData->music ?? '-' }}</td>
                             <td>
                                 {{ optional($weddingData->order)->no_order ??
                                 '-' }}
@@ -138,7 +142,7 @@
                         </tr>
                         @empty
                         <tr>
-                            <td colspan="6">
+                            <td colspan="7">
                                 @lang('crud.common.no_items_found')
                             </td>
                         </tr>
@@ -146,7 +150,7 @@
                     </tbody>
                     <tfoot>
                         <tr>
-                            <td colspan="6">
+                            <td colspan="7">
                                 {!! $allWeddingData->render() !!}
                             </td>
                         </tr>

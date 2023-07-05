@@ -113,8 +113,10 @@ class WebsiteControllerTest extends TestCase
             'website_logo' => $this->faker->text(255),
             'email' => $this->faker->email,
             'whatsapp_number' => $this->faker->text(255),
+            'address' => $this->faker->text(255),
             'link_instagram' => $this->faker->text(255),
             'link_fb' => $this->faker->text(255),
+            'link_twitter' => $this->faker->text(255),
             'description' => $this->faker->sentence(15),
         ];
 

@@ -122,6 +122,7 @@ class WeddingDataControllerTest extends TestCase
             'wedding_coordinate' => $this->faker->text(255),
             'greeting' => $this->faker->text,
             'giff_address' => $this->faker->text(255),
+            'music' => $this->faker->text(255),
             'order_id' => $order->id,
         ];
 

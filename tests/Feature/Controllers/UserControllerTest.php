@@ -115,6 +115,7 @@ class UserControllerTest extends TestCase
             'name' => $this->faker->name(),
             'email' => $this->faker->unique->email,
             'phone_number' => $this->faker->phoneNumber,
+            'key' => $this->faker->text,
         ];
 
         $data['password'] = \Str::random('8');

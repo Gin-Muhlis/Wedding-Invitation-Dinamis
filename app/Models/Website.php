@@ -16,8 +16,10 @@ class Website extends Model
         'website_logo',
         'email',
         'whatsapp_number',
+        'address',
         'link_instagram',
         'link_fb',
+        'link_twitter',
         'description',
     ];
 

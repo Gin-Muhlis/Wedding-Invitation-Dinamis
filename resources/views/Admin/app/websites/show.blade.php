@@ -25,12 +25,20 @@
                     <span>{{ $website->whatsapp_number ?? '-' }}</span>
                 </div>
                 <div class="mb-4">
+                    <h5>@lang('crud.websites.inputs.address')</h5>
+                    <span>{{ $website->address ?? '-' }}</span>
+                </div>
+                <div class="mb-4">
                     <h5>@lang('crud.websites.inputs.link_instagram')</h5>
                     <span>{{ $website->link_instagram ?? '-' }}</span>
                 </div>
                 <div class="mb-4">
                     <h5>@lang('crud.websites.inputs.link_fb')</h5>
                     <span>{{ $website->link_fb ?? '-' }}</span>
+                </div>
+                <div class="mb-4">
+                    <h5>@lang('crud.websites.inputs.link_twitter')</h5>
+                    <span>{{ $website->link_twitter ?? '-' }}</span>
                 </div>
                 <div class="mb-4">
                     <h5>@lang('crud.websites.inputs.description')</h5>

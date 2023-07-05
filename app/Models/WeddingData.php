@@ -18,6 +18,7 @@ class WeddingData extends Model
         'greeting',
         'giff_address',
         'order_id',
+        'music',
     ];
 
     protected $searchableFields = ['*'];

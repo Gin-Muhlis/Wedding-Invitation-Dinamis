@@ -1,31 +1,32 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\FaqController;
-use App\Http\Controllers\Admin\FiturController;
-use App\Http\Controllers\Admin\HomeController;
-use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\GiftController;
+use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\RsvpController;
-use App\Http\Controllers\Admin\FiturCategoryController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\AlbumController;
+use App\Http\Controllers\Admin\FiturController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\QuoteController;
 use App\Http\Controllers\Admin\StoryController;
 use App\Http\Controllers\Admin\ThemeController;
+use App\Http\Controllers\user\WelcomeController;
 use App\Http\Controllers\Admin\CatgoryController;
 use App\Http\Controllers\Admin\VisitorController;
 use App\Http\Controllers\Admin\WebsiteController;
 use App\Http\Controllers\Admin\TestimonyController;
 use App\Http\Controllers\Admin\BridegroomController;
 use App\Http\Controllers\Admin\PermissionController;
-use App\Http\Controllers\Admin\WeddingDataController;
 use App\Http\Controllers\Admin\GiftPaymentController;
+use App\Http\Controllers\Admin\WeddingDataController;
 use App\Http\Controllers\Admin\InvitedGuestController;
+use App\Http\Controllers\Admin\FiturCategoryController;
 use App\Http\Controllers\Admin\WeddingCeremonyController;
 use App\Http\Controllers\Admin\WeddingReceptionController;
-use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,9 +39,7 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
+Route::get('/', [WelcomeController::class, 'index']);
 
 Route::prefix('/super/admin')->group(function () {
     Auth::routes();

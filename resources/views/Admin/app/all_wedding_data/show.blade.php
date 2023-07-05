@@ -37,6 +37,10 @@
                     <span>{{ $weddingData->greeting ?? '-' }}</span>
                 </div>
                 <div class="mb-4">
+                    <h5>@lang('crud.all_wedding_data.inputs.music')</h5>
+                    <span>{{ $weddingData->music ?? '-' }}</span>
+                </div>
+                <div class="mb-4">
                     <h5>@lang('crud.all_wedding_data.inputs.order_id')</h5>
                     <span
                         >{{ optional($weddingData->order)->no_order ?? '-'
