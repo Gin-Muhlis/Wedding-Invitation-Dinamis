@@ -56,7 +56,6 @@ Route::prefix('/super/admin')
         Route::resource('albums', AlbumController::class);
         Route::resource('bridegrooms', BridegroomController::class);
         Route::resource('catgories', CatgoryController::class);
-        Route::resource('comments', CommentController::class);
         Route::resource('invited-guests', InvitedGuestController::class);
         Route::resource('orders', OrderController::class);
         Route::resource('quotes', QuoteController::class);
@@ -107,3 +106,6 @@ Route::prefix('/super/admin')
         Route::resource('fitur-categories', FiturCategoryController::class);
         Route::resource('rsvps', RsvpController::class);
     });
+
+// user route
+Route::get('/demo', [WelcomeController::class, 'dummy']);

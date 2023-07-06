@@ -26,4 +26,9 @@ class WelcomeController extends Controller
 
         return view('welcome', compact('data_website', 'data_fitur', 'data_category', 'data_katalog', 'data_testimonies', 'data_faqs'));
     }
+
+    public function dummy()
+    {
+        return view('invitation.A001');
+    }
 }
