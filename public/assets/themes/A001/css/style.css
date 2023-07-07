@@ -5,99 +5,62 @@
     --light-text: #cccccc;
 }
 
-.title-sampul {
-    font-family: "PT Serif", serif;
-    color: var(--dark-text);
-    font-weight: 700;
-}
-
-.frame-foto-sampul {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    /* overflow: hidden; */
-    position: relative;
-}
-
-.frame-foto-sampul::after {
-    content: "";
-    width: 125%;
-    height: 125%;
-    border-radius: 50%;
-    background-image: url("../img/bingkai1.png");
+.section-hero {
+    background-image: url("../img/bg_sampul.jpg");
     background-size: cover;
     background-position: center;
-    z-index: 3;
+    min-height: 100vh;
+}
+
+.section-hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(240, 141, 187, 0.2);
+}
+
+.item-hero {
+    z-index: 10;
+}
+
+.title-hero {
+    font-family: "Cardo", sans-serif;
+    z-index: 10;
+}
+
+.frame-image-hero {
+    width: 300px;
+    height: 400px;
+    z-index: 5;
+}
+
+.frame-image-hero .frame {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    filter: drop-shadow(0px 0px 15px rgba(81, 63, 124, 0.9));
-    /* background-color: red; */
+    width: 370px;
+    height: 500px;
+    object-fit: fill;
+    filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 1));
 }
 
-.frame-foto-sampul img {
-    z-index: 3;
+.frame-image-hero img {
     width: 100%;
     height: 100%;
-    border-radius: 50%;
     object-fit: cover;
 }
 
-.bridegroom-name-sampul {
+.bridegroom-name-hero {
     font-family: "Grand Hotel", cursive;
-    font-size: 4rem;
-}
-
-.date-wedding-sampul {
-    font-family: "Cardo", serif;
-}
-
-.column-countdown {
-    background-color: rgb(81, 63, 124);
-    box-shadow: 6px 6px 10px rgba(111, 83, 148, 0.4);
-    width: 120px;
-}
-
-.countdown {
-    font-family: "Cardo", serif;
+    font-size: 4.5rem;
     z-index: 10;
 }
 
-.countdown .time {
-    line-height: 1;
-}
-
-.countdown .text-time {
-    line-height: 1;
-}
-
-.sampul-bunga-kiri {
-    position: absolute;
-    left: 0;
-    bottom: -30px;
-}
-
-.sampul-bunga-kanan {
-    position: absolute;
-    right: 0;
-    bottom: -30px;
-}
-
-@media screen and (max-width: 500px) {
-    .sampul-bunga-kiri,
-    .sampul-bunga-kanan {
-        width: 30%;
-    }
-
-    .sampul-bunga-tengah {
-        width: 60%;
-    }
-}
-
-.sampul-bunga-tengah {
-    position: absolute;
-    left: 50%;
-    top: -40px;
-    transform: translateX(-50%);
+.date-wedding-hero {
+    font-family: "PT Serif", serif;
+    font-weight: 700;
 }

@@ -13,43 +13,17 @@
 </head>
 
 <body>
-    <div class="container">
-        {{-- !----------> SAMPUL <----------  --}}
-        <section class="position-relative text-center section-sampul">
-            <div class="text py-5 mt-5">
-                <h2 class="title-sampul fs-5 mb-5">THE WEDDING OF</h2>
-                <div class="frame-foto-sampul m-auto">
-                    <img src="{{ asset('dummy/sampul_image.jpg') }}" alt="gambar sampul">
-                </div>
-                <h1 class="bridegroom-name-sampul mt-4 mb-4">Alucard & Miya</h1>
-                <p class="date-wedding-sampul fw-semibold fs-5 mb-4">Minggu, 7 November 2023</p>
-                <div
-                    class="countdown position-relative d-flex align-items-center justify-content-center gap-4 flex-wrap text-white">
-                    <div class="column-countdown py-2 rounded">
-                        <span class="d-block time fs-3">00</span>
-                        <span class="d-block text-time">Hari</span>
-                    </div>
-                    <div class="column-countdown py-2 rounded">
-                        <span class="d-block time fs-3">00</span>
-                        <span class="d-block text-time">Jam</span>
-                    </div>
-                    <div class="column-countdown py-2 rounded">
-                        <span class="d-block time fs-3">00</span>
-                        <span class="d-block text-time">Menit</span>
-                    </div>
-                    <div class="column-countdown py-2 rounded">
-                        <span class="d-block time fs-3">00</span>
-                        <span class="d-block text-time">Detik</span>
-                    </div>
-                </div>
+    {{-- !----------> HERO <----------  --}}
+    <div class="position-relative text-center section-hero d-flex align-items-center justify-content-center py-5">
+        <div class="item-hero position-relative d-flex flex-column align-items-center">
+            <span class="title-hero d-inline-block fs-4 text-white mb-3 position-relative">THE WEDDING OF</span>
+            <div class="frame-image-hero position-relative mb-3">
+                <img src="{{ asset('assets/themes/A001/img/bingkai.png') }}" alt="" class="frame">
+                <img src="{{ asset('assets/themes/A001/img/bridegroom.jpg') }}" alt="prewedding image">
             </div>
-            <img src="{{ asset('assets/themes/A001/img/bunga_tengah.png') }}" alt="dekorasi bunga"
-                class="sampul-bunga-tengah">
-            <img src="{{ asset('assets/themes/A001/img/bunga_kiri.png') }}" alt="dekorasi bunga"
-                class="sampul-bunga-kiri">
-            <img src="{{ asset('assets/themes/A001/img/bunga_kanan.png') }}" alt="dekorasi bunga"
-                class="sampul-bunga-kanan">
-        </section>
+            <h1 class="bridegroom-name-hero position-relative text-white mb-4">Alucard & Miya</h1>
+            <p class="date-wedding-hero text-white fs-5">Minggu, 30 November 2023</p>
+        </div>
     </div>
 
     {{-- !----------> SCRIPT <----------  --}}
