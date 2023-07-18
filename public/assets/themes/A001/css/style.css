@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cardo&family=Grand+Hotel&family=PT+Serif:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Cardo&family=Dancing+Script:wght@400;500;700&family=Grand+Hotel&family=PT+Serif:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500;1,600&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&display=swap');
 
 :root {
     --dark-text: #323232;
@@ -19,7 +19,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(240, 141, 187, 0.2);
+    background-color: rgba(240, 141, 187, 0.3);
 }
 
 .item-hero {
@@ -63,4 +63,603 @@
 .date-wedding-hero {
     font-family: "PT Serif", serif;
     font-weight: 700;
+}
+
+.custom-shape-divider-bottom-1689220953 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1689220953 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 50px;
+}
+
+.custom-shape-divider-bottom-1689220953 .shape-fill {
+    fill: rgba(240, 141, 187, 1);
+}
+
+.greeting-section .custom-shape-divider-bottom-1689220953 .shape-fill,
+.wedding-section .custom-shape-divider-bottom-1689220953 .shape-fill,
+.gallery-section .custom-shape-divider-bottom-1689220953 .shape-fill {
+    fill: #ffffff;
+}
+
+
+/* GREETING */
+.greeting-section {
+    background-color: rgba(240, 141, 187, 1);
+    font-family: 'Cardo', sans-serif;
+    overflow: hidden;
+    padding-block: 100px;
+}
+
+.greeting-section .ayat {
+    width: 80%;
+    margin-inline: auto;
+    font-size: 1.1rem;
+}
+
+.greeting-section .surat {
+    font-weight: 700;
+}
+
+.greeting-section .bunga_greeting,
+.wedding-section .bunga_wedding,
+.gallery-section .bunga_gallery {
+    position: absolute;
+    opacity: .2;
+}
+
+.greeting-section .bunga_kiri,
+.wedding-section .bunga_kiri,
+.gallery-section .bunga_kiri {
+    left: -10px;
+    top: 0;
+}
+
+.greeting-section .bunga_kanan,
+.wedding-section .bunga_kanan,
+.gallery-section .bunga_kanan {
+    right: -10px;
+    top: 0;
+}
+
+/* BRIDEGROOM */
+.bridegroom-section {
+    padding-block: 80px;
+}
+
+.bridegroom-section .salam {
+    font-family: 'Dancing Script', cursive;
+}
+
+.bridegroom-section .salam-isi {
+    width: 50%;
+    margin-inline: auto;
+    font-family: 'Cardo', serif;
+}
+
+.bridegroom-data {
+    font-family: 'Playfair Display', serif;
+}
+
+.bridegroom-data.and {
+    color: rgba(240, 141, 187, 1);
+    font-weight: 600;
+}
+
+.bridegroom-image {
+    position: relative;
+}
+
+.bridegroom-image .frame-bridegroom {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 310px;
+    height: 480px;
+    object-fit: fill;
+    filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 1));
+}
+
+.bridegroom-image .img {
+    width: 250px;
+    object-fit: cover;
+}
+
+.bridegroom-data .bridegroom-name {
+    color: rgba(240, 141, 187, 1);
+    border-radius: 2px;
+    border-bottom: 2px solid rgba(0,0,0,.5);
+    padding-bottom: 8px;
+}
+
+.bridegroom-datagro .bridegroom-son-text {
+    font-size: 1rem;
+}
+
+.bridegroom-data .bridegroom-parent-text {
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.sosmed a {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(240, 141, 187, 1);
+    color: #ffffff;
+    border-radius: 50%;
+}
+
+/* WEDDING */
+.wedding-section {
+    background-color: rgba(240, 141, 187, 1);
+    padding-block: 100px;
+}
+
+.wedding-section .wedding-data {
+    width: clamp(250px, 100%, 992px);
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.wedding-section .background-wedding {
+    height: 400px;
+}
+
+.wedding-section .background-wedding > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.wedding-section .background-wedding::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: rgba(240, 141, 187, .5);
+    z-index: 19;
+}
+
+.background-wedding .text-background-wedding {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+}
+
+.text-background-wedding img {
+    width: 300px;   
+}
+
+.text-background-wedding span {
+    font-family: 'Dancing Script', cursive;
+    font-weight: 500;
+}
+
+.wedding-data .row {
+    padding: 50px;
+}
+
+.wedding-data .maps {
+    padding: 0 50px 50px;
+}
+
+.wedding-data .row .icon-wedding {
+    width: 80px;
+}
+
+.wedding-data h2 {
+    font-family: 'Dancing Script', cursive;
+    color: rgba(240, 141, 187, 1);
+    font-weight: 600;
+}
+
+.wedding-data .row .date,
+.wedding-data .row .time {
+    font-family: 'Cardo', sans-serif;
+}
+
+.wedding-data .countdown-item {
+    background-color: rgba(240, 141, 187, 1);
+    border-radius: 5px;
+    font-family: 'Cardo', sans-serif;
+    padding: 3px 25px;
+}
+
+.wedding-data .countdown-item :first-child {
+    font-size: 1.2rem;
+}
+
+.wedding-data .countdown-item :last-child {
+    margin-top: -10px;
+}
+
+.wedding-data .line-home i {
+    color: rgba(240, 141, 187, 1);
+    font-size: 1.3rem;
+    flex-basis: 10%;
+}
+
+.wedding-data .line-home .line1,
+.wedding-data .line-home .line2 {
+    width: 100%;
+    height: 2px;
+    border-radius: 5px;
+    background-color: #080808;
+    flex-basis: 40%;
+}
+
+.wedding-data .location {
+    font-family: 'Cardo', sans-serif;
+    width: 70%;
+    margin-inline: auto;
+}
+
+.wedding-data .btn-map {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 8px 30px;
+    border-radius: 20px;
+    background-color: rgba(240, 141, 187, 1);
+    font-size: .9rem;
+}
+
+/* STORY */
+.content-story {
+    padding-block: 70px;
+}
+
+.line-story {
+    margin-block: 100px;
+    width: 5px;
+    height: 90%;
+    border-radius: 5px;
+    background-color: rgba(240, 141, 187, 1);
+    position: absolute;;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+}
+
+.story-section .content {
+    width: calc(50% - 40px);
+    border-radius: 10px;
+    background-color: rgba(240, 141, 187, 1);
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.story-section .content .image-story {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.story-section .content .title-story,
+.story-section .content .date-story {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.story-section .content .content-text {
+    font-size: .9rem;
+}
+
+.story-section .content::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-color: rgba(240, 141, 187, 1);
+    transform: rotate(45deg);
+    position: absolute;
+    top: 30px;
+    z-index: -1;
+}
+
+.story-section .content1::before {
+    right: -10px;
+}
+
+.story-section .content2::before {
+    left: -10px;
+}
+
+.story-section .icon-content {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(240, 141, 187, 1);
+    position: absolute;
+    top: 20px;
+    font-size: 1.1rem;;
+}
+
+.story-section .content1 .icon-content {
+    right: -60px;
+}
+
+.story-section .content2 .icon-content {
+    left: -60px;
+}
+
+/* GALLERY */
+.gallery-section {
+    padding-block: 100px;
+    background-color: rgba(240, 141, 187, 1);
+}
+
+.grafis-header {
+    width: 250px;
+}
+
+.title-header {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+}
+
+.title-pink {
+    color: rgba(240, 141, 187, 1);
+}
+
+.gallery-section .image-gallery {
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(255,255,255,.5);
+    height: 300px;
+    object-fit: cover;
+}
+
+/* RSVP */
+.rsvp-section {
+    padding-block: 70px;
+}
+
+.wrapper-rsvp {
+    background-color: rgba(240, 141, 187, 1);
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0,0,0,.3);
+    font-family: 'Poppins', sans-serif;
+}
+
+.wrapper-rsvp .header-form {
+    border-bottom: 2px solid #ffffff;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.wrapper-rsvp .header-form p {
+    line-height: 0;
+}
+
+.wrapper-rsvp .form-rsvp {
+    padding: 25px;
+    border-bottom: 2px solid #ffffff;
+}
+
+.form-rsvp input::placeholder,
+.form-rsvp textarea::placeholder {
+    opacity: .7;
+}
+
+.form-rsvp textarea {
+    height: 100px;
+}
+
+
+.wrapper-rsvp .data-rsvp {
+    padding-inline: 25px;
+    padding-block: 20px;
+}
+
+.data-rsvp .image {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: pink;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.data-rsvp .name {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.data-rsvp .time {
+    font-size: .8rem;
+    opacity: .8;
+}
+
+.data-rsvprsvp .message {
+    font-size: .9rem;
+}
+
+.gift-header i {
+    color: rgba(240, 141, 187, 1);
+    font-size: 4rem;
+}
+
+
+.gift-header p {
+    font-family: 'Cardo', sans-serif;
+    font-size: 1rem;
+}
+
+.box-gif {
+    border: 3px solid rgba(240, 141, 187, 1);
+    border-radius: 10px;
+}
+
+.box-gif i {
+    font-size: 2rem;
+    color: rgba(240, 141, 187, 1);
+}
+
+.box-gif span {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.box-gif button {
+    background-color: rgba(240, 141, 187, 1);
+    border-radius: 30px !important;
+    font-size: .9rem;   
+}
+
+.popup-gift {
+    width: clamp(300px, 100%, 420px);
+    height: clamp(100vh, 100%, 100vmax);
+    padding: 50px 30px;
+    background-color: #ffffff;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+    overflow: scroll;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-data {
+    padding: 30px 20px;
+    width: 320px;
+    background-image: url('../../../../pattern.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 30px;
+}
+
+.card-data .data-img {
+    width: 100px;
+    object-fit: cover;
+}
+
+.card-data .chip-img {
+    width: 40px;
+    object-fit: cover;
+}
+
+.card-data .no-rekening {
+    font-size: 1rem;
+}
+
+.card-data .owner {
+    font-size: .9rem;
+}
+
+.card-data .salin-btn {
+    padding: 2px 20px;
+    border-radius: 3px;
+    font-size: .8rem;
+    color: #080808;
+    background-color: #ffffff;
+    align-self: flex-end;
+    cursor: pointer;
+}
+
+.close-popup-rekening {
+    font-size: 1.5rem;
+    color: #080808;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+    background-color: rgba(240, 141, 187, 1);
+    font-family: 'Cardo', sans-serif;
+}
+
+footer img {
+    width: 250px;
+}
+
+footer h1 {
+    font-family: "Grand Hotel", cursive;
+    font-size: 4rem;
+}
+
+footer p {
+    font-size: 1.1rem;
+}
+
+/* SAMPUL */
+body {
+    overflow: hidden;
+}
+
+.sampul-section {
+    z-index: 999999;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.sampul-section::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: rgba(0,0,0,.7);
+}
+
+.text-sampul {
+    z-index: 5;
+    font-family: 'Poppins', sans-serif;
+}
+
+.text-sampul .title-sampul {
+    font-size: 1.2rem;
+}
+
+.text-sampul .name-bridegroom-sampul {
+    font-family: "Grand Hotel", cursive;
+    font-size: 6rem;
+}
+
+.text-sampul .to {
+    font-size: 1rem;
+}
+
+.text-sampul .name-visitor {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.text-sampul .open-invitation {
+    display: inline-block !important;
+    padding: 8px 30px;
+    border-radius: 2px;
+    border: 1px solid #ffffff;
+    background: transparent;
+    font-size: 1rem;
+    cursor: pointer;
 }
