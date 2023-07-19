@@ -14,9 +14,9 @@ return new class extends Migration {
     {
         Schema::table('themes', function (Blueprint $table) {
             $table
-                ->foreign('catgory_id')
+                ->foreign('category_id')
                 ->references('id')
-                ->on('catgories')
+                ->on('categories')
                 ->onUpdate('CASCADE')
                 ->onDelete('CASCADE');
         });
@@ -30,7 +30,7 @@ return new class extends Migration {
     public function down()
     {
         Schema::table('themes', function (Blueprint $table) {
-            $table->dropForeign(['catgory_id']);
+            $table->dropForeign(['category_id']);
         });
     }
 };

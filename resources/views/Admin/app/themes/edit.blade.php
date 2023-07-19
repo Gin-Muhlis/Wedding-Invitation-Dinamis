@@ -8,7 +8,7 @@
                 <a href="{{ route('themes.index') }}" class="mr-4"
                     ><i class="icon ion-md-arrow-back"></i
                 ></a>
-                @lang('crud.themes.edit_title')
+                @lang('crud.tema.edit_title')
             </h4>
 
             <x-form

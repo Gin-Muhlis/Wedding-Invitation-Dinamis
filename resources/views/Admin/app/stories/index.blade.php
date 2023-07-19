@@ -37,7 +37,9 @@
     <div class="card">
         <div class="card-body">
             <div style="display: flex; justify-content: space-between;">
-                <h4 class="card-title">@lang('crud.stories.index_title')</h4>
+                <h4 class="card-title">
+                    @lang('crud.cerita_cinta.index_title')
+                </h4>
             </div>
 
             <div class="table-responsive">
@@ -45,19 +47,19 @@
                     <thead>
                         <tr>
                             <th class="text-left">
-                                @lang('crud.stories.inputs.story_date')
+                                @lang('crud.cerita_cinta.inputs.story_date')
                             </th>
                             <th class="text-left">
-                                @lang('crud.stories.inputs.story_image')
+                                @lang('crud.cerita_cinta.inputs.story_image')
                             </th>
                             <th class="text-left">
-                                @lang('crud.stories.inputs.story_title')
+                                @lang('crud.cerita_cinta.inputs.story_title')
                             </th>
                             <th class="text-left">
-                                @lang('crud.stories.inputs.content')
+                                @lang('crud.cerita_cinta.inputs.content')
                             </th>
                             <th class="text-left">
-                                @lang('crud.stories.inputs.order_id')
+                                @lang('crud.cerita_cinta.inputs.order_id')
                             </th>
                             <th class="text-center">
                                 @lang('crud.common.actions')

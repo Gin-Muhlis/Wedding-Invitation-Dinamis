@@ -37,7 +37,9 @@
     <div class="card">
         <div class="card-body">
             <div style="display: flex; justify-content: space-between;">
-                <h4 class="card-title">@lang('crud.gifts.index_title')</h4>
+                <h4 class="card-title">
+                    @lang('crud.data_hadiah.index_title')
+                </h4>
             </div>
 
             <div class="table-responsive">
@@ -45,13 +47,16 @@
                     <thead>
                         <tr>
                             <th class="text-left">
-                                @lang('crud.gifts.inputs.owner_name')
+                                @lang('crud.data_hadiah.inputs.owner_name')
                             </th>
                             <th class="text-left">
-                                @lang('crud.gifts.inputs.no_data')
+                                @lang('crud.data_hadiah.inputs.no_data')
                             </th>
                             <th class="text-left">
-                                @lang('crud.gifts.inputs.order_id')
+                                @lang('crud.data_hadiah.inputs.gift_payment_id')
+                            </th>
+                            <th class="text-left">
+                                @lang('crud.data_hadiah.inputs.order_id')
                             </th>
                             <th class="text-center">
                                 @lang('crud.common.actions')
@@ -63,6 +68,9 @@
                         <tr>
                             <td>{{ $gift->owner_name ?? '-' }}</td>
                             <td>{{ $gift->no_data ?? '-' }}</td>
+                            <td>
+                                {{ optional($gift->giftPayment)->name ?? '-' }}
+                            </td>
                             <td>
                                 {{ optional($gift->order)->no_order ?? '-' }}
                             </td>
@@ -110,7 +118,7 @@
                         </tr>
                         @empty
                         <tr>
-                            <td colspan="4">
+                            <td colspan="5">
                                 @lang('crud.common.no_items_found')
                             </td>
                         </tr>
@@ -118,7 +126,7 @@
                     </tbody>
                     <tfoot>
                         <tr>
-                            <td colspan="4">{!! $gifts->render() !!}</td>
+                            <td colspan="5">{!! $gifts->render() !!}</td>
                         </tr>
                     </tfoot>
                 </table>

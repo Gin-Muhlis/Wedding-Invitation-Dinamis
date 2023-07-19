@@ -37,7 +37,7 @@
     <div class="card">
         <div class="card-body">
             <div style="display: flex; justify-content: space-between;">
-                <h4 class="card-title">@lang('crud.orders.index_title')</h4>
+                <h4 class="card-title">@lang('crud.order.index_title')</h4>
             </div>
 
             <div class="table-responsive">
@@ -45,25 +45,25 @@
                     <thead>
                         <tr>
                             <th class="text-left">
-                                @lang('crud.orders.inputs.no_order')
+                                @lang('crud.order.inputs.no_order')
                             </th>
                             <th class="text-left">
-                                @lang('crud.orders.inputs.order_date')
+                                @lang('crud.order.inputs.order_date')
                             </th>
                             <th class="text-left">
-                                @lang('crud.orders.inputs.domain')
+                                @lang('crud.order.inputs.domain')
                             </th>
                             <th class="text-right">
-                                @lang('crud.orders.inputs.total_order')
+                                @lang('crud.order.inputs.total_order')
                             </th>
                             <th class="text-left">
-                                @lang('crud.orders.inputs.user_id')
+                                @lang('crud.order.inputs.user_id')
                             </th>
                             <th class="text-left">
-                                @lang('crud.orders.inputs.theme_id')
+                                @lang('crud.order.inputs.theme_id')
                             </th>
                             <th class="text-left">
-                                @lang('crud.orders.inputs.status')
+                                @lang('crud.order.inputs.status')
                             </th>
                             <th class="text-center">
                                 @lang('crud.common.actions')

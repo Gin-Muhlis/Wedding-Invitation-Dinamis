@@ -8,13 +8,12 @@
                 <a href="{{ route('fiturs.index') }}" class="mr-4"
                     ><i class="icon ion-md-arrow-back"></i
                 ></a>
-                @lang('crud.fiturs.edit_title')
+                @lang('crud.fitur.edit_title')
             </h4>
 
             <x-form
                 method="PUT"
                 action="{{ route('fiturs.update', $fitur) }}"
-                has-files
                 class="mt-4"
             >
                 @include('Admin.app.fiturs.form-inputs')

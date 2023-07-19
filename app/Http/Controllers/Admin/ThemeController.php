@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Theme;
-use App\Models\Catgory;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Requests\Admin\ThemeStoreRequest;
 use App\Http\Requests\Admin\ThemeUpdateRequest;
@@ -36,9 +36,9 @@ class ThemeController extends Controller
     {
         $this->authorize('create', Theme::class);
 
-        $catgories = Catgory::pluck('category', 'id');
+        $categories = Category::pluck('category', 'id');
 
-        return view('Admin.app.themes.create', compact('catgories'));
+        return view('Admin.app.themes.create', compact('categories'));
     }
 
     /**
@@ -79,9 +79,9 @@ class ThemeController extends Controller
     {
         $this->authorize('update', $theme);
 
-        $catgories = Catgory::pluck('category', 'id');
+        $categories = Category::pluck('category', 'id');
 
-        return view('Admin.app.themes.edit', compact('theme', 'catgories'));
+        return view('Admin.app.themes.edit', compact('theme', 'categories'));
     }
 
     /**

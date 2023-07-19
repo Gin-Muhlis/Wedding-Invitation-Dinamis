@@ -41,7 +41,7 @@
         <div class="card-body">
             <div style="display: flex; justify-content: space-between;">
                 <h4 class="card-title">
-                    @lang('crud.fitur_categories.index_title')
+                    @lang('crud.fitur_kategori.index_title')
                 </h4>
             </div>
 
@@ -50,7 +50,7 @@
                     <thead>
                         <tr>
                             <th class="text-left">
-                                @lang('crud.fitur_categories.inputs.name')
+                                @lang('crud.fitur_kategori.inputs.name')
                             </th>
                             <th class="text-center">
                                 @lang('crud.common.actions')

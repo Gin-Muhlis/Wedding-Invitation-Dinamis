@@ -14,7 +14,6 @@ class WeddingCeremony extends Model
     protected $fillable = [
         'ceremony_date',
         'ceremony_time',
-        'ceremony_place',
         'ceremony_address',
         'order_id',
     ];

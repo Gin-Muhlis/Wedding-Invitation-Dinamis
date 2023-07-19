@@ -8,7 +8,7 @@
                 <a href="{{ route('albums.index') }}" class="mr-4"
                     ><i class="icon ion-md-arrow-back"></i
                 ></a>
-                @lang('crud.albums.create_title')
+                @lang('crud.album.create_title')
             </h4>
 
             <x-form

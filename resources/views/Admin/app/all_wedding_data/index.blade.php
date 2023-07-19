@@ -41,7 +41,7 @@
         <div class="card-body">
             <div style="display: flex; justify-content: space-between;">
                 <h4 class="card-title">
-                    @lang('crud.all_wedding_data.index_title')
+                    @lang('crud.data_pernikahan.index_title')
                 </h4>
             </div>
 
@@ -50,22 +50,25 @@
                     <thead>
                         <tr>
                             <th class="text-left">
-                                @lang('crud.all_wedding_data.inputs.male_image')
+                                @lang('crud.data_pernikahan.inputs.wedding_coordinate')
                             </th>
                             <th class="text-left">
-                                @lang('crud.all_wedding_data.inputs.female_image')
+                                @lang('crud.data_pernikahan.inputs.giff_address')
                             </th>
                             <th class="text-left">
-                                @lang('crud.all_wedding_data.inputs.wedding_coordinate')
+                                @lang('crud.data_pernikahan.inputs.male_image')
                             </th>
                             <th class="text-left">
-                                @lang('crud.all_wedding_data.inputs.greeting')
+                                @lang('crud.data_pernikahan.inputs.female_image')
                             </th>
                             <th class="text-left">
-                                @lang('crud.all_wedding_data.inputs.music')
+                                @lang('crud.data_pernikahan.inputs.cover_image')
                             </th>
                             <th class="text-left">
-                                @lang('crud.all_wedding_data.inputs.order_id')
+                                @lang('crud.data_pernikahan.inputs.music')
+                            </th>
+                            <th class="text-left">
+                                @lang('crud.data_pernikahan.inputs.order_id')
                             </th>
                             <th class="text-center">
                                 @lang('crud.common.actions')
@@ -75,6 +78,10 @@
                     <tbody>
                         @forelse($allWeddingData as $weddingData)
                         <tr>
+                            <td>
+                                {{ $weddingData->wedding_coordinate ?? '-' }}
+                            </td>
+                            <td>{{ $weddingData->giff_address ?? '-' }}</td>
                             <td>
                                 <x-partials.thumbnail
                                     src="{{ $weddingData->male_image ? \Storage::url($weddingData->male_image) : '' }}"
@@ -86,10 +93,20 @@
                                 />
                             </td>
                             <td>
-                                {{ $weddingData->wedding_coordinate ?? '-' }}
+                                <x-partials.thumbnail
+                                    src="{{ $weddingData->cover_image ? \Storage::url($weddingData->cover_image) : '' }}"
+                                />
                             </td>
-                            <td>{{ $weddingData->greeting ?? '-' }}</td>
-                            <td>{{ $weddingData->music ?? '-' }}</td>
+                            <td>
+                                @if($weddingData->music)
+                                <a
+                                    href="{{ \Storage::url($weddingData->music) }}"
+                                    target="blank"
+                                    ><i class="icon ion-md-download"></i
+                                    >&nbsp;Download</a
+                                >
+                                @else - @endif
+                            </td>
                             <td>
                                 {{ optional($weddingData->order)->no_order ??
                                 '-' }}
@@ -142,7 +159,7 @@
                         </tr>
                         @empty
                         <tr>
-                            <td colspan="7">
+                            <td colspan="8">
                                 @lang('crud.common.no_items_found')
                             </td>
                         </tr>
@@ -150,7 +167,7 @@
                     </tbody>
                     <tfoot>
                         <tr>
-                            <td colspan="7">
+                            <td colspan="8">
                                 {!! $allWeddingData->render() !!}
                             </td>
                         </tr>

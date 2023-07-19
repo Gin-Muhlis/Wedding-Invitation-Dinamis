@@ -37,7 +37,7 @@
     <div class="card">
         <div class="card-body">
             <div style="display: flex; justify-content: space-between;">
-                <h4 class="card-title">@lang('crud.faqs.index_title')</h4>
+                <h4 class="card-title">@lang('crud.pertanyaan.index_title')</h4>
             </div>
 
             <div class="table-responsive">
@@ -45,10 +45,10 @@
                     <thead>
                         <tr>
                             <th class="text-left">
-                                @lang('crud.faqs.inputs.question')
+                                @lang('crud.pertanyaan.inputs.question')
                             </th>
                             <th class="text-left">
-                                @lang('crud.faqs.inputs.answer')
+                                @lang('crud.pertanyaan.inputs.answer')
                             </th>
                             <th class="text-center">
                                 @lang('crud.common.actions')

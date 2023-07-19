@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Fitur;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\Admin\FiturStoreRequest;
 use App\Http\Requests\Admin\FiturUpdateRequest;
 
@@ -48,6 +47,7 @@ class FiturController extends Controller
         $this->authorize('create', Fitur::class);
 
         $validated = $request->validated();
+
         $fitur = Fitur::create($validated);
 
         return redirect()
@@ -89,6 +89,7 @@ class FiturController extends Controller
         $this->authorize('update', $fitur);
 
         $validated = $request->validated();
+
         $fitur->update($validated);
 
         return redirect()

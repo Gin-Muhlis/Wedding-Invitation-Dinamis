@@ -40,9 +40,7 @@
     <div class="card">
         <div class="card-body">
             <div style="display: flex; justify-content: space-between;">
-                <h4 class="card-title">
-                    @lang('crud.bridegrooms.index_title')
-                </h4>
+                <h4 class="card-title">@lang('crud.mempelai.index_title')</h4>
             </div>
 
             <div class="table-responsive">
@@ -50,31 +48,31 @@
                     <thead>
                         <tr>
                             <th class="text-left">
-                                @lang('crud.bridegrooms.inputs.male_fullname')
+                                @lang('crud.mempelai.inputs.male_fullname')
                             </th>
                             <th class="text-left">
-                                @lang('crud.bridegrooms.inputs.male_nickname')
+                                @lang('crud.mempelai.inputs.male_nickname')
                             </th>
                             <th class="text-left">
-                                @lang('crud.bridegrooms.inputs.male_mother_name')
+                                @lang('crud.mempelai.inputs.male_mother_name')
                             </th>
                             <th class="text-left">
-                                @lang('crud.bridegrooms.inputs.male_father_name')
+                                @lang('crud.mempelai.inputs.male_father_name')
                             </th>
                             <th class="text-left">
-                                @lang('crud.bridegrooms.inputs.female_fullname')
+                                @lang('crud.mempelai.inputs.female_fullname')
                             </th>
                             <th class="text-left">
-                                @lang('crud.bridegrooms.inputs.female_nickname')
+                                @lang('crud.mempelai.inputs.female_nickname')
                             </th>
                             <th class="text-left">
-                                @lang('crud.bridegrooms.inputs.female_mother_name')
+                                @lang('crud.mempelai.inputs.female_mother_name')
                             </th>
                             <th class="text-left">
-                                @lang('crud.bridegrooms.inputs.female_father_name')
+                                @lang('crud.mempelai.inputs.female_father_name')
                             </th>
                             <th class="text-left">
-                                @lang('crud.bridegrooms.inputs.order_id')
+                                @lang('crud.mempelai.inputs.order_id')
                             </th>
                             <th class="text-center">
                                 @lang('crud.common.actions')

@@ -26,7 +26,6 @@ class WeddingCeremonyUpdateRequest extends FormRequest
         return [
             'ceremony_date' => ['required', 'date'],
             'ceremony_time' => ['required', 'date_format:H:i:s'],
-            'ceremony_place' => ['required', 'max:255', 'string'],
             'ceremony_address' => ['required', 'max:255', 'string'],
             'order_id' => ['required', 'exists:orders,id'],
         ];

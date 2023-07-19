@@ -609,11 +609,12 @@ footer p {
 }
 
 /* SAMPUL */
-body {
+/* body {
     overflow: hidden;
-}
+} */
 
 .sampul-section {
+    display: none !important;
     z-index: 999999;
     background-size: cover;
     background-position: center;

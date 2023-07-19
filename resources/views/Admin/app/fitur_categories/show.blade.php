@@ -8,12 +8,12 @@
                 <a href="{{ route('fitur-categories.index') }}" class="mr-4"
                     ><i class="icon ion-md-arrow-back"></i
                 ></a>
-                @lang('crud.fitur_categories.show_title')
+                @lang('crud.fitur_kategori.show_title')
             </h4>
 
             <div class="mt-4">
                 <div class="mb-4">
-                    <h5>@lang('crud.fitur_categories.inputs.name')</h5>
+                    <h5>@lang('crud.fitur_kategori.inputs.name')</h5>
                     <span>{{ $fiturCategory->name ?? '-' }}</span>
                 </div>
             </div>

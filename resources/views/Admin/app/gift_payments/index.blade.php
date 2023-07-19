@@ -41,7 +41,7 @@
         <div class="card-body">
             <div style="display: flex; justify-content: space-between;">
                 <h4 class="card-title">
-                    @lang('crud.gift_payments.index_title')
+                    @lang('crud.pembayaran_hadiah.index_title')
                 </h4>
             </div>
 
@@ -50,10 +50,10 @@
                     <thead>
                         <tr>
                             <th class="text-left">
-                                @lang('crud.gift_payments.inputs.name')
+                                @lang('crud.pembayaran_hadiah.inputs.name')
                             </th>
                             <th class="text-left">
-                                @lang('crud.gift_payments.inputs.id')
+                                @lang('crud.pembayaran_hadiah.inputs.id')
                             </th>
                             <th class="text-center">
                                 @lang('crud.common.actions')

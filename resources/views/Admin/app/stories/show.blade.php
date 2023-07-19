@@ -8,28 +8,28 @@
                 <a href="{{ route('stories.index') }}" class="mr-4"
                     ><i class="icon ion-md-arrow-back"></i
                 ></a>
-                @lang('crud.stories.show_title')
+                @lang('crud.cerita_cinta.show_title')
             </h4>
 
             <div class="mt-4">
                 <div class="mb-4">
-                    <h5>@lang('crud.stories.inputs.story_date')</h5>
+                    <h5>@lang('crud.cerita_cinta.inputs.story_date')</h5>
                     <span>{{ $story->story_date ?? '-' }}</span>
                 </div>
                 <div class="mb-4">
-                    <h5>@lang('crud.stories.inputs.story_image')</h5>
+                    <h5>@lang('crud.cerita_cinta.inputs.story_image')</h5>
                     <span>{{ $story->story_image ?? '-' }}</span>
                 </div>
                 <div class="mb-4">
-                    <h5>@lang('crud.stories.inputs.story_title')</h5>
+                    <h5>@lang('crud.cerita_cinta.inputs.story_title')</h5>
                     <span>{{ $story->story_title ?? '-' }}</span>
                 </div>
                 <div class="mb-4">
-                    <h5>@lang('crud.stories.inputs.content')</h5>
+                    <h5>@lang('crud.cerita_cinta.inputs.content')</h5>
                     <span>{{ $story->content ?? '-' }}</span>
                 </div>
                 <div class="mb-4">
-                    <h5>@lang('crud.stories.inputs.order_id')</h5>
+                    <h5>@lang('crud.cerita_cinta.inputs.order_id')</h5>
                     <span>{{ optional($story->order)->no_order ?? '-' }}</span>
                 </div>
             </div>

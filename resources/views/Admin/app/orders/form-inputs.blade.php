@@ -69,6 +69,7 @@
             @php $selected = old('status', ($editing ? $order->status : '')) @endphp
             <option value="aktif" {{ $selected == 'aktif' ? 'selected' : '' }} >Aktif</option>
             <option value="kadaluwarsa" {{ $selected == 'kadaluwarsa' ? 'selected' : '' }} >Kadaluwarsa</option>
+            <option value="menunggu pembayaran" {{ $selected == 'menunggu pembayaran' ? 'selected' : '' }} >Menunggu pembayaran</option>
         </x-inputs.select>
     </x-inputs.group>
 </div>

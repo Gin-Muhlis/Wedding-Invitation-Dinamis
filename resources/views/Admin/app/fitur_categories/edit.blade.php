@@ -8,7 +8,7 @@
                 <a href="{{ route('fitur-categories.index') }}" class="mr-4"
                     ><i class="icon ion-md-arrow-back"></i
                 ></a>
-                @lang('crud.fitur_categories.edit_title')
+                @lang('crud.fitur_kategori.edit_title')
             </h4>
 
             <x-form

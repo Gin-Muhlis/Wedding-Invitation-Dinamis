@@ -24,17 +24,6 @@
 
     <x-inputs.group class="col-sm-12">
         <x-inputs.text
-            name="reception_place"
-            label="Tempat Resepsi"
-            :value="old('reception_place', ($editing ? $weddingReception->reception_place : ''))"
-            maxlength="255"
-            placeholder="Tempat Resepsi"
-            required
-        ></x-inputs.text>
-    </x-inputs.group>
-
-    <x-inputs.group class="col-sm-12">
-        <x-inputs.text
             name="reception_address"
             label="Alamat Resepsi"
             :value="old('reception_address', ($editing ? $weddingReception->reception_address : ''))"

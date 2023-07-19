@@ -5,7 +5,7 @@ namespace Tests\Feature\Controllers;
 use App\Models\User;
 use App\Models\Theme;
 
-use App\Models\Catgory;
+use App\Models\Category;
 
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -110,13 +110,13 @@ class ThemeControllerTest extends TestCase
     {
         $theme = Theme::factory()->create();
 
-        $catgory = Catgory::factory()->create();
+        $category = Category::factory()->create();
 
         $data = [
             'theme_name' => $this->faker->name(),
             'theme_code' => $this->faker->text(255),
             'type' => 'pakai foto',
-            'catgory_id' => $catgory->id,
+            'category_id' => $category->id,
         ];
 
         $response = $this->put(route('themes.update', $theme), $data);

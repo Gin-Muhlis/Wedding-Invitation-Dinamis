@@ -16,7 +16,6 @@ return new class extends Migration {
             $table->bigIncrements('id');
             $table->date('reception_date');
             $table->time('reception_time');
-            $table->string('reception_place');
             $table->string('reception_address');
             $table->unsignedBigInteger('order_id');
 

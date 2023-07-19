@@ -8,16 +8,16 @@
                 <a href="{{ route('faqs.index') }}" class="mr-4"
                     ><i class="icon ion-md-arrow-back"></i
                 ></a>
-                @lang('crud.faqs.show_title')
+                @lang('crud.pertanyaan.show_title')
             </h4>
 
             <div class="mt-4">
                 <div class="mb-4">
-                    <h5>@lang('crud.faqs.inputs.question')</h5>
+                    <h5>@lang('crud.pertanyaan.inputs.question')</h5>
                     <span>{{ $faq->question ?? '-' }}</span>
                 </div>
                 <div class="mb-4">
-                    <h5>@lang('crud.faqs.inputs.answer')</h5>
+                    <h5>@lang('crud.pertanyaan.inputs.answer')</h5>
                     <span>{{ $faq->answer ?? '-' }}</span>
                 </div>
             </div>

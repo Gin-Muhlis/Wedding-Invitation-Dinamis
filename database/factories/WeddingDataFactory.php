@@ -25,8 +25,8 @@ class WeddingDataFactory extends Factory
         return [
             'male_image' => $this->faker->text(255),
             'female_image' => $this->faker->text(255),
+            'cover_image' => $this->faker->text(255),
             'wedding_coordinate' => $this->faker->text(255),
-            'greeting' => $this->faker->text,
             'giff_address' => $this->faker->text(255),
             'music' => $this->faker->text(255),
             'order_id' => \App\Models\Order::factory(),

@@ -8,7 +8,7 @@
                 <a href="{{ route('wedding-ceremonies.index') }}" class="mr-4"
                     ><i class="icon ion-md-arrow-back"></i
                 ></a>
-                @lang('crud.wedding_ceremonies.create_title')
+                @lang('crud.data_akad_nikah.create_title')
             </h4>
 
             <x-form

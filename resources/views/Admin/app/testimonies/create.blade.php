@@ -8,7 +8,7 @@
                 <a href="{{ route('testimonies.index') }}" class="mr-4"
                     ><i class="icon ion-md-arrow-back"></i
                 ></a>
-                @lang('crud.testimonies.create_title')
+                @lang('crud.testimoni.create_title')
             </h4>
 
             <x-form

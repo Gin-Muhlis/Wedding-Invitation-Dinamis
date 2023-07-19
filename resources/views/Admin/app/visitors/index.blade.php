@@ -40,7 +40,7 @@
     <div class="card">
         <div class="card-body">
             <div style="display: flex; justify-content: space-between;">
-                <h4 class="card-title">@lang('crud.visitors.index_title')</h4>
+                <h4 class="card-title">@lang('crud.pengunjung.index_title')</h4>
             </div>
 
             <div class="table-responsive">
@@ -48,13 +48,13 @@
                     <thead>
                         <tr>
                             <th class="text-left">
-                                @lang('crud.visitors.inputs.name')
+                                @lang('crud.pengunjung.inputs.name')
                             </th>
                             <th class="text-left">
-                                @lang('crud.visitors.inputs.order_id')
+                                @lang('crud.pengunjung.inputs.ip_address')
                             </th>
                             <th class="text-left">
-                                @lang('crud.visitors.inputs.ip_address')
+                                @lang('crud.pengunjung.inputs.order_id')
                             </th>
                             <th class="text-center">
                                 @lang('crud.common.actions')
@@ -65,10 +65,10 @@
                         @forelse($visitors as $visitor)
                         <tr>
                             <td>{{ $visitor->name ?? '-' }}</td>
+                            <td>{{ $visitor->ip_address ?? '-' }}</td>
                             <td>
                                 {{ optional($visitor->order)->no_order ?? '-' }}
                             </td>
-                            <td>{{ $visitor->ip_address ?? '-' }}</td>
                             <td class="text-center" style="width: 134px;">
                                 <div
                                     role="group"

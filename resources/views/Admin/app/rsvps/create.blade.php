@@ -8,7 +8,7 @@
                 <a href="{{ route('rsvps.index') }}" class="mr-4"
                     ><i class="icon ion-md-arrow-back"></i
                 ></a>
-                @lang('crud.rsvps.create_title')
+                @lang('crud.rsvp.create_title')
             </h4>
 
             <x-form

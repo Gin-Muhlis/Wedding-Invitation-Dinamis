@@ -4,10 +4,10 @@
     <x-inputs.group class="col-sm-12">
         <x-inputs.text
             name="name"
-            label="Name"
+            label="Nama"
             :value="old('name', ($editing ? $rsvp->name : ''))"
             maxlength="255"
-            placeholder="Name"
+            placeholder="Nama"
             required
         ></x-inputs.text>
     </x-inputs.group>
@@ -15,7 +15,7 @@
     <x-inputs.group class="col-sm-12">
         <x-inputs.textarea
             name="comment"
-            label="Comment"
+            label="Ucapan"
             maxlength="255"
             required
             >{{ old('comment', ($editing ? $rsvp->comment : ''))

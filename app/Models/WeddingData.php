@@ -14,21 +14,16 @@ class WeddingData extends Model
     protected $fillable = [
         'male_image',
         'female_image',
+        'cover_image',
         'wedding_coordinate',
-        'greeting',
         'giff_address',
-        'order_id',
         'music',
+        'order_id',
     ];
 
     protected $searchableFields = ['*'];
 
     protected $table = 'wedding_data';
-
-    public function quote()
-    {
-        return $this->hasOne(Quote::class);
-    }
 
     public function order()
     {

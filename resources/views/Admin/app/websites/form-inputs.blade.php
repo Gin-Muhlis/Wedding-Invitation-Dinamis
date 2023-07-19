@@ -4,10 +4,10 @@
     <x-inputs.group class="col-sm-12">
         <x-inputs.text
             name="website_name"
-            label="Website Name"
+            label="Nama Website"
             :value="old('website_name', ($editing ? $website->website_name : ''))"
             maxlength="255"
-            placeholder="Website Name"
+            placeholder="Nama Website"
             required
         ></x-inputs.text>
     </x-inputs.group>
@@ -26,10 +26,10 @@
     <x-inputs.group class="col-sm-12">
         <x-inputs.text
             name="whatsapp_number"
-            label="Whatsapp Number"
+            label="No Whatsapp"
             :value="old('whatsapp_number', ($editing ? $website->whatsapp_number : ''))"
             maxlength="255"
-            placeholder="Whatsapp Number"
+            placeholder="No Whatsapp"
             required
         ></x-inputs.text>
     </x-inputs.group>
@@ -95,7 +95,7 @@
         >
             <x-inputs.partials.label
                 name="website_logo"
-                label="Website Logo"
+                label="Logo Website"
             ></x-inputs.partials.label
             ><br />
 

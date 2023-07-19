@@ -8,16 +8,16 @@
                 <a href="{{ route('gift-payments.index') }}" class="mr-4"
                     ><i class="icon ion-md-arrow-back"></i
                 ></a>
-                @lang('crud.gift_payments.show_title')
+                @lang('crud.pembayaran_hadiah.show_title')
             </h4>
 
             <div class="mt-4">
                 <div class="mb-4">
-                    <h5>@lang('crud.gift_payments.inputs.name')</h5>
+                    <h5>@lang('crud.pembayaran_hadiah.inputs.name')</h5>
                     <span>{{ $giftPayment->name ?? '-' }}</span>
                 </div>
                 <div class="mb-4">
-                    <h5>@lang('crud.gift_payments.inputs.id')</h5>
+                    <h5>@lang('crud.pembayaran_hadiah.inputs.id')</h5>
                     <x-partials.thumbnail
                         src="{{ $giftPayment->id ? \Storage::url($giftPayment->id) : '' }}"
                         size="150"

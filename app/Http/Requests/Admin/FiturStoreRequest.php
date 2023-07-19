@@ -25,7 +25,7 @@ class FiturStoreRequest extends FormRequest
     {
         return [
             'name' => ['required', 'max:255', 'string'],
-            'icon' => ['string', 'max:255', 'required'],
+            'icon' => ['required', 'max:255', 'string'],
         ];
     }
 }

@@ -4,7 +4,7 @@ namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class QuoteUpdateRequest extends FormRequest
+class CategoryUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,9 +24,9 @@ class QuoteUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'quote' => ['required', 'string'],
-            'surat' => ['required', 'max:255', 'string'],
-            'wedding_data_id' => ['required', 'exists:wedding_data,id'],
+            'category' => ['required', 'max:255', 'string'],
+            'price' => ['required', 'max:255'],
+            'fiturCategories' => ['array'],
         ];
     }
 }

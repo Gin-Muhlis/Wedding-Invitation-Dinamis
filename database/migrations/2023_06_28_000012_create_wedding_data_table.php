@@ -16,11 +16,11 @@ return new class extends Migration {
             $table->bigIncrements('id');
             $table->string('male_image');
             $table->string('female_image');
+            $table->string('cover_image');
             $table->string('wedding_coordinate');
-            $table->text('greeting');
             $table->string('giff_address');
-            $table->unsignedBigInteger('order_id');
             $table->string('music');
+            $table->unsignedBigInteger('order_id');
 
             $table->timestamps();
         });

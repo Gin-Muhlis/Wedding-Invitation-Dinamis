@@ -4,7 +4,7 @@
     <x-inputs.group class="col-sm-12">
         <x-inputs.text
             name="name"
-            label="Name"
+            label="Nama"
             :value="old('name', ($editing ? $giftPayment->name : ''))"
             maxlength="255"
             placeholder="Name"
@@ -18,7 +18,7 @@
         >
             <x-inputs.partials.label
                 name="id"
-                label="Id"
+                label="Icon"
             ></x-inputs.partials.label
             ><br />
 

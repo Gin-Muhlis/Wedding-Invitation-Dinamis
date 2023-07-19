@@ -8,7 +8,7 @@
                 <a href="{{ route('bridegrooms.index') }}" class="mr-4"
                     ><i class="icon ion-md-arrow-back"></i
                 ></a>
-                @lang('crud.bridegrooms.create_title')
+                @lang('crud.mempelai.create_title')
             </h4>
 
             <x-form

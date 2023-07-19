@@ -24,17 +24,6 @@
 
     <x-inputs.group class="col-sm-12">
         <x-inputs.text
-            name="ceremony_place"
-            label="Tempat Akad Nikah"
-            :value="old('ceremony_place', ($editing ? $weddingCeremony->ceremony_place : ''))"
-            maxlength="255"
-            placeholder="Tempat Akad Nikah"
-            required
-        ></x-inputs.text>
-    </x-inputs.group>
-
-    <x-inputs.group class="col-sm-12">
-        <x-inputs.text
             name="ceremony_address"
             label="Alamat Akad Nikah"
             :value="old('ceremony_address', ($editing ? $weddingCeremony->ceremony_address : ''))"

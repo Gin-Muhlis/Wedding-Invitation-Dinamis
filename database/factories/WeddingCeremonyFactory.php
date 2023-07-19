@@ -25,7 +25,6 @@ class WeddingCeremonyFactory extends Factory
         return [
             'ceremony_date' => $this->faker->date,
             'ceremony_time' => $this->faker->time,
-            'ceremony_place' => $this->faker->text(255),
             'ceremony_address' => $this->faker->text(255),
             'order_id' => \App\Models\Order::factory(),
         ];

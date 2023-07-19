@@ -25,7 +25,8 @@ class GiftStoreRequest extends FormRequest
     {
         return [
             'owner_name' => ['required', 'max:255', 'string'],
-            'no_data' => ['required'],
+            'no_data' => ['required', 'max:255'],
+            'gift_payment_id' => ['required', 'exists:gift_payments,id'],
             'order_id' => ['required', 'exists:orders,id'],
         ];
     }

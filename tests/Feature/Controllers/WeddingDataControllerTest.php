@@ -68,8 +68,6 @@ class WeddingDataControllerTest extends TestCase
 
         $response = $this->post(route('all-wedding-data.store'), $data);
 
-        unset($data['giff_address']);
-
         $this->assertDatabaseHas('wedding_data', $data);
 
         $weddingData = WeddingData::latest('id')->first();
@@ -119,8 +117,8 @@ class WeddingDataControllerTest extends TestCase
         $data = [
             'male_image' => $this->faker->text(255),
             'female_image' => $this->faker->text(255),
+            'cover_image' => $this->faker->text(255),
             'wedding_coordinate' => $this->faker->text(255),
-            'greeting' => $this->faker->text,
             'giff_address' => $this->faker->text(255),
             'music' => $this->faker->text(255),
             'order_id' => $order->id,
@@ -130,8 +128,6 @@ class WeddingDataControllerTest extends TestCase
             route('all-wedding-data.update', $weddingData),
             $data
         );
-
-        unset($data['giff_address']);
 
         $data['id'] = $weddingData->id;
 

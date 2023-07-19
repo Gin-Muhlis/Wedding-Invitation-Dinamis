@@ -41,7 +41,7 @@
         <div class="card-body">
             <div style="display: flex; justify-content: space-between;">
                 <h4 class="card-title">
-                    @lang('crud.invited_guests.index_title')
+                    @lang('crud.tamu_undangan.index_title')
                 </h4>
             </div>
 
@@ -50,13 +50,13 @@
                     <thead>
                         <tr>
                             <th class="text-left">
-                                @lang('crud.invited_guests.inputs.link')
+                                @lang('crud.tamu_undangan.inputs.link')
                             </th>
                             <th class="text-left">
-                                @lang('crud.invited_guests.inputs.name')
+                                @lang('crud.tamu_undangan.inputs.name')
                             </th>
                             <th class="text-left">
-                                @lang('crud.invited_guests.inputs.order_id')
+                                @lang('crud.tamu_undangan.inputs.order_id')
                             </th>
                             <th class="text-center">
                                 @lang('crud.common.actions')

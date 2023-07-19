@@ -8,40 +8,53 @@
                 <a href="{{ route('all-wedding-data.index') }}" class="mr-4"
                     ><i class="icon ion-md-arrow-back"></i
                 ></a>
-                @lang('crud.all_wedding_data.show_title')
+                @lang('crud.data_pernikahan.show_title')
             </h4>
 
             <div class="mt-4">
                 <div class="mb-4">
-                    <h5>@lang('crud.all_wedding_data.inputs.male_image')</h5>
+                    <h5>
+                        @lang('crud.data_pernikahan.inputs.wedding_coordinate')
+                    </h5>
+                    <span>{{ $weddingData->wedding_coordinate ?? '-' }}</span>
+                </div>
+                <div class="mb-4">
+                    <h5>@lang('crud.data_pernikahan.inputs.giff_address')</h5>
+                    <span>{{ $weddingData->giff_address ?? '-' }}</span>
+                </div>
+                <div class="mb-4">
+                    <h5>@lang('crud.data_pernikahan.inputs.male_image')</h5>
                     <x-partials.thumbnail
                         src="{{ $weddingData->male_image ? \Storage::url($weddingData->male_image) : '' }}"
                         size="150"
                     />
                 </div>
                 <div class="mb-4">
-                    <h5>@lang('crud.all_wedding_data.inputs.female_image')</h5>
+                    <h5>@lang('crud.data_pernikahan.inputs.female_image')</h5>
                     <x-partials.thumbnail
                         src="{{ $weddingData->female_image ? \Storage::url($weddingData->female_image) : '' }}"
                         size="150"
                     />
                 </div>
                 <div class="mb-4">
-                    <h5>
-                        @lang('crud.all_wedding_data.inputs.wedding_coordinate')
-                    </h5>
-                    <span>{{ $weddingData->wedding_coordinate ?? '-' }}</span>
+                    <h5>@lang('crud.data_pernikahan.inputs.cover_image')</h5>
+                    <x-partials.thumbnail
+                        src="{{ $weddingData->cover_image ? \Storage::url($weddingData->cover_image) : '' }}"
+                        size="150"
+                    />
                 </div>
                 <div class="mb-4">
-                    <h5>@lang('crud.all_wedding_data.inputs.greeting')</h5>
-                    <span>{{ $weddingData->greeting ?? '-' }}</span>
+                    <h5>@lang('crud.data_pernikahan.inputs.music')</h5>
+                    @if($weddingData->music)
+                    <a
+                        href="{{ \Storage::url($weddingData->music) }}"
+                        target="blank"
+                        ><i class="icon ion-md-download"></i>&nbsp;Download</a
+                    >
+                    @else - @endif
                 </div>
                 <div class="mb-4">
-                    <h5>@lang('crud.all_wedding_data.inputs.music')</h5>
-                    <span>{{ $weddingData->music ?? '-' }}</span>
-                </div>
-                <div class="mb-4">
-                    <h5>@lang('crud.all_wedding_data.inputs.order_id')</h5>
+                    <h5>@lang('crud.data_pernikahan.inputs.order_id')</h5>
                     <span
                         >{{ optional($weddingData->order)->no_order ?? '-'
                         }}</span

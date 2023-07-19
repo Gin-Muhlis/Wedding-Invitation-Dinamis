@@ -8,7 +8,7 @@
                 <a href="{{ route('stories.index') }}" class="mr-4"
                     ><i class="icon ion-md-arrow-back"></i
                 ></a>
-                @lang('crud.stories.edit_title')
+                @lang('crud.cerita_cinta.edit_title')
             </h4>
 
             <x-form

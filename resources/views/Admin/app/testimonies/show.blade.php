@@ -8,27 +8,27 @@
                 <a href="{{ route('testimonies.index') }}" class="mr-4"
                     ><i class="icon ion-md-arrow-back"></i
                 ></a>
-                @lang('crud.testimonies.show_title')
+                @lang('crud.testimoni.show_title')
             </h4>
 
             <div class="mt-4">
                 <div class="mb-4">
-                    <h5>@lang('crud.testimonies.inputs.name')</h5>
+                    <h5>@lang('crud.testimoni.inputs.name')</h5>
                     <span>{{ $testimony->name ?? '-' }}</span>
                 </div>
                 <div class="mb-4">
-                    <h5>@lang('crud.testimonies.inputs.image')</h5>
+                    <h5>@lang('crud.testimoni.inputs.image')</h5>
                     <x-partials.thumbnail
                         src="{{ $testimony->image ? \Storage::url($testimony->image) : '' }}"
                         size="150"
                     />
                 </div>
                 <div class="mb-4">
-                    <h5>@lang('crud.testimonies.inputs.rating')</h5>
+                    <h5>@lang('crud.testimoni.inputs.rating')</h5>
                     <span>{{ $testimony->rating ?? '-' }}</span>
                 </div>
                 <div class="mb-4">
-                    <h5>@lang('crud.testimonies.inputs.review')</h5>
+                    <h5>@lang('crud.testimoni.inputs.review')</h5>
                     <span>{{ $testimony->review ?? '-' }}</span>
                 </div>
             </div>

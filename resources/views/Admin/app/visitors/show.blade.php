@@ -8,23 +8,23 @@
                 <a href="{{ route('visitors.index') }}" class="mr-4"
                     ><i class="icon ion-md-arrow-back"></i
                 ></a>
-                @lang('crud.visitors.show_title')
+                @lang('crud.pengunjung.show_title')
             </h4>
 
             <div class="mt-4">
                 <div class="mb-4">
-                    <h5>@lang('crud.visitors.inputs.name')</h5>
+                    <h5>@lang('crud.pengunjung.inputs.name')</h5>
                     <span>{{ $visitor->name ?? '-' }}</span>
                 </div>
                 <div class="mb-4">
-                    <h5>@lang('crud.visitors.inputs.order_id')</h5>
+                    <h5>@lang('crud.pengunjung.inputs.ip_address')</h5>
+                    <span>{{ $visitor->ip_address ?? '-' }}</span>
+                </div>
+                <div class="mb-4">
+                    <h5>@lang('crud.pengunjung.inputs.order_id')</h5>
                     <span
                         >{{ optional($visitor->order)->no_order ?? '-' }}</span
                     >
-                </div>
-                <div class="mb-4">
-                    <h5>@lang('crud.visitors.inputs.ip_address')</h5>
-                    <span>{{ $visitor->ip_address ?? '-' }}</span>
                 </div>
             </div>
 

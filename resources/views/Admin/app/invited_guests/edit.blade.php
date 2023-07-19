@@ -8,7 +8,7 @@
                 <a href="{{ route('invited-guests.index') }}" class="mr-4"
                     ><i class="icon ion-md-arrow-back"></i
                 ></a>
-                @lang('crud.invited_guests.edit_title')
+                @lang('crud.tamu_undangan.edit_title')
             </h4>
 
             <x-form

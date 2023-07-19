@@ -25,8 +25,8 @@ class VisitorUpdateRequest extends FormRequest
     {
         return [
             'name' => ['required', 'max:255', 'string'],
-            'order_id' => ['required', 'exists:orders,id'],
             'ip_address' => ['required', 'max:255'],
+            'order_id' => ['required', 'exists:orders,id'],
         ];
     }
 }

@@ -11,17 +11,17 @@ class Theme extends Model
     use HasFactory;
     use Searchable;
 
-    protected $fillable = ['theme_name', 'theme_code', 'catgory_id', 'type'];
+    protected $fillable = ['theme_name', 'theme_code', 'type', 'category_id'];
 
     protected $searchableFields = ['*'];
-
-    public function catgory()
-    {
-        return $this->belongsTo(Catgory::class);
-    }
 
     public function orders()
     {
         return $this->hasMany(Order::class);
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
     }
 }

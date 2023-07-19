@@ -24,11 +24,12 @@ class WeddingDataUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'male_image' => ['image', 'max:1024', 'required'],
-            'female_image' => ['image', 'max:1024', 'required'],
             'wedding_coordinate' => ['required', 'max:255', 'string'],
-            'greeting' => ['required', 'max:255', 'string'],
-            'music' => ['required', 'max:255', 'string'],
+            'giff_address' => ['required', 'max:255', 'string'],
+            'male_image' => ['image', 'max:3048', 'required'],
+            'female_image' => ['image', 'max:3048', 'required'],
+            'cover_image' => ['image', 'max:3048', 'required'],
+            'music' => ['file', 'max:5124', 'required', 'mimes:mp3'],
             'order_id' => ['required', 'exists:orders,id'],
         ];
     }

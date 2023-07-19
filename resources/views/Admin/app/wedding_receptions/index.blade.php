@@ -41,7 +41,7 @@
         <div class="card-body">
             <div style="display: flex; justify-content: space-between;">
                 <h4 class="card-title">
-                    @lang('crud.wedding_receptions.index_title')
+                    @lang('crud.data_resepsi.index_title')
                 </h4>
             </div>
 
@@ -50,19 +50,16 @@
                     <thead>
                         <tr>
                             <th class="text-left">
-                                @lang('crud.wedding_receptions.inputs.reception_date')
+                                @lang('crud.data_resepsi.inputs.reception_date')
                             </th>
                             <th class="text-left">
-                                @lang('crud.wedding_receptions.inputs.reception_time')
+                                @lang('crud.data_resepsi.inputs.reception_time')
                             </th>
                             <th class="text-left">
-                                @lang('crud.wedding_receptions.inputs.reception_place')
+                                @lang('crud.data_resepsi.inputs.reception_address')
                             </th>
                             <th class="text-left">
-                                @lang('crud.wedding_receptions.inputs.reception_address')
-                            </th>
-                            <th class="text-left">
-                                @lang('crud.wedding_receptions.inputs.order_id')
+                                @lang('crud.data_resepsi.inputs.order_id')
                             </th>
                             <th class="text-center">
                                 @lang('crud.common.actions')
@@ -77,9 +74,6 @@
                             </td>
                             <td>
                                 {{ $weddingReception->reception_time ?? '-' }}
-                            </td>
-                            <td>
-                                {{ $weddingReception->reception_place ?? '-' }}
                             </td>
                             <td>
                                 {{ $weddingReception->reception_address ?? '-'
@@ -137,7 +131,7 @@
                         </tr>
                         @empty
                         <tr>
-                            <td colspan="6">
+                            <td colspan="5">
                                 @lang('crud.common.no_items_found')
                             </td>
                         </tr>
@@ -145,7 +139,7 @@
                     </tbody>
                     <tfoot>
                         <tr>
-                            <td colspan="6">
+                            <td colspan="5">
                                 {!! $weddingReceptions->render() !!}
                             </td>
                         </tr>

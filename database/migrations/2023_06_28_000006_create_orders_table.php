@@ -20,7 +20,11 @@ return new class extends Migration {
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('theme_id');
             $table->bigInteger('total_order');
-            $table->enum('status', ['aktif', 'kadaluwarsa']);
+            $table->enum('status', [
+                'aktif',
+                'kadaluwarsa',
+                'menunggu pembayaran',
+            ]);
 
             $table->timestamps();
         });

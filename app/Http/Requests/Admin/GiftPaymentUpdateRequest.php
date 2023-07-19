@@ -25,7 +25,7 @@ class GiftPaymentUpdateRequest extends FormRequest
     {
         return [
             'name' => ['required', 'max:255', 'string'],
-            'id' => ['image', 'max:1024', 'required'],
+            'id' => ['image', 'max:2048', 'required'],
         ];
     }
 }

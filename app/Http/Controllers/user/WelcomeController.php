@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers\user;
 
-use App\Http\Controllers\Controller;
-use App\Models\Catgory;
 use App\Models\Faq;
 use App\Models\Fitur;
-use App\Models\Testimony;
 use App\Models\Theme;
+use App\Models\Catgory;
 use App\Models\Website;
+use App\Models\Testimony;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class WelcomeController extends Controller
 {
@@ -24,11 +25,7 @@ class WelcomeController extends Controller
         $data_testimonies = Testimony::all();
         $data_faqs = Faq::all();
 
-        return view('welcome', compact('data_website', 'data_fitur', 'data_category', 'data_katalog', 'data_testimonies', 'data_faqs'));
-    }
 
-    public function dummy()
-    {
-        return view('invitation.A001');
+        return view('welcome', compact('data_website', 'data_fitur', 'data_category', 'data_katalog', 'data_testimonies', 'data_faqs'));
     }
 }

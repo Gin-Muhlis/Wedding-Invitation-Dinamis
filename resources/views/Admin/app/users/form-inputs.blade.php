@@ -4,10 +4,10 @@
     <x-inputs.group class="col-sm-12">
         <x-inputs.text
             name="name"
-            label="Name"
+            label="Nama"
             :value="old('name', ($editing ? $user->name : ''))"
             maxlength="255"
-            placeholder="Name"
+            placeholder="Nama"
             required
         ></x-inputs.text>
     </x-inputs.group>
@@ -26,10 +26,10 @@
     <x-inputs.group class="col-sm-12">
         <x-inputs.text
             name="phone_number"
-            label="Phone Number"
+            label="No Telepon"
             :value="old('phone_number', ($editing ? $user->phone_number : ''))"
             maxlength="255"
-            placeholder="Phone Number"
+            placeholder="No Telepon"
             required
         ></x-inputs.text>
     </x-inputs.group>

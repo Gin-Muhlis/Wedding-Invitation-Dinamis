@@ -26,8 +26,8 @@ class ThemeUpdateRequest extends FormRequest
         return [
             'theme_name' => ['required', 'max:255', 'string'],
             'theme_code' => ['required', 'max:255', 'string'],
-            'catgory_id' => ['required', 'exists:catgories,id'],
             'type' => ['required', 'in:pakai foto,tanpa foto'],
+            'category_id' => ['required', 'exists:categories,id'],
         ];
     }
 }

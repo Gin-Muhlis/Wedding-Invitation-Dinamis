@@ -37,7 +37,7 @@
     <div class="card">
         <div class="card-body">
             <div style="display: flex; justify-content: space-between;">
-                <h4 class="card-title">@lang('crud.albums.index_title')</h4>
+                <h4 class="card-title">@lang('crud.album.index_title')</h4>
             </div>
 
             <div class="table-responsive">
@@ -45,10 +45,10 @@
                     <thead>
                         <tr>
                             <th class="text-left">
-                                @lang('crud.albums.inputs.image')
+                                @lang('crud.album.inputs.image')
                             </th>
                             <th class="text-left">
-                                @lang('crud.albums.inputs.order_id')
+                                @lang('crud.album.inputs.order_id')
                             </th>
                             <th class="text-center">
                                 @lang('crud.common.actions')

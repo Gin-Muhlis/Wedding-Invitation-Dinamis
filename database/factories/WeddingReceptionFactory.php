@@ -25,7 +25,6 @@ class WeddingReceptionFactory extends Factory
         return [
             'reception_date' => $this->faker->date,
             'reception_time' => $this->faker->time,
-            'reception_place' => $this->faker->text(255),
             'reception_address' => $this->faker->text(255),
             'order_id' => \App\Models\Order::factory(),
         ];

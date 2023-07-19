@@ -40,9 +40,7 @@
     <div class="card">
         <div class="card-body">
             <div style="display: flex; justify-content: space-between;">
-                <h4 class="card-title">
-                    @lang('crud.testimonies.index_title')
-                </h4>
+                <h4 class="card-title">@lang('crud.testimoni.index_title')</h4>
             </div>
 
             <div class="table-responsive">
@@ -50,16 +48,16 @@
                     <thead>
                         <tr>
                             <th class="text-left">
-                                @lang('crud.testimonies.inputs.name')
+                                @lang('crud.testimoni.inputs.name')
                             </th>
                             <th class="text-left">
-                                @lang('crud.testimonies.inputs.image')
+                                @lang('crud.testimoni.inputs.image')
                             </th>
                             <th class="text-right">
-                                @lang('crud.testimonies.inputs.rating')
+                                @lang('crud.testimoni.inputs.rating')
                             </th>
                             <th class="text-left">
-                                @lang('crud.testimonies.inputs.review')
+                                @lang('crud.testimoni.inputs.review')
                             </th>
                             <th class="text-center">
                                 @lang('crud.common.actions')

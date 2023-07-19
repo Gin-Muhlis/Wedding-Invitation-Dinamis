@@ -26,7 +26,6 @@ class WeddingReceptionUpdateRequest extends FormRequest
         return [
             'reception_date' => ['required', 'date'],
             'reception_time' => ['required', 'date_format:H:i:s'],
-            'reception_place' => ['required', 'max:255', 'string'],
             'reception_address' => ['required', 'max:255', 'string'],
             'order_id' => ['required', 'exists:orders,id'],
         ];

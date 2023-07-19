@@ -37,7 +37,7 @@
     <div class="card">
         <div class="card-body">
             <div style="display: flex; justify-content: space-between;">
-                <h4 class="card-title">@lang('crud.themes.index_title')</h4>
+                <h4 class="card-title">@lang('crud.tema.index_title')</h4>
             </div>
 
             <div class="table-responsive">
@@ -45,16 +45,16 @@
                     <thead>
                         <tr>
                             <th class="text-left">
-                                @lang('crud.themes.inputs.theme_name')
+                                @lang('crud.tema.inputs.theme_name')
                             </th>
                             <th class="text-left">
-                                @lang('crud.themes.inputs.theme_code')
+                                @lang('crud.tema.inputs.theme_code')
                             </th>
                             <th class="text-left">
-                                @lang('crud.themes.inputs.catgory_id')
+                                @lang('crud.tema.inputs.type')
                             </th>
                             <th class="text-left">
-                                @lang('crud.themes.inputs.type')
+                                @lang('crud.tema.inputs.category_id')
                             </th>
                             <th class="text-center">
                                 @lang('crud.common.actions')
@@ -66,10 +66,11 @@
                         <tr>
                             <td>{{ $theme->theme_name ?? '-' }}</td>
                             <td>{{ $theme->theme_code ?? '-' }}</td>
-                            <td>
-                                {{ optional($theme->catgory)->category ?? '-' }}
-                            </td>
                             <td>{{ $theme->type ?? '-' }}</td>
+                            <td>
+                                {{ optional($theme->category)->category ?? '-'
+                                }}
+                            </td>
                             <td class="text-center" style="width: 134px;">
                                 <div
                                     role="group"

@@ -8,7 +8,7 @@
                 <a href="{{ route('wedding-receptions.index') }}" class="mr-4"
                     ><i class="icon ion-md-arrow-back"></i
                 ></a>
-                @lang('crud.wedding_receptions.edit_title')
+                @lang('crud.data_resepsi.edit_title')
             </h4>
 
             <x-form

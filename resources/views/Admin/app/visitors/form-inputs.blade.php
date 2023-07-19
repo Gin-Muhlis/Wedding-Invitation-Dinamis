@@ -13,16 +13,6 @@
     </x-inputs.group>
 
     <x-inputs.group class="col-sm-12">
-        <x-inputs.select name="order_id" label="Order" required>
-            @php $selected = old('order_id', ($editing ? $visitor->order_id : '')) @endphp
-            <option disabled {{ empty($selected) ? 'selected' : '' }}>Please select the Order</option>
-            @foreach($orders as $value => $label)
-            <option value="{{ $value }}" {{ $selected == $value ? 'selected' : '' }} >{{ $label }}</option>
-            @endforeach
-        </x-inputs.select>
-    </x-inputs.group>
-
-    <x-inputs.group class="col-sm-12">
         <x-inputs.text
             name="ip_address"
             label="Ip Address"
@@ -31,5 +21,15 @@
             placeholder="Ip Address"
             required
         ></x-inputs.text>
+    </x-inputs.group>
+
+    <x-inputs.group class="col-sm-12">
+        <x-inputs.select name="order_id" label="Order" required>
+            @php $selected = old('order_id', ($editing ? $visitor->order_id : '')) @endphp
+            <option disabled {{ empty($selected) ? 'selected' : '' }}>Please select the Order</option>
+            @foreach($orders as $value => $label)
+            <option value="{{ $value }}" {{ $selected == $value ? 'selected' : '' }} >{{ $label }}</option>
+            @endforeach
+        </x-inputs.select>
     </x-inputs.group>
 </div>

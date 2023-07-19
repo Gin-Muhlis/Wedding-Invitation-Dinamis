@@ -16,7 +16,6 @@ return new class extends Migration {
             $table->bigIncrements('id');
             $table->date('ceremony_date');
             $table->time('ceremony_time');
-            $table->string('ceremony_place');
             $table->string('ceremony_address');
             $table->unsignedBigInteger('order_id');
 

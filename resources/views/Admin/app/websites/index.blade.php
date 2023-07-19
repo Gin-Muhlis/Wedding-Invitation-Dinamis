@@ -40,7 +40,9 @@
     <div class="card">
         <div class="card-body">
             <div style="display: flex; justify-content: space-between;">
-                <h4 class="card-title">@lang('crud.websites.index_title')</h4>
+                <h4 class="card-title">
+                    @lang('crud.data_website.index_title')
+                </h4>
             </div>
 
             <div class="table-responsive">
@@ -48,31 +50,31 @@
                     <thead>
                         <tr>
                             <th class="text-left">
-                                @lang('crud.websites.inputs.website_name')
+                                @lang('crud.data_website.inputs.website_name')
                             </th>
                             <th class="text-left">
-                                @lang('crud.websites.inputs.email')
+                                @lang('crud.data_website.inputs.email')
                             </th>
                             <th class="text-left">
-                                @lang('crud.websites.inputs.whatsapp_number')
+                                @lang('crud.data_website.inputs.whatsapp_number')
                             </th>
                             <th class="text-left">
-                                @lang('crud.websites.inputs.address')
+                                @lang('crud.data_website.inputs.address')
                             </th>
                             <th class="text-left">
-                                @lang('crud.websites.inputs.link_instagram')
+                                @lang('crud.data_website.inputs.link_instagram')
                             </th>
                             <th class="text-left">
-                                @lang('crud.websites.inputs.link_fb')
+                                @lang('crud.data_website.inputs.link_fb')
                             </th>
                             <th class="text-left">
-                                @lang('crud.websites.inputs.link_twitter')
+                                @lang('crud.data_website.inputs.link_twitter')
                             </th>
                             <th class="text-left">
-                                @lang('crud.websites.inputs.description')
+                                @lang('crud.data_website.inputs.description')
                             </th>
                             <th class="text-left">
-                                @lang('crud.websites.inputs.website_logo')
+                                @lang('crud.data_website.inputs.website_logo')
                             </th>
                             <th class="text-center">
                                 @lang('crud.common.actions')

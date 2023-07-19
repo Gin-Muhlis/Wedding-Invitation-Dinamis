@@ -37,7 +37,7 @@
     <div class="card">
         <div class="card-body">
             <div style="display: flex; justify-content: space-between;">
-                <h4 class="card-title">@lang('crud.rsvps.index_title')</h4>
+                <h4 class="card-title">@lang('crud.rsvp.index_title')</h4>
             </div>
 
             <div class="table-responsive">
@@ -45,16 +45,16 @@
                     <thead>
                         <tr>
                             <th class="text-left">
-                                @lang('crud.rsvps.inputs.name')
+                                @lang('crud.rsvp.inputs.name')
                             </th>
                             <th class="text-left">
-                                @lang('crud.rsvps.inputs.comment')
+                                @lang('crud.rsvp.inputs.comment')
                             </th>
                             <th class="text-left">
-                                @lang('crud.rsvps.inputs.kehadiran')
+                                @lang('crud.rsvp.inputs.kehadiran')
                             </th>
                             <th class="text-left">
-                                @lang('crud.rsvps.inputs.order_id')
+                                @lang('crud.rsvp.inputs.order_id')
                             </th>
                             <th class="text-center">
                                 @lang('crud.common.actions')

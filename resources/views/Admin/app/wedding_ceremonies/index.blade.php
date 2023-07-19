@@ -41,7 +41,7 @@
         <div class="card-body">
             <div style="display: flex; justify-content: space-between;">
                 <h4 class="card-title">
-                    @lang('crud.wedding_ceremonies.index_title')
+                    @lang('crud.data_akad_nikah.index_title')
                 </h4>
             </div>
 
@@ -50,19 +50,16 @@
                     <thead>
                         <tr>
                             <th class="text-left">
-                                @lang('crud.wedding_ceremonies.inputs.ceremony_date')
+                                @lang('crud.data_akad_nikah.inputs.ceremony_date')
                             </th>
                             <th class="text-left">
-                                @lang('crud.wedding_ceremonies.inputs.ceremony_time')
+                                @lang('crud.data_akad_nikah.inputs.ceremony_time')
                             </th>
                             <th class="text-left">
-                                @lang('crud.wedding_ceremonies.inputs.ceremony_place')
+                                @lang('crud.data_akad_nikah.inputs.ceremony_address')
                             </th>
                             <th class="text-left">
-                                @lang('crud.wedding_ceremonies.inputs.ceremony_address')
-                            </th>
-                            <th class="text-left">
-                                @lang('crud.wedding_ceremonies.inputs.order_id')
+                                @lang('crud.data_akad_nikah.inputs.order_id')
                             </th>
                             <th class="text-center">
                                 @lang('crud.common.actions')
@@ -77,9 +74,6 @@
                             </td>
                             <td>
                                 {{ $weddingCeremony->ceremony_time ?? '-' }}
-                            </td>
-                            <td>
-                                {{ $weddingCeremony->ceremony_place ?? '-' }}
                             </td>
                             <td>
                                 {{ $weddingCeremony->ceremony_address ?? '-' }}
@@ -136,7 +130,7 @@
                         </tr>
                         @empty
                         <tr>
-                            <td colspan="6">
+                            <td colspan="5">
                                 @lang('crud.common.no_items_found')
                             </td>
                         </tr>
@@ -144,7 +138,7 @@
                     </tbody>
                     <tfoot>
                         <tr>
-                            <td colspan="6">
+                            <td colspan="5">
                                 {!! $weddingCeremonies->render() !!}
                             </td>
                         </tr>

@@ -16,8 +16,8 @@ return new class extends Migration {
             $table->bigIncrements('id');
             $table->string('theme_name');
             $table->string('theme_code');
-            $table->unsignedBigInteger('catgory_id');
             $table->enum('type', ['pakai foto', 'tanpa foto']);
+            $table->unsignedBigInteger('category_id');
 
             $table->timestamps();
         });

@@ -8,7 +8,7 @@
                 <a href="{{ route('orders.index') }}" class="mr-4"
                     ><i class="icon ion-md-arrow-back"></i
                 ></a>
-                @lang('crud.orders.create_title')
+                @lang('crud.order.create_title')
             </h4>
 
             <x-form

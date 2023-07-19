@@ -66,6 +66,16 @@ class WeddingDataController extends Controller
                 ->store('public');
         }
 
+        if ($request->hasFile('cover_image')) {
+            $validated['cover_image'] = $request
+                ->file('cover_image')
+                ->store('public');
+        }
+
+        if ($request->hasFile('music')) {
+            $validated['music'] = $request->file('music')->store('public');
+        }
+
         $weddingData = WeddingData::create($validated);
 
         return redirect()
@@ -134,6 +144,24 @@ class WeddingDataController extends Controller
                 ->store('public');
         }
 
+        if ($request->hasFile('cover_image')) {
+            if ($weddingData->cover_image) {
+                Storage::delete($weddingData->cover_image);
+            }
+
+            $validated['cover_image'] = $request
+                ->file('cover_image')
+                ->store('public');
+        }
+
+        if ($request->hasFile('music')) {
+            if ($weddingData->music) {
+                Storage::delete($weddingData->music);
+            }
+
+            $validated['music'] = $request->file('music')->store('public');
+        }
+
         $weddingData->update($validated);
 
         return redirect()
@@ -156,6 +184,14 @@ class WeddingDataController extends Controller
 
         if ($weddingData->female_image) {
             Storage::delete($weddingData->female_image);
+        }
+
+        if ($weddingData->cover_image) {
+            Storage::delete($weddingData->cover_image);
+        }
+
+        if ($weddingData->music) {
+            Storage::delete($weddingData->music);
         }
 
         $weddingData->delete();

@@ -32,7 +32,7 @@ class WebsiteStoreRequest extends FormRequest
             'link_fb' => ['required', 'max:255', 'string'],
             'link_twitter' => ['required', 'max:255', 'string'],
             'description' => ['required', 'max:255', 'string'],
-            'website_logo' => ['image', 'max:1024', 'required'],
+            'website_logo' => ['image', 'max:2048', 'required'],
         ];
     }
 }

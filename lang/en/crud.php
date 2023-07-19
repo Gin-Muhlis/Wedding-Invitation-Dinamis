@@ -22,8 +22,24 @@ return [
         'removed' => 'Successfully removed',
     ],
 
-    'albums' => [
-        'name' => 'Albums',
+    'users' => [
+        'name' => 'Users',
+        'index_title' => 'Users List',
+        'new_title' => 'New User',
+        'create_title' => 'Create User',
+        'edit_title' => 'Edit User',
+        'show_title' => 'Show User',
+        'inputs' => [
+            'name' => 'Nama',
+            'email' => 'Email',
+            'phone_number' => 'No Telepon',
+            'key' => 'Key',
+            'password' => 'Password',
+        ],
+    ],
+
+    'album' => [
+        'name' => 'Album',
         'index_title' => 'Daftar Album',
         'new_title' => 'Album Baru',
         'create_title' => 'Buat Album',
@@ -35,13 +51,13 @@ return [
         ],
     ],
 
-    'bridegrooms' => [
-        'name' => 'Bridegrooms',
-        'index_title' => 'Bridegrooms List',
-        'new_title' => 'New Bridegroom',
-        'create_title' => 'Create Bridegroom',
-        'edit_title' => 'Edit Bridegroom',
-        'show_title' => 'Show Bridegroom',
+    'mempelai' => [
+        'name' => 'Mempelai',
+        'index_title' => 'Daftar Mempelai',
+        'new_title' => 'Mempelai Baru',
+        'create_title' => 'Buat Mempelai',
+        'edit_title' => 'Edit Mempelai',
+        'show_title' => 'Tampilkan Mempelai',
         'inputs' => [
             'male_fullname' => 'Nama Lengkap Pria',
             'male_nickname' => 'Nama Panggilan Pria',
@@ -55,40 +71,13 @@ return [
         ],
     ],
 
-    'catgories' => [
-        'name' => 'Catgories',
-        'index_title' => 'Catgories List',
-        'new_title' => 'New Catgory',
-        'create_title' => 'Create Catgory',
-        'edit_title' => 'Edit Catgory',
-        'show_title' => 'Show Catgory',
-        'inputs' => [
-            'category' => 'Kategori',
-            'price' => 'Harga',
-        ],
-    ],
-
-    'invited_guests' => [
-        'name' => 'Invited Guests',
-        'index_title' => 'InvitedGuests List',
-        'new_title' => 'New Invited guest',
-        'create_title' => 'Create InvitedGuest',
-        'edit_title' => 'Edit InvitedGuest',
-        'show_title' => 'Show InvitedGuest',
-        'inputs' => [
-            'link' => 'Link Undangan',
-            'name' => 'Nama',
-            'order_id' => 'Order',
-        ],
-    ],
-
-    'orders' => [
-        'name' => 'Orders',
-        'index_title' => 'Orders List',
-        'new_title' => 'New Order',
-        'create_title' => 'Create Order',
+    'order' => [
+        'name' => 'Order',
+        'index_title' => 'Daftar Order',
+        'new_title' => 'Order Baru',
+        'create_title' => 'Buat Order',
         'edit_title' => 'Edit Order',
-        'show_title' => 'Show Order',
+        'show_title' => 'Tampilkan Order',
         'inputs' => [
             'no_order' => 'No Order',
             'order_date' => 'Tanggal Order',
@@ -100,27 +89,107 @@ return [
         ],
     ],
 
-    'quotes' => [
-        'name' => 'Quotes',
-        'index_title' => 'Quotes List',
-        'new_title' => 'New Quote',
-        'create_title' => 'Create Quote',
-        'edit_title' => 'Edit Quote',
-        'show_title' => 'Show Quote',
+    'pengunjung' => [
+        'name' => 'Pengunjung',
+        'index_title' => 'Daftar Pengunjung',
+        'new_title' => 'Pengunjung Baru',
+        'create_title' => 'Buat Pengunjung',
+        'edit_title' => 'Edit Pengunjung',
+        'show_title' => 'Tampilkan Pengunjung',
         'inputs' => [
-            'quote' => 'Quote',
-            'surat' => 'Surat & Ayat',
-            'wedding_data_id' => 'Wedding Data',
+            'name' => 'Nama',
+            'ip_address' => 'Ip Address',
+            'order_id' => 'Order',
         ],
     ],
 
-    'stories' => [
-        'name' => 'Stories',
-        'index_title' => 'Stories List',
-        'new_title' => 'New Story',
-        'create_title' => 'Create Story',
-        'edit_title' => 'Edit Story',
-        'show_title' => 'Show Story',
+    'fitur' => [
+        'name' => 'Fitur',
+        'index_title' => 'Daftar Fitur',
+        'new_title' => 'Fitur Baru',
+        'create_title' => 'Buat Fitur',
+        'edit_title' => 'Edit Fitur',
+        'show_title' => 'Tampilkan Fitur',
+        'inputs' => [
+            'name' => 'Nama Fitur',
+            'icon' => 'Icon',
+        ],
+    ],
+
+    'pertanyaan' => [
+        'name' => 'Pertanyaan',
+        'index_title' => 'Daftar Pertanyaan',
+        'new_title' => 'Pertanyaan Baru',
+        'create_title' => 'Buat Pertanyaan',
+        'edit_title' => 'Edit Pertanyaan',
+        'show_title' => 'Tampilkan Pertanyaan',
+        'inputs' => [
+            'question' => 'Pertanyaan',
+            'answer' => 'Jawaban',
+        ],
+    ],
+
+    'testimoni' => [
+        'name' => 'Testimoni',
+        'index_title' => 'Daftar Testimoni',
+        'new_title' => 'Testimoni Baru',
+        'create_title' => 'Buat Testimoni',
+        'edit_title' => 'Edit Testimoni',
+        'show_title' => 'Tampilkan Testimoni',
+        'inputs' => [
+            'name' => 'Nama',
+            'image' => 'Gambar',
+            'rating' => 'Rating',
+            'review' => 'Review',
+        ],
+    ],
+
+    'fitur_kategori' => [
+        'name' => 'Fitur Kategori',
+        'index_title' => 'Daftar Fitur Kategori',
+        'new_title' => 'Fitur Kategori Baru',
+        'create_title' => 'Buat Fitur Kategori',
+        'edit_title' => 'Edit Fitur Kategori',
+        'show_title' => 'Tampilkan Fitur Kategori',
+        'inputs' => [
+            'name' => 'Name',
+        ],
+    ],
+
+    'pembayaran_hadiah' => [
+        'name' => 'Pembayaran Hadiah',
+        'index_title' => 'Daftar Pembayaran Hadiah',
+        'new_title' => 'Pembayaran Hadiah Baru',
+        'create_title' => 'Buat Pembayaran Hadiah',
+        'edit_title' => 'Edit Pembayaran Hadiah',
+        'show_title' => 'Tampilkan Pembayaran Hadiah',
+        'inputs' => [
+            'name' => 'Nama',
+            'id' => 'Icon',
+        ],
+    ],
+
+    'tamu_undangan' => [
+        'name' => 'Tamu Undangan',
+        'index_title' => 'Daftar Tamu Undangan',
+        'new_title' => 'Tamu Undangan Baru',
+        'create_title' => 'Buat Tamu Undangan',
+        'edit_title' => 'Edit Tamu Undangan',
+        'show_title' => 'Tampilkan Tamu Undangan',
+        'inputs' => [
+            'link' => 'Link Undangan',
+            'name' => 'Nama',
+            'order_id' => 'Order',
+        ],
+    ],
+
+    'cerita_cinta' => [
+        'name' => 'Cerita Cinta',
+        'index_title' => 'Daftar Cerita Cinta',
+        'new_title' => 'Cerita Cinta Baru',
+        'create_title' => 'Buat Cerita Cinta',
+        'edit_title' => 'Edit Cerita Cinta',
+        'show_title' => 'Tampilkan Cerita Cinta',
         'inputs' => [
             'story_date' => 'Tanggal Cerita',
             'story_image' => 'Gambar Cerita',
@@ -130,212 +199,129 @@ return [
         ],
     ],
 
-    'users' => [
-        'name' => 'Users',
-        'index_title' => 'Users List',
-        'new_title' => 'New User',
-        'create_title' => 'Create User',
-        'edit_title' => 'Edit User',
-        'show_title' => 'Show User',
+    'data_website' => [
+        'name' => 'Data Website',
+        'index_title' => 'Daftar Data Website',
+        'new_title' => 'Data Website Baru',
+        'create_title' => 'Buat Data Website',
+        'edit_title' => 'Edit Data Website',
+        'show_title' => 'Tampilkan Data Website',
         'inputs' => [
-            'name' => 'Name',
+            'website_name' => 'Nama Website',
             'email' => 'Email',
-            'phone_number' => 'Phone Number',
-            'key' => 'Key',
-            'password' => 'Password',
-        ],
-    ],
-
-    'visitors' => [
-        'name' => 'Visitors',
-        'index_title' => 'Visitors List',
-        'new_title' => 'New Visitor',
-        'create_title' => 'Create Visitor',
-        'edit_title' => 'Edit Visitor',
-        'show_title' => 'Show Visitor',
-        'inputs' => [
-            'name' => 'Nama',
-            'order_id' => 'Order',
-            'ip_address' => 'Ip Address',
-        ],
-    ],
-
-    'wedding_ceremonies' => [
-        'name' => 'Wedding Ceremonies',
-        'index_title' => 'WeddingCeremonies List',
-        'new_title' => 'New Wedding ceremony',
-        'create_title' => 'Create WeddingCeremony',
-        'edit_title' => 'Edit WeddingCeremony',
-        'show_title' => 'Show WeddingCeremony',
-        'inputs' => [
-            'ceremony_date' => 'Tanggal Akad Nikah',
-            'ceremony_time' => 'Jam Akad Nikah',
-            'ceremony_place' => 'Tempat Akad Nikah',
-            'ceremony_address' => 'Alamat Akad Nikah',
-            'order_id' => 'Order',
-        ],
-    ],
-
-    'all_wedding_data' => [
-        'name' => 'All Wedding Data',
-        'index_title' => 'AllWeddingData List',
-        'new_title' => 'New Wedding data',
-        'create_title' => 'Create WeddingData',
-        'edit_title' => 'Edit WeddingData',
-        'show_title' => 'Show WeddingData',
-        'inputs' => [
-            'male_image' => 'Male Image',
-            'female_image' => 'Female Image',
-            'wedding_coordinate' => 'Wedding Coordinate',
-            'greeting' => 'Greeting',
-            'music' => 'Musik',
-            'order_id' => 'Order',
-        ],
-    ],
-
-    'wedding_receptions' => [
-        'name' => 'Wedding Receptions',
-        'index_title' => 'WeddingReceptions List',
-        'new_title' => 'New Wedding reception',
-        'create_title' => 'Create WeddingReception',
-        'edit_title' => 'Edit WeddingReception',
-        'show_title' => 'Show WeddingReception',
-        'inputs' => [
-            'reception_date' => 'Tanggal Resepsi',
-            'reception_time' => 'Jam Resepsi',
-            'reception_place' => 'Tempat Resepsi',
-            'reception_address' => 'Alamat Resepsi',
-            'order_id' => 'Order',
-        ],
-    ],
-
-    'gifts' => [
-        'name' => 'Gifts',
-        'index_title' => 'Gifts List',
-        'new_title' => 'New Gift',
-        'create_title' => 'Create Gift',
-        'edit_title' => 'Edit Gift',
-        'show_title' => 'Show Gift',
-        'inputs' => [
-            'owner_name' => 'Nama Pemilik',
-            'no_data' => 'No Data Pembayaran',
-            'order_id' => 'Order',
-        ],
-    ],
-
-    'gift_payments' => [
-        'name' => 'Gift Payments',
-        'index_title' => 'GiftPayments List',
-        'new_title' => 'New Gift payment',
-        'create_title' => 'Create GiftPayment',
-        'edit_title' => 'Edit GiftPayment',
-        'show_title' => 'Show GiftPayment',
-        'inputs' => [
-            'name' => 'Name',
-            'id' => 'Id',
-        ],
-    ],
-
-    'fiturs' => [
-        'name' => 'Fiturs',
-        'index_title' => 'Fiturs List',
-        'new_title' => 'New Fitur',
-        'create_title' => 'Create Fitur',
-        'edit_title' => 'Edit Fitur',
-        'show_title' => 'Show Fitur',
-        'inputs' => [
-            'name' => 'Nama Fitur',
-            'icon' => 'Icon',
-        ],
-    ],
-
-    'websites' => [
-        'name' => 'Websites',
-        'index_title' => 'Websites List',
-        'new_title' => 'New Website',
-        'create_title' => 'Create Website',
-        'edit_title' => 'Edit Website',
-        'show_title' => 'Show Website',
-        'inputs' => [
-            'website_name' => 'Website Name',
-            'email' => 'Email',
-            'whatsapp_number' => 'Whatsapp Number',
+            'whatsapp_number' => 'No Whatsapp',
             'address' => 'Alamat',
             'link_instagram' => 'Link Instagram',
             'link_fb' => 'Link Fb',
             'link_twitter' => 'Link Twitter',
             'description' => 'Description',
-            'website_logo' => 'Website Logo',
+            'website_logo' => 'Logo Website',
         ],
     ],
 
-    'faqs' => [
-        'name' => 'Faqs',
-        'index_title' => 'Faqs List',
-        'new_title' => 'New Faq',
-        'create_title' => 'Create Faq',
-        'edit_title' => 'Edit Faq',
-        'show_title' => 'Show Faq',
-        'inputs' => [
-            'question' => 'Pertanyaan',
-            'answer' => 'Jawaban',
-        ],
-    ],
-
-    'testimonies' => [
-        'name' => 'Testimonies',
-        'index_title' => 'Testimonies List',
-        'new_title' => 'New Testimony',
-        'create_title' => 'Create Testimony',
-        'edit_title' => 'Edit Testimony',
-        'show_title' => 'Show Testimony',
+    'rsvp' => [
+        'name' => 'Rsvp',
+        'index_title' => 'Daftar Rsvp',
+        'new_title' => 'Rsvp Baru',
+        'create_title' => 'Buat Rsvp',
+        'edit_title' => 'Edit Rsvp',
+        'show_title' => 'Tampilkan Rsvp',
         'inputs' => [
             'name' => 'Nama',
-            'image' => 'Gambar',
-            'rating' => 'Rating',
-            'review' => 'Review',
+            'comment' => 'Ucapan',
+            'kehadiran' => 'Kehadiran',
+            'order_id' => 'Order',
         ],
     ],
 
-    'themes' => [
-        'name' => 'Themes',
-        'index_title' => 'Themes List',
-        'new_title' => 'New Theme',
-        'create_title' => 'Create Theme',
-        'edit_title' => 'Edit Theme',
-        'show_title' => 'Show Theme',
+    'kategori' => [
+        'name' => 'Kategori',
+        'index_title' => 'Daftar Kategori',
+        'new_title' => 'Kategori baru',
+        'create_title' => 'Buuat Kategori',
+        'edit_title' => 'Edit Kategori',
+        'show_title' => 'Tampilkan Kategori',
+        'inputs' => [
+            'category' => 'Category',
+            'price' => 'Price',
+        ],
+    ],
+
+    'data_resepsi' => [
+        'name' => 'Data Resepsi',
+        'index_title' => 'Daftar Data Resepsi',
+        'new_title' => 'Data Resepsi Baru',
+        'create_title' => 'Buat Data Resepsi',
+        'edit_title' => 'Edit Data Resepsi',
+        'show_title' => 'Tampilkan Data Resepsi',
+        'inputs' => [
+            'reception_date' => 'Tanggal Resepsi',
+            'reception_time' => 'Jam Resepsi',
+            'reception_address' => 'Alamat Resepsi',
+            'order_id' => 'Order',
+        ],
+    ],
+
+    'data_akad_nikah' => [
+        'name' => 'Data Akad Nikah',
+        'index_title' => 'Daftar Data Akad Nikah',
+        'new_title' => 'Data Akad Nikah Baru',
+        'create_title' => 'Buat Data Akad Nikah',
+        'edit_title' => 'Edit Data Akad Nikah',
+        'show_title' => 'Tampilkan Data Akad Nikah',
+        'inputs' => [
+            'ceremony_date' => 'Tanggal Akad Nikah',
+            'ceremony_time' => 'Jam Akad Nikah',
+            'ceremony_address' => 'Alamat Akad Nikah',
+            'order_id' => 'Order',
+        ],
+    ],
+
+    'data_pernikahan' => [
+        'name' => 'Data Pernikahan',
+        'index_title' => 'Daftar Data Pernikahan',
+        'new_title' => 'Data Pernikahan Baru',
+        'create_title' => 'Buat Data Pernikahan',
+        'edit_title' => 'Edit Data Pernikahan',
+        'show_title' => 'Tampilkan Data Pernikahan',
+        'inputs' => [
+            'wedding_coordinate' => 'Koordinat Pernikahan',
+            'giff_address' => 'Alamat Kado',
+            'male_image' => 'Gambar Mempelai Pria',
+            'female_image' => 'Gambar Mempelai Wanita',
+            'cover_image' => 'Gambar Sampul Undangan',
+            'music' => 'Musik',
+            'order_id' => 'Order',
+        ],
+    ],
+
+    'data_hadiah' => [
+        'name' => 'Data Hadiah',
+        'index_title' => 'Daftar Data Hadiah',
+        'new_title' => 'Data Hadiah Baru',
+        'create_title' => 'Buat Data Hadiah',
+        'edit_title' => 'Edit Data Hadiah',
+        'show_title' => 'Tampilkan Data Hadiah',
+        'inputs' => [
+            'owner_name' => 'Nama Owner',
+            'no_data' => 'No Data',
+            'gift_payment_id' => 'Jenis Pembayaran',
+            'order_id' => 'Order',
+        ],
+    ],
+
+    'tema' => [
+        'name' => 'Tema',
+        'index_title' => 'Daftar Tema',
+        'new_title' => 'Tema Baru',
+        'create_title' => 'Buat Tema',
+        'edit_title' => 'Edit Tema',
+        'show_title' => 'Tampilkan Tema',
         'inputs' => [
             'theme_name' => 'Nama Tema',
             'theme_code' => 'Kode Tema',
-            'catgory_id' => 'Catgory',
             'type' => 'Tipe',
-        ],
-    ],
-
-    'fitur_categories' => [
-        'name' => 'Fitur Categories',
-        'index_title' => 'FiturCategories List',
-        'new_title' => 'New Fitur category',
-        'create_title' => 'Create FiturCategory',
-        'edit_title' => 'Edit FiturCategory',
-        'show_title' => 'Show FiturCategory',
-        'inputs' => [
-            'name' => 'Name',
-        ],
-    ],
-
-    'rsvps' => [
-        'name' => 'Rsvps',
-        'index_title' => 'Rsvps List',
-        'new_title' => 'New Rsvp',
-        'create_title' => 'Create Rsvp',
-        'edit_title' => 'Edit Rsvp',
-        'show_title' => 'Show Rsvp',
-        'inputs' => [
-            'name' => 'Name',
-            'comment' => 'Comment',
-            'kehadiran' => 'Kehadiran',
-            'order_id' => 'Order',
+            'category_id' => 'Category',
         ],
     ],
 

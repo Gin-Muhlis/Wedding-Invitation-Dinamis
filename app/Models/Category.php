@@ -6,23 +6,25 @@ use App\Models\Scopes\Searchable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class FiturCategory extends Model
+class Category extends Model
 {
     use HasFactory;
     use Searchable;
 
-    protected $fillable = ['name'];
+    protected $fillable = ['category', 'price'];
 
     protected $searchableFields = ['*'];
 
-    protected $table = 'fitur_categories';
+    public function themes()
+    {
+        return $this->hasMany(Theme::class);
+    }
 
-    public function catgories()
+    public function fiturCategories()
     {
         return $this->belongsToMany(
-            Category::class,
+            FiturCategory::class,
             'catgory_fitur_category',
-            'fitur_category_id',
             'catgory_id'
         );
     }

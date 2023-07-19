@@ -8,7 +8,7 @@
                 <a href="{{ route('visitors.index') }}" class="mr-4"
                     ><i class="icon ion-md-arrow-back"></i
                 ></a>
-                @lang('crud.visitors.edit_title')
+                @lang('crud.pengunjung.edit_title')
             </h4>
 
             <x-form

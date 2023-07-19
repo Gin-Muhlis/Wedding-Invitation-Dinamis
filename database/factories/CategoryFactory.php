@@ -2,18 +2,18 @@
 
 namespace Database\Factories;
 
-use App\Models\Quote;
+use App\Models\Category;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class QuoteFactory extends Factory
+class CategoryFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Quote::class;
+    protected $model = Category::class;
 
     /**
      * Define the model's default state.
@@ -23,9 +23,8 @@ class QuoteFactory extends Factory
     public function definition()
     {
         return [
-            'quote' => $this->faker->text,
-            'surat' => $this->faker->text(255),
-            'wedding_data_id' => \App\Models\WeddingData::factory(),
+            'category' => $this->faker->text(255),
+            'price' => $this->faker->randomNumber,
         ];
     }
 }

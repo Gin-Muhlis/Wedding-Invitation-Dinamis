@@ -30,7 +30,10 @@ class OrderUpdateRequest extends FormRequest
             'total_order' => ['required'],
             'user_id' => ['required', 'exists:users,id'],
             'theme_id' => ['required', 'exists:themes,id'],
-            'status' => ['required', 'in:aktif,kadaluwarsa'],
+            'status' => [
+                'required',
+                'in:aktif,kadaluwarsa,menunggu pembayaran',
+            ],
         ];
     }
 }

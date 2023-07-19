@@ -8,7 +8,7 @@
                 <a href="{{ route('gift-payments.index') }}" class="mr-4"
                     ><i class="icon ion-md-arrow-back"></i
                 ></a>
-                @lang('crud.gift_payments.edit_title')
+                @lang('crud.pembayaran_hadiah.edit_title')
             </h4>
 
             <x-form

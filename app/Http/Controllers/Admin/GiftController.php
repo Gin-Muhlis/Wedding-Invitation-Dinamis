@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Gift;
 use App\Models\Order;
+use App\Models\GiftPayment;
 use Illuminate\Http\Request;
 use App\Http\Requests\Admin\GiftStoreRequest;
 use App\Http\Requests\Admin\GiftUpdateRequest;
@@ -36,9 +37,13 @@ class GiftController extends Controller
     {
         $this->authorize('create', Gift::class);
 
+        $giftPayments = GiftPayment::pluck('name', 'id');
         $orders = Order::pluck('no_order', 'id');
 
-        return view('Admin.app.gifts.create', compact('orders'));
+        return view(
+            'Admin.app.gifts.create',
+            compact('giftPayments', 'orders')
+        );
     }
 
     /**
@@ -79,9 +84,13 @@ class GiftController extends Controller
     {
         $this->authorize('update', $gift);
 
+        $giftPayments = GiftPayment::pluck('name', 'id');
         $orders = Order::pluck('no_order', 'id');
 
-        return view('Admin.app.gifts.edit', compact('gift', 'orders'));
+        return view(
+            'Admin.app.gifts.edit',
+            compact('gift', 'giftPayments', 'orders')
+        );
     }
 
     /**

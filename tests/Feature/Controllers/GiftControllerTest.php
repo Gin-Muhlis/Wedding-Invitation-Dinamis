@@ -67,8 +67,6 @@ class GiftControllerTest extends TestCase
 
         $response = $this->post(route('gifts.store'), $data);
 
-        unset($data['gift_payment_id']);
-
         $this->assertDatabaseHas('gifts', $data);
 
         $gift = Gift::latest('id')->first();
@@ -124,8 +122,6 @@ class GiftControllerTest extends TestCase
         ];
 
         $response = $this->put(route('gifts.update', $gift), $data);
-
-        unset($data['gift_payment_id']);
 
         $data['id'] = $gift->id;
 
