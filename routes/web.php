@@ -18,6 +18,7 @@ use App\Http\Controllers\Admin\VisitorController;
 use App\Http\Controllers\Admin\WebsiteController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\TestimonyController;
+use App\Http\Controllers\user\InvitationController;
 use App\Http\Controllers\Admin\BridegroomController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\GiftPaymentController;
@@ -44,9 +45,9 @@ Route::prefix('/super/admin')->group(function () {
 });
 
 Route::prefix('/super/admin')
-    ->middleware('auth')
+    ->middleware(['auth', 'superAdmin'])
     ->group(function () {
-        Route::get('/home', [HomeCo☻ntroller::class, 'index'])->name('home');
+        Route::get('/home', [HomeController::class, 'index'])->name('home');
         Route::resource('roles', RoleController::class);
         Route::resource('permissions', PermissionController::class);
 
@@ -579,3 +580,5 @@ Route::prefix('/super/admin')
 
 // !USER ROUTES
 Route::get('/', [WelcomeController::class, 'index']);
+
+Route::get('/demo/{code}', [InvitationController::class, 'demo'])->name('demo');

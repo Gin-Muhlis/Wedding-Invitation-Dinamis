@@ -51,7 +51,6 @@ class WeddingReceptionController extends Controller
     public function store(WeddingReceptionStoreRequest $request)
     {
         $this->authorize('create', WeddingReception::class);
-
         $validated = $request->validated();
 
         $weddingReception = WeddingReception::create($validated);

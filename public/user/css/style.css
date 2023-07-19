@@ -365,6 +365,7 @@ html {
 }
 
 .box-area {
+    height: 200px;
     border-radius: 15px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35);
     padding: 20px;
@@ -412,6 +413,10 @@ html {
     font-size: 0.9rem;
     line-height: 20px;
     margin-bottom: 0;
+    -webkit-line-clamp: 4;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
 }
 
 .testimonies-carousel .owl-nav {

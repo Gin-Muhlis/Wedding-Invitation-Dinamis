@@ -14,6 +14,7 @@
             <x-form
                 method="POST"
                 action="{{ route('stories.store') }}"
+                has-files
                 class="mt-4"
             >
                 @include('Admin.app.stories.form-inputs')

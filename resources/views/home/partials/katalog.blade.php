@@ -30,11 +30,11 @@
                                       <div class="card">
                                           <div class="card-header">
                                               <img src="{{ asset('assets/themes/' . $theme->theme_code . '/preview.png') }}"
-                                                  alt="">
+                                                  alt="preview image">
                                           </div>
                                           <div
                                               class="card-body py-4 d-flex align-items-center justify-content-center gap-2 w-100">
-                                              <a href="#"
+                                              <a href="demo/{{ $theme->theme_code }}/?to=Nama Tamu"
                                                   class="btn text-light text-decoration-none text-white btn-theme">
                                                   <i class="fa-solid fa-eye"></i>
                                                   <span>Preview</span>

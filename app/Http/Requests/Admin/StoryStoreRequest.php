@@ -24,8 +24,8 @@ class StoryStoreRequest extends FormRequest
     public function rules()
     {
         return [
+            'story_image' => ['image', 'max:3096', 'nullable'],
             'story_date' => ['required', 'date'],
-            'story_image' => ['nullable', 'max:255', 'string'],
             'story_title' => ['nullable', 'max:255', 'string'],
             'content' => ['required', 'string'],
             'order_id' => ['required', 'exists:orders,id'],

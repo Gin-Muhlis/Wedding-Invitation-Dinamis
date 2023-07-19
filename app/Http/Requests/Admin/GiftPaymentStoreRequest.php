@@ -25,7 +25,7 @@ class GiftPaymentStoreRequest extends FormRequest
     {
         return [
             'name' => ['required', 'max:255', 'string'],
-            'id' => ['image', 'max:2048', 'required'],
+            'icon' => ['image', 'max:2048', 'required'],
         ];
     }
 }

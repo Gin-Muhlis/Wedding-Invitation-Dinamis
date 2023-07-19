@@ -52,7 +52,7 @@ class AlbumController extends Controller
 
         $validated = $request->validated();
         if ($request->hasFile('image')) {
-            $validated['image'] = $request->file('image')->store('public');
+            $validated['image'] = $request->file('image')->store('public/8dac6342-5021-4f90-880d-348248790a79');
         }
 
         $album = Album::create($validated);
@@ -103,7 +103,7 @@ class AlbumController extends Controller
                 Storage::delete($album->image);
             }
 
-            $validated['image'] = $request->file('image')->store('public');
+            $validated['image'] = $request->file('image')->store('public/8dac6342-5021-4f90-880d-348248790a79');
         }
 
         $album->update($validated);

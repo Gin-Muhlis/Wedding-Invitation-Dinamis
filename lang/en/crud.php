@@ -191,8 +191,8 @@ return [
         'edit_title' => 'Edit Cerita Cinta',
         'show_title' => 'Tampilkan Cerita Cinta',
         'inputs' => [
-            'story_date' => 'Tanggal Cerita',
             'story_image' => 'Gambar Cerita',
+            'story_date' => 'Tanggal Cerita',
             'story_title' => 'Judul Cerita',
             'content' => 'Isi Cerita',
             'order_id' => 'Order',

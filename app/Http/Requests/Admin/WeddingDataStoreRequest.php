@@ -29,7 +29,7 @@ class WeddingDataStoreRequest extends FormRequest
             'male_image' => ['image', 'max:3048', 'required'],
             'female_image' => ['image', 'max:3048', 'required'],
             'cover_image' => ['image', 'max:3048', 'required'],
-            'music' => ['file', 'max:5124', 'required', 'mimes:mp3'],
+            'music' => ['file', 'max:10124', 'required', 'mimes:mp3'],
             'order_id' => ['required', 'exists:orders,id'],
         ];
     }

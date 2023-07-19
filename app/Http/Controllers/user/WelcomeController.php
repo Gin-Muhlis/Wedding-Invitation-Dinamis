@@ -5,7 +5,7 @@ namespace App\Http\Controllers\user;
 use App\Models\Faq;
 use App\Models\Fitur;
 use App\Models\Theme;
-use App\Models\Catgory;
+use App\Models\Category;
 use App\Models\Website;
 use App\Models\Testimony;
 use Illuminate\Support\Str;
@@ -19,7 +19,7 @@ class WelcomeController extends Controller
         // !mengambil semua data yang diperlukan halaman utama
         $data_website = Website::latest()->first();
         $data_fitur = Fitur::all();
-        $data_category = Catgory::with('fiturCategories')->get();
+        $data_category = Category::with('fiturCategories')->get();
         $data_katalog['theme_with_foto'] = Theme::where('type', 'pakai foto')->get();
         $data_katalog['theme_without_foto'] = Theme::where('type', 'tanpa foto')->get();
         $data_testimonies = Testimony::all();

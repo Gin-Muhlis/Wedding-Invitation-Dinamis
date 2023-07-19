@@ -21,9 +21,9 @@ class FiturCategory extends Model
     {
         return $this->belongsToMany(
             Category::class,
-            'catgory_fitur_category',
+            'category_fitur_category',
             'fitur_category_id',
-            'catgory_id'
+            'category_id'
         );
     }
 }

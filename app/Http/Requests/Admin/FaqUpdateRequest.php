@@ -24,7 +24,7 @@ class FaqUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'question' => ['required', 'max:255', 'string'],
+            'question' => ['required', 'string'],
             'answer' => ['required', 'string'],
         ];
     }

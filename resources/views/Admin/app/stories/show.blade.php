@@ -13,12 +13,15 @@
 
             <div class="mt-4">
                 <div class="mb-4">
-                    <h5>@lang('crud.cerita_cinta.inputs.story_date')</h5>
-                    <span>{{ $story->story_date ?? '-' }}</span>
+                    <h5>@lang('crud.cerita_cinta.inputs.story_image')</h5>
+                    <x-partials.thumbnail
+                        src="{{ $story->story_image ? \Storage::url($story->story_image) : '' }}"
+                        size="150"
+                    />
                 </div>
                 <div class="mb-4">
-                    <h5>@lang('crud.cerita_cinta.inputs.story_image')</h5>
-                    <span>{{ $story->story_image ?? '-' }}</span>
+                    <h5>@lang('crud.cerita_cinta.inputs.story_date')</h5>
+                    <span>{{ $story->story_date ?? '-' }}</span>
                 </div>
                 <div class="mb-4">
                     <h5>@lang('crud.cerita_cinta.inputs.story_title')</h5>

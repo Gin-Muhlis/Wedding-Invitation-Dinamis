@@ -13,14 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('gifts', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('owner_name');
-            $table->string('no_data');
-            $table->unsignedBigInteger('order_id');
-            $table->unsignedBigInteger('gift_payment_id');
-
-            $table->timestamps();
+        Schema::create('category_fitur_category', function (Blueprint $table) {
+            $table->unsignedBigInteger('fitur_category_id');
+            $table->unsignedBigInteger('category_id');
         });
     }
 
@@ -31,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('gifts');
+        Schema::dropIfExists('catgory_fitur_category');
     }
 };

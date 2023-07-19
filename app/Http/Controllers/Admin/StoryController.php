@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Story;
 use App\Models\Order;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\Admin\StoryStoreRequest;
 use App\Http\Requests\Admin\StoryUpdateRequest;
 
@@ -50,6 +51,11 @@ class StoryController extends Controller
         $this->authorize('create', Story::class);
 
         $validated = $request->validated();
+        if ($request->hasFile('story_image')) {
+            $validated['story_image'] = $request
+                ->file('story_image')
+                ->store('public/8dac6342-5021-4f90-880d-348248790a79');
+        }
 
         $story = Story::create($validated);
 
@@ -94,6 +100,15 @@ class StoryController extends Controller
         $this->authorize('update', $story);
 
         $validated = $request->validated();
+        if ($request->hasFile('story_image')) {
+            if ($story->story_image) {
+                Storage::delete($story->story_image);
+            }
+
+            $validated['story_image'] = $request
+                ->file('story_image')
+                ->store('public/8dac6342-5021-4f90-880d-348248790a79');
+        }
 
         $story->update($validated);
 
@@ -110,6 +125,10 @@ class StoryController extends Controller
     public function destroy(Request $request, Story $story)
     {
         $this->authorize('delete', $story);
+
+        if ($story->story_image) {
+            Storage::delete($story->story_image);
+        }
 
         $story->delete();
 

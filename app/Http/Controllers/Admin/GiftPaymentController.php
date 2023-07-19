@@ -51,8 +51,8 @@ class GiftPaymentController extends Controller
         $this->authorize('create', GiftPayment::class);
 
         $validated = $request->validated();
-        if ($request->hasFile('id')) {
-            $validated['id'] = $request->file('id')->store('public');
+        if ($request->hasFile('icon')) {
+            $validated['icon'] = $request->file('icon')->store('public');
         }
 
         $giftPayment = GiftPayment::create($validated);
@@ -98,12 +98,12 @@ class GiftPaymentController extends Controller
         $this->authorize('update', $giftPayment);
 
         $validated = $request->validated();
-        if ($request->hasFile('id')) {
+        if ($request->hasFile('icon')) {
             if ($giftPayment->id) {
                 Storage::delete($giftPayment->id);
             }
 
-            $validated['id'] = $request->file('id')->store('public');
+            $validated['icon'] = $request->file('icon')->store('public');
         }
 
         $giftPayment->update($validated);

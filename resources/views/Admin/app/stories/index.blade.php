@@ -47,10 +47,10 @@
                     <thead>
                         <tr>
                             <th class="text-left">
-                                @lang('crud.cerita_cinta.inputs.story_date')
+                                @lang('crud.cerita_cinta.inputs.story_image')
                             </th>
                             <th class="text-left">
-                                @lang('crud.cerita_cinta.inputs.story_image')
+                                @lang('crud.cerita_cinta.inputs.story_date')
                             </th>
                             <th class="text-left">
                                 @lang('crud.cerita_cinta.inputs.story_title')
@@ -69,8 +69,12 @@
                     <tbody>
                         @forelse($stories as $story)
                         <tr>
+                            <td>
+                                <x-partials.thumbnail
+                                    src="{{ $story->story_image ? \Storage::url($story->story_image) : '' }}"
+                                />
+                            </td>
                             <td>{{ $story->story_date ?? '-' }}</td>
-                            <td>{{ $story->story_image ?? '-' }}</td>
                             <td>{{ $story->story_title ?? '-' }}</td>
                             <td>{{ $story->content ?? '-' }}</td>
                             <td>

@@ -51,7 +51,7 @@ class FaqController extends Controller
         $faq = Faq::create($validated);
 
         return redirect()
-            ->route('faqs.edit', $faq)
+            ->route('faqs.create', $faq)
             ->withSuccess(__('crud.common.created'));
     }
 

@@ -51,7 +51,7 @@ class FiturController extends Controller
         $fitur = Fitur::create($validated);
 
         return redirect()
-            ->route('fiturs.edit', $fitur)
+            ->route('fiturs.create', $fitur)
             ->withSuccess(__('crud.common.created'));
     }
 

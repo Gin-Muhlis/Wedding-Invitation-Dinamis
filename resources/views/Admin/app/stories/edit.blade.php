@@ -14,6 +14,7 @@
             <x-form
                 method="PUT"
                 action="{{ route('stories.update', $story) }}"
+                has-files
                 class="mt-4"
             >
                 @include('Admin.app.stories.form-inputs')

@@ -20,7 +20,7 @@ class SuperAdminMiddleware
 
         $user = Auth::user();
 
-        if (!$user->hasRole('super')) {
+        if (!$user->hasRole('super') && !$user->hasRole('super-admin')) {
             abort(404);
         }
         return $next($request);

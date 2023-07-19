@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'admin@admin.com',
                 'password' => Hash::make('admin77'),
                 'phone_number' => '089325722289',
+
             ]);
         $this->call(PermissionsSeeder::class);
     }

@@ -54,7 +54,7 @@ class FiturCategoryController extends Controller
         $fiturCategory = FiturCategory::create($validated);
 
         return redirect()
-            ->route('fitur-categories.edit', $fiturCategory)
+            ->route('fitur-categories.create', $fiturCategory)
             ->withSuccess(__('crud.common.created'));
     }
 

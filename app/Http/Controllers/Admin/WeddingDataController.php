@@ -57,23 +57,23 @@ class WeddingDataController extends Controller
         if ($request->hasFile('male_image')) {
             $validated['male_image'] = $request
                 ->file('male_image')
-                ->store('public');
+                ->store('public/8dac6342-5021-4f90-880d-348248790a79');
         }
 
         if ($request->hasFile('female_image')) {
             $validated['female_image'] = $request
                 ->file('female_image')
-                ->store('public');
+                ->store('public/8dac6342-5021-4f90-880d-348248790a79');
         }
 
         if ($request->hasFile('cover_image')) {
             $validated['cover_image'] = $request
                 ->file('cover_image')
-                ->store('public');
+                ->store('public/8dac6342-5021-4f90-880d-348248790a79');
         }
 
         if ($request->hasFile('music')) {
-            $validated['music'] = $request->file('music')->store('public');
+            $validated['music'] = $request->file('music')->store('public/8dac6342-5021-4f90-880d-348248790a79');
         }
 
         $weddingData = WeddingData::create($validated);

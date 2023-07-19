@@ -1,3 +1,6 @@
+@php
+    require_once app_path() . '/php/helpers.php';
+@endphp
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Alucard & Miya</title>
+    <title>{{ $data['bridegroom']->male_nickname }} & {{ $data['bridegroom']->female_nickname }}</title>
 
     {{-- !----------> SCRIPT <----------  --}}
     <script src="https://kit.fontawesome.com/64f5e4ae10.js" crossorigin="anonymous"></script>
@@ -18,6 +21,7 @@
 </head>
 
 <body>
+
     {{-- !----------> HERO <----------  --}}
     <div class="position-relative text-center section-hero d-flex align-items-center justify-content-center py-5">
         <div class="container item-hero position-relative d-flex flex-column align-items-center">
@@ -26,8 +30,14 @@
                 <img src="{{ asset('assets/themes/A001/img/bingkai.png') }}" alt="bingkai" class="frame">
                 <img src="{{ asset('assets/themes/A001/img/bridegroom.jpg') }}" alt="prewedding image">
             </div>
-            <h1 class="bridegroom-name-hero position-relative text-white mb-4">Alucard & Miya</h1>
-            <p class="date-wedding-hero text-white fs-5">Minggu, 30 November 2023</p>
+            <h1 class="bridegroom-name-hero position-relative text-white mb-4">{{ $data['bridegroom']->male_nickname }}
+                & {{ $data['bridegroom']->female_nickname }}</h1>
+            @php
+                $text_date_ceremony = makeTextDate($data['wedding_ceremony']->ceremony_date);
+            @endphp
+            <p class="date-wedding-hero text-white fs-5">
+                {{ $text_date_ceremony }}
+            </p>
         </div>
         <div class="custom-shape-divider-bottom-1689220953">
             <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
@@ -75,22 +85,15 @@
         <div class="row justify-content-center align-items-center">
             <div class="col-md-5 d-flex align-items-center justify-content-end gap-3">
                 <div class="bridegroom-data">
-                    <h2 class="bridegroom-name mb-3">Alucard</h2>
-                    <span class="bridegroom-son-text mb-2">Putri dari</span>
-                    <p class="bridegroom-parent-text fst-italic">Bapak Moonton dan Ibu Moonton</p>
-                    <div class="sosmed d-flex align-items-center justify-content-center gap-2">
-                        <a href="#">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                        <a href="#">
-                            <i class="fa-brands fa-facebook"></i>
-                        </a>
-                    </div>
+                    <h2 class="bridegroom-name mb-3">{{ $data['bridegroom']->male_fullname }}</h2>
+                    <span class="bridegroom-son-text d-inline-block mb-1">Putra dari</span>
+                    <p class="bridegroom-parent-text fst-italic">Bapak {{ $data['bridegroom']->male_father_name }} dan
+                        Ibu {{ $data['bridegroom']->male_mother_name }}</p>
                 </div>
                 <div class="bridegroom-image p-3">
                     <img src="{{ asset('assets/themes/A001/img/bingkai.png') }}" alt="bingkai"
                         class="frame-bridegroom">
-                    <img src="{{ asset('assets/themes/A001/img/bridegroom.jpg') }}" class="img" alt="mempelai">
+                    <img src="{{ \Storage::url($data['wedding_data']->male_image) }}" class="img" alt="mempelai">
                 </div>
             </div>
             <div class="col-md-1 bridegroom-data and fs-1">
@@ -98,22 +101,15 @@
             </div>
             <div class="col-md-5 d-flex align-items-center justify-content-start gap-2">
                 <div class="bridegroom-data order-1">
-                    <h2 class="bridegroom-name mb-3">Alucard</h2>
-                    <span class="bridegroom-son-text mb-2">Putri dari</span>
-                    <p class="bridegroom-parent-text fst-italic">Bapak Moonton dan Ibu Moonton</p>
-                    <div class="sosmed d-flex align-items-center justify-content-center gap-2">
-                        <a href="#">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                        <a href="#">
-                            <i class="fa-brands fa-facebook"></i>
-                        </a>
-                    </div>
+                    <h3 class="bridegroom-name mb-3">{{ $data['bridegroom']->female_fullname }}</h3>
+                    <span class="bridegroom-son-text d-inline-block mb-1">Putri dari</span>
+                    <p class="bridegroom-parent-text fst-italic">Bapak {{ $data['bridegroom']->female_father_name }}
+                        dan Ibu {{ $data['bridegroom']->female_mother_name }}</p>
                 </div>
                 <div class="bridegroom-image p-3 order-0">
                     <img src="{{ asset('assets/themes/A001/img/bingkai.png') }}" alt="bingkai"
                         class="frame-bridegroom">
-                    <img src="{{ asset('assets/themes/A001/img/bridegroom.jpg') }}" class="img" alt="mempelai">
+                    <img src="{{ \Storage::url($data['wedding_data']->female_image) }}" class="img" alt="mempelai">
                 </div>
             </div>
         </div>
@@ -129,8 +125,8 @@
 
     {{-- !----------> WEDDING <----------  --}}
     <div class="container-fluid wedding-section position-relative overflow-hidden">
-        <img src="{{ asset('assets/themes/A001/img/bunga_kiri.png') }}" class="bunga_wedding bunga_kiri"
-            width="300" alt="bunga">
+        <img src="{{ asset('assets/themes/A001/img/bunga_kiri.png') }}" class="bunga_wedding bunga_kiri" width="300"
+            alt="bunga">
         <img src="{{ asset('assets/themes/A001/img/bunga_kanan.png') }}" class="bunga_wedding bunga_kanan"
             width="300" alt="bunga">
         <div class="wedding-data m-auto shadow shadow-lg text-center bg-light">
@@ -148,8 +144,11 @@
                     <img src="{{ asset('assets/themes/A001/img/ring.png') }}" alt="icon wedding"
                         class="icon-wedding mb-2">
                     <h2 class="mb-2">Akad Nikah</h2>
-                    <span class="date mb-1 d-block">Senin, 30 November 2024</span>
-                    <span class="time d-block mb-3">Pukul 09.00 WIB s.d selesai</span>
+                    <span class="date mb-1 d-block">{{ $text_date_ceremony }}</span>
+
+                    <span class="time d-block mb-3">Pukul {{ makeTextTime($data['wedding_ceremony']->ceremony_time) }}
+                        WIB s.d
+                        selesai</span>
                     <div class="countdown d-flex align-items-center justify-content-center gap-2 mb-4">
                         <div
                             class="countdown-item text-center d-flex align-items-center justify-content-center flex-column text-white">
@@ -179,15 +178,17 @@
                     </div>
                     <h2>Lokasi</h2>
                     <p class="location">
-                        Kediaman Mempelai Wanita, Jl. Gatot Mangkupraja, Nagrak, Cianjur
+                        {{ $data['wedding_ceremony']->ceremony_address }}
                     </p>
                 </div>
                 <div class="col">
                     <img src="{{ asset('assets/themes/A001/img/gate.png') }}" alt="icon wedding"
                         class="icon-wedding mb-2">
                     <h2 class="mb-2">Resepsi</h2>
-                    <span class="date mb-1 d-block">Senin, 30 November 2024</span>
-                    <span class="time d-block mb-3">Pukul 09.00 WIB s.d selesai</span>
+                    <span
+                        class="date mb-1 d-block">{{ makeTextDate($data['wedding_reception']->reception_date) }}</span>
+                    <span class="time d-block mb-3">Pukul
+                        {{ makeTextTime($data['wedding_reception']->reception_time) }} WIB s.d selesai</span>
                     <div class="countdown d-flex align-items-center justify-content-center gap-2 mb-4">
                         <div
                             class="countdown-item text-center d-flex align-items-center justify-content-center flex-column text-white">
@@ -217,16 +218,17 @@
                     </div>
                     <h2>Lokasi</h2>
                     <p class="location">
-                        Kediaman Mempelai Wanita, Jl. Gatot Mangkupraja, Nagrak, Cianjur
+                        {{ $data['wedding_reception']->reception_address }}
                     </p>
                 </div>
             </div>
             <div class="maps">
+
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d990.3831124249497!2d107.1357332!3d-6.8265733!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68525760aaa209%3A0x4a4020b1836d1a1d!2sSMK%20Negeri%201%20Cianjur!5e0!3m2!1sid!2sid!4v1689303885458!5m2!1sid!2sid"
-                    height="300" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade" class="d-block w-100 mb-5"></iframe>
-                <a href="#" class="text-center btn-map ">
+                    src="https://maps.google.com/maps?q={{ $data['wedding_data']->wedding_coordinate }}&hl=es;z=14&amp;output=embed"
+                    height="300" class="d-block w-100 mb-5"></iframe>
+                <a href="https://maps.google.com/maps?q={{ $data['wedding_data']->wedding_coordinate }}"
+                    target="_blank" class="text-center btn-map ">
                     <i class="fa-solid fa-map-location-dot"></i>
                     <span>Buka Peta</span>
                 </a>
@@ -247,78 +249,24 @@
     <div class="container-fluid story-section position-relative">
         <div class="container content-story position-relative">
             <div class="line-story"></div>
-            <div class="row justify-content-start mb-5">
-                <div class="content content1 text-white position-relative">
-                    <div class="icon-content d-flex align-items-center justify-content-center">
-                        <i class="fa-solid fa-heart " style="color: #ffffff;"></i>
+            @foreach ($data['stories'] as $story)
+                <div class="row justify-content-{{ $loop->index % 2 == 0 ? 'start' : 'end' }} mb-5">
+                    <div class="content content1 text-white position-relative">
+                        <div class="icon-content d-flex align-items-center justify-content-center">
+                            <i class="fa-solid fa-heart " style="color: #ffffff;"></i>
+                        </div>
+                        <img src="{{ \Storage::url($story->story_image) }}" alt="story image"
+                            class="image-story mb-3">
+                        <div class="d-flex align-items-center justify-content-between w-100 mb-2">
+                            <span class="title-story">{{ $story->story_title }}</span>
+                            <span class="date-story">{{ generateDate($story->story_date) }}</span>
+                        </div>
+                        <p class="content-text w-100">
+                            {{ $story->content }}
+                        </p>
                     </div>
-                    <img src="{{ asset('assets/themes/A001/img/bridegroom.jpg') }}" alt="story image"
-                        class="image-story mb-3">
-                    <div class="d-flex align-items-center justify-content-between w-100 mb-2">
-                        <span class="title-story">Awal Bertemu</span>
-                        <span class="date-story">30 November 2021</span>
-                    </div>
-                    <p class="content-text w-100">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus rem earum praesentium!
-                        Eaque,
-                        voluptate optio ea earum dolore facere et.
-                    </p>
                 </div>
-            </div>
-            <div class="row justify-content-end mb-5">
-                <div class="content content2 text-white position-relative">
-                    <div class="icon-content d-flex align-items-center justify-content-center">
-                        <i class="fa-solid fa-heart " style="color: #ffffff;"></i>
-                    </div>
-                    <img src="{{ asset('assets/themes/A001/img/bridegroom.jpg') }}" alt="story image"
-                        class="image-story mb-3">
-                    <div class="d-flex align-items-center justify-content-between">
-                        <span class="title-story">Awal Bertemu</span>
-                        <span class="date-story">30 November 2021</span>
-                    </div>
-                    <p class="content-text">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus rem earum praesentium!
-                        Eaque,
-                        voluptate optio ea earum dolore facere et.
-                    </p>
-                </div>
-            </div>
-            <div class="row justify-content-start mb-5">
-                <div class="content content1 text-white position-relative">
-                    <div class="icon-content d-flex align-items-center justify-content-center">
-                        <i class="fa-solid fa-heart " style="color: #ffffff;"></i>
-                    </div>
-                    <img src="{{ asset('assets/themes/A001/img/bridegroom.jpg') }}" alt="story image"
-                        class="image-story mb-3">
-                    <div class="d-flex align-items-center justify-content-between w-100 mb-2">
-                        <span class="title-story">Awal Bertemu</span>
-                        <span class="date-story">30 November 2021</span>
-                    </div>
-                    <p class="content-text w-100">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus rem earum praesentium!
-                        Eaque,
-                        voluptate optio ea earum dolore facere et.
-                    </p>
-                </div>
-            </div>
-            <div class="row justify-content-end mb-5">
-                <div class="content content2 text-white position-relative">
-                    <div class="icon-content d-flex align-items-center justify-content-center">
-                        <i class="fa-solid fa-heart " style="color: #ffffff;"></i>
-                    </div>
-                    <img src="{{ asset('assets/themes/A001/img/bridegroom.jpg') }}" alt="story image"
-                        class="image-story mb-3">
-                    <div class="d-flex align-items-center justify-content-between">
-                        <span class="title-story">Awal Bertemu</span>
-                        <span class="date-story">30 November 2021</span>
-                    </div>
-                    <p class="content-text">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus rem earum praesentium!
-                        Eaque,
-                        voluptate optio ea earum dolore facere et.
-                    </p>
-                </div>
-            </div>
+            @endforeach
         </div>
         <div class="custom-shape-divider-bottom-1689220953">
             <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
@@ -343,24 +291,12 @@
                 <h2 class="title-header">Our Gallery</h2>
             </div>
             <div class="row align-items-center justify-content-center">
-                <a href="{{ asset('dummy/sampul_image.jpg') }}" data-fancybox="gallery" class="col-md-4 mb-4">
-                    <img src="{{ asset('dummy/sampul_image.jpg') }}" class="w-100 image-gallery" />
-                </a>
-                <a href="{{ asset('dummy/sampul_image.jpg') }}" data-fancybox="gallery" class="col-md-4 mb-4">
-                    <img src="{{ asset('dummy/sampul_image.jpg') }}" class="w-100 image-gallery" />
-                </a>
-                <a href="{{ asset('dummy/sampul_image.jpg') }}" data-fancybox="gallery" class="col-md-4 mb-4">
-                    <img src="{{ asset('dummy/sampul_image.jpg') }}" class="w-100 image-gallery" />
-                </a>
-                <a href="{{ asset('dummy/sampul_image.jpg') }}" data-fancybox="gallery" class="col-md-4 mb-4">
-                    <img src="{{ asset('dummy/sampul_image.jpg') }}" class="w-100 image-gallery" />
-                </a>
-                <a href="{{ asset('dummy/sampul_image.jpg') }}" data-fancybox="gallery" class="col-md-4 mb-4">
-                    <img src="{{ asset('dummy/sampul_image.jpg') }}" class="w-100 image-gallery" />
-                </a>
-                <a href="{{ asset('dummy/sampul_image.jpg') }}" data-fancybox="gallery" class="col-md-4 mb-4">
-                    <img src="{{ asset('dummy/sampul_image.jpg') }}" class="w-100 image-gallery" />
-                </a>
+
+                @foreach ($data['albums'] as $image)
+                    <a href="{{ \Storage::url($image->image) }}" data-fancybox="gallery" class="col-md-4 mb-4">
+                        <img src="{{ \Storage::url($image->image) }}" class="w-100 image-gallery" />
+                    </a>
+                @endforeach
 
             </div>
         </div>

@@ -147,13 +147,11 @@
     font-family: 'Cardo', serif;
 }
 
-.bridegroom-data {
-    font-family: 'Playfair Display', serif;
-}
 
 .bridegroom-data.and {
     color: rgba(240, 141, 187, 1);
     font-weight: 600;
+    font-family: 'Playfair Display', serif;
 }
 
 .bridegroom-image {
@@ -185,11 +183,13 @@
 
 .bridegroom-datagro .bridegroom-son-text {
     font-size: 1rem;
+    font-family: 'Playfair Display', serif;
 }
 
 .bridegroom-data .bridegroom-parent-text {
     font-weight: 500;
     font-size: 1rem;
+    font-family: 'Cardo', sans-serif;
 }
 
 .sosmed a {
