@@ -582,3 +582,4 @@ Route::prefix('/super/admin')
 Route::get('/', [WelcomeController::class, 'index']);
 
 Route::get('/demo/{code}', [InvitationController::class, 'demo'])->name('demo');
+Route::post('/rsvp-invitation', [InvitationController::class, 'sendRsvp']);

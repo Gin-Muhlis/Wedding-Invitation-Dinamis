@@ -283,12 +283,28 @@
     padding: 3px 25px;
 }
 
-.wedding-data .countdown-item :first-child {
+.wedding-data .countdown .simply-section {
+    background-color: rgba(240, 141, 187, 1);
+    border-radius: 5px;
+    font-family: 'Cardo', sans-serif;
+    padding: 3px 25px;
+}
+
+.wedding-data .countdown .simply-section div :first-child {
     font-size: 1.2rem;
 }
 
-.wedding-data .countdown-item :last-child {
+.wedding-data .countdown .simply-section div :last-child {
     margin-top: -10px;
+}
+
+.wedding-data .countdown .simply-section div {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #ffffff;
 }
 
 .wedding-data .line-home i {
@@ -473,13 +489,21 @@
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background: pink;
+    background: #080808c2;
     font-size: 1rem;
     font-weight: 600;
 }
 
 .data-rsvp .name {
     font-size: 1rem;
+    font-weight: 600;
+}
+
+.data-rsvp .kehadiran {
+    font-size: .7rem;
+    padding: 3px 7px;
+    border-radius: 4px;
+    background: #ffffff;
     font-weight: 600;
 }
 

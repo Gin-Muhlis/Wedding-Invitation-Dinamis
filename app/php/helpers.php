@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Carbon;
+
 function makeTextDate($data)
 {
     $day = [
@@ -25,18 +27,14 @@ function makeTextDate($data)
         '11' => 'Novermber',
         '12' => 'Desember',
     ];
-    $dayFormat = \Carbon\Carbon::createFromFormat(
-        'Y-m-d H:i:s',
+    $dayFormat = Carbon::createFromFormat(
+        'Y-m-d',
         $data
     );
     $dayFormat->locale('id');
     $dayName = $dayFormat->format('l');
-    $date_split = explode(
-        ' ',
-        $data
-    );
 
-    $date = explode('-', $date_split[0]);
+    $date = explode('-', $data);
 
     $text_date = "{$day[$dayName]}, {$date[2]} {$bulan[$date[1]]} {$date[0]}";
 
@@ -68,14 +66,30 @@ function generateDate($data)
         '11' => 'Novermber',
         '12' => 'Desember',
     ];
-    $date_split = explode(
-        ' ',
-        $data
-    );
 
-    $date = explode('-', $date_split[0]);
+    $date = explode('-', $data);
 
     $text_date = "{$date[2]} {$bulan[$date[1]]} {$date[0]}";
 
     return $text_date;
+}
+
+function getTimeAgo($time)
+{
+    $carbonTimestamp = Carbon::createFromTimestamp($time);
+    $diffTimestamp = $carbonTimestamp->diffInSeconds(Carbon::now());
+
+    if ($diffTimestamp < 60) {
+        return $diffTimestamp . ' Seconds ago.';
+    } else if ($diffTimestamp < 3600) {
+        return floor($diffTimestamp / 60) . ' Minutes ago.';
+    } else if ($diffTimestamp < 86400) {
+        return floor($diffTimestamp / 3600) . ' Hours ago.';
+    } else if ($diffTimestamp < 2592000) {
+        return floor($diffTimestamp / 86400) . ' Days ago.';
+    } else if ($diffTimestamp < 31536000) {
+        return floor($diffTimestamp / 2592000) . ' Months ago.';
+    } else {
+        return floor($diffTimestamp / 31536000) . ' Years ago.';
+    }
 }

@@ -7,6 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ $data['bridegroom']->male_nickname }} & {{ $data['bridegroom']->female_nickname }}</title>
 
@@ -33,7 +34,7 @@
             <h1 class="bridegroom-name-hero position-relative text-white mb-4">{{ $data['bridegroom']->male_nickname }}
                 & {{ $data['bridegroom']->female_nickname }}</h1>
             @php
-                $text_date_ceremony = makeTextDate($data['wedding_ceremony']->ceremony_date);
+                $text_date_ceremony = makeTextDate($data['wedding_ceremony']->ceremony_date->toDateString());
             @endphp
             <p class="date-wedding-hero text-white fs-5">
                 {{ $text_date_ceremony }}
@@ -51,8 +52,8 @@
 
     {{-- !----------> GREETING <----------  --}}
     <div class="container-fluid text-center greeting-section position-relative">
-        <img src="{{ asset('assets/themes/A001/img/bunga_kiri.png') }}" class="bunga_greeting bunga_kiri" width="300"
-            alt="bunga">
+        <img src="{{ asset('assets/themes/A001/img/bunga_kiri.png') }}" class="bunga_greeting bunga_kiri"
+            width="300" alt="bunga">
         <img src="{{ asset('assets/themes/A001/img/bunga_kanan.png') }}" class="bunga_greeting bunga_kanan"
             width="300" alt="bunga">
         <div class="container">
@@ -149,27 +150,8 @@
                     <span class="time d-block mb-3">Pukul {{ makeTextTime($data['wedding_ceremony']->ceremony_time) }}
                         WIB s.d
                         selesai</span>
-                    <div class="countdown d-flex align-items-center justify-content-center gap-2 mb-4">
-                        <div
-                            class="countdown-item text-center d-flex align-items-center justify-content-center flex-column text-white">
-                            <span class="countdown-day">00</span>
-                            <span class="countcown-text">Hari</span>
-                        </div>
-                        <div
-                            class="countdown-item text-center d-flex align-items-center justify-content-center flex-column text-white">
-                            <span class="countdown-hour">00</span>
-                            <span class="countcown-text">Jam</span>
-                        </div>
-                        <div
-                            class="countdown-item text-center d-flex align-items-center justify-content-center flex-column text-white">
-                            <span class="countdown-minute">00</span>
-                            <span class="countcown-text">Menit</span>
-                        </div>
-                        <div
-                            class="countdown-item text-center d-flex align-items-center justify-content-center flex-column text-white">
-                            <span class="countdown-second">00</span>
-                            <span class="countcown-text">Detik</span>
-                        </div>
+                    <div id="countdown-ceremony"
+                        class="countdown d-flex align-items-center justify-content-center gap-2 mb-4">
                     </div>
                     <div class="d-flex align-items-center justify-content-center gap-1 mb-4 line-home">
                         <div class="line1"></div>
@@ -186,30 +168,11 @@
                         class="icon-wedding mb-2">
                     <h2 class="mb-2">Resepsi</h2>
                     <span
-                        class="date mb-1 d-block">{{ makeTextDate($data['wedding_reception']->reception_date) }}</span>
+                        class="date mb-1 d-block">{{ makeTextDate($data['wedding_reception']->reception_date->toDateString()) }}</span>
                     <span class="time d-block mb-3">Pukul
                         {{ makeTextTime($data['wedding_reception']->reception_time) }} WIB s.d selesai</span>
-                    <div class="countdown d-flex align-items-center justify-content-center gap-2 mb-4">
-                        <div
-                            class="countdown-item text-center d-flex align-items-center justify-content-center flex-column text-white">
-                            <span class="countdown-day">00</span>
-                            <span class="countcown-text">Hari</span>
-                        </div>
-                        <div
-                            class="countdown-item text-center d-flex align-items-center justify-content-center flex-column text-white">
-                            <span class="countdown-hour">00</span>
-                            <span class="countcown-text">Jam</span>
-                        </div>
-                        <div
-                            class="countdown-item text-center d-flex align-items-center justify-content-center flex-column text-white">
-                            <span class="countdown-minute">00</span>
-                            <span class="countcown-text">Menit</span>
-                        </div>
-                        <div
-                            class="countdown-item text-center d-flex align-items-center justify-content-center flex-column text-white">
-                            <span class="countdown-second">00</span>
-                            <span class="countcown-text">Detik</span>
-                        </div>
+                    <div id="countdown-reception"
+                        class="countdown d-flex align-items-center justify-content-center gap-2 mb-4">
                     </div>
                     <div class="d-flex align-items-center justify-content-center gap-1 mb-4 line-home">
                         <div class="line1"></div>
@@ -259,7 +222,7 @@
                             class="image-story mb-3">
                         <div class="d-flex align-items-center justify-content-between w-100 mb-2">
                             <span class="title-story">{{ $story->story_title }}</span>
-                            <span class="date-story">{{ generateDate($story->story_date) }}</span>
+                            <span class="date-story">{{ generateDate($story->story_date->toDateString()) }}</span>
                         </div>
                         <p class="content-text w-100">
                             {{ $story->content }}
@@ -322,20 +285,20 @@
                 <div class="header-form d-flex align-items-center justify-content-center gap-1 py-3 text-white">
                     <i class="fa-regular fa-envelope-open"></i>
                     <p class="count-rsvp mb-0">
-                        1 Ucapan
+                        {{ $data['rsvps']->count() }} Ucapan
                     </p>
                 </div>
                 <form action="" class="form-rsvp">
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Nama">
+                        <input type="text" class="form-control" id="input-name" placeholder="Nama">
                     </div>
                     <div class="input-group mb-3">
-                        <textarea class="form-control" placeholder="Pesan"></textarea>
+                        <textarea class="form-control" id="input-comment" placeholder="Pesan"></textarea>
                     </div>
                     <div class="input-group mb-3">
                         <label class="d-block mb-2 text-white" for="inputGroupSelect01">Konfirmasi Kehadiran</label>
                         <div class="input-group mb-3">
-                            <select class="form-select" id="inputGroupSelect01">
+                            <select class="form-select" id="input-kehadiran">
                                 <option value="hadir" selected>Hadir</option>
                                 <option value="tidak hadir">Tidak Hadir</option>
                             </select>
@@ -346,26 +309,25 @@
                     </div>
                 </form>
                 <div class="data-rsvp">
-                    <div class="d-flex align-items-start justify-content-start gap-2 mb-3">
-                        <div class="image d-flex align-items-center justify-content-center text-white">
-                            G
-                        </div>
-                        <div class="text d-flex flex-column gap-1">
-                            <span class="name">Gin Gin</span>
-                            <span class="time text-white">1 week ago</span>
-                            <span class="message text-white">Selamat atas pernikahannya</span>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-start justify-content-start gap-2 mb-3">
-                        <div class="image d-flex align-items-center justify-content-center text-white">
-                            G
-                        </div>
-                        <div class="text d-flex flex-column gap-1">
-                            <span class="name">Gin Gin</span>
-                            <span class="time text-white">1 week ago</span>
-                            <span class="message text-white">Selamat atas pernikahannya</span>
-                        </div>
-                    </div>
+                    @if ($data['rsvps']->count() > 0)
+                        @foreach ($data['rsvps'] as $rsvp)
+                            <div class="d-flex align-items-start justify-content-start gap-2 mb-3">
+                                <div class="image d-flex align-items-center justify-content-center text-white">
+                                    {{ substr($rsvp->name, 0, 1) }}
+                                </div>
+                                <div class="text d-flex flex-column gap-1">
+                                    <div class="mb-1 d-flex align-items-center justify-content-start gap-2">
+                                        <span class="name text-light">{{ $rsvp->name }}</span>
+                                        <span class="kehadiran text-dark">{{ $rsvp->kehadiran }}</span>
+                                    </div>
+                                    <span
+                                        class="time text-white">{{ getTimeAgo(strtotime($rsvp->created_at)) }}</span>
+                                    <span class="message text-white">{{ $rsvp->comment }}</span>
+                                </div>
+                            </div>
+                        @endforeach
+                    @endif
+
                 </div>
             </div>
             <div class="gift-header mb-5 text-center">
@@ -540,15 +502,24 @@
     </div>
 
     {{-- !----------> SCRIPT <----------  --}}
+    <script>
+        const dateWeddingCeremony = @json($data['wedding_ceremony']->ceremony_date->toDateString());
+        const dateWeddingReception = @json($data['wedding_reception']->reception_date->toDateString());
+    </script>
+
+    <script>
+        const order_id = @json($data['order']->id);
+    </script>
+
     <script src="{{ asset('assets/themes/A001/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('assets/themes/A001/js/jquery.min.js') }}"></script>
     <script src="{{ asset('assets/themes/A001/js/script.js') }}"></script>
+    <script src="{{ asset('assets/themes/A001/js/fancybox.js') }}"></script>
+    <script src="{{ asset('simplyCountdown/simplyCountdown.js-master/dist/simplyCountdown.min.js') }}"></script>
+    <script src="{{ asset('assets/themes/A001/js/simplyCountdown.js') }}"></script>
+    <script src="{{ asset('assets/themes/A001/js/rsvps.js') }}"></script>
 
-    <script>
-        Fancybox.bind("[data-fancybox]", {
-            // Your custom options
-        });
-    </script>
+
 </body>
 
 </html>
