@@ -17,6 +17,7 @@ return new class extends Migration {
             $table->string('name');
             $table->text('comment');
             $table->enum('kehadiran', ['hadir', 'tidak hadir']);
+            $table->string('bg_profile');
             $table->unsignedBigInteger('order_id');
 
             $table->timestamps();

@@ -192,6 +192,14 @@
                                 </a>
                             </li>
                             @endcan
+                            @can('view-any', App\Models\ReplyRsvp::class)
+                            <li class="nav-item">
+                                <a href="{{ route('reply-rsvps.index') }}" class="nav-link">
+                                    <i class="nav-icon icon ion-md-radio-button-off"></i>
+                                    <p>Balasan RSVPS</p>
+                                </a>
+                            </li>
+                            @endcan
                     </ul>
                 </li>
 

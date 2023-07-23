@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\RsvpController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\AlbumController;
+use App\Http\Controllers\Admin\ReplyRsvpController;
 use App\Http\Controllers\Admin\FiturController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\StoryController;
@@ -575,6 +576,34 @@ Route::prefix('/super/admin')
             ThemeController::class,
             'destroy',
         ])->name('themes.destroy');
+        Route::get('balasan-rsvps', [
+            ReplyRsvpController::class,
+            'index',
+        ])->name('reply-rsvps.index');
+        Route::post('balasan-rsvps', [
+            ReplyRsvpController::class,
+            'store',
+        ])->name('reply-rsvps.store');
+        Route::get('balasan-rsvps/create', [
+            ReplyRsvpController::class,
+            'create',
+        ])->name('reply-rsvps.create');
+        Route::get('balasan-rsvps/{replyRsvp}', [
+            ReplyRsvpController::class,
+            'show',
+        ])->name('reply-rsvps.show');
+        Route::get('balasan-rsvps/{replyRsvp}/edit', [
+            ReplyRsvpController::class,
+            'edit',
+        ])->name('reply-rsvps.edit');
+        Route::put('balasan-rsvps/{replyRsvp}', [
+            ReplyRsvpController::class,
+            'update',
+        ])->name('reply-rsvps.update');
+        Route::delete('balasan-rsvps/{replyRsvp}', [
+            ReplyRsvpController::class,
+            'destroy',
+        ])->name('reply-rsvps.destroy');
     });
 
 
@@ -583,3 +612,4 @@ Route::get('/', [WelcomeController::class, 'index']);
 
 Route::get('/demo/{code}', [InvitationController::class, 'demo'])->name('demo');
 Route::post('/rsvp-invitation', [InvitationController::class, 'sendRsvp']);
+Route::post('/reply-rsvp', [InvitationController::class, 'replyRsvp']);

@@ -132,7 +132,7 @@
             width="300" alt="bunga">
         <div class="wedding-data m-auto shadow shadow-lg text-center bg-light">
             <div class="background-wedding w-100 position-relative">
-                <img src="{{ asset('dummy/sampul_image.jpg') }}" alt="wedding background">
+                <img src="{{ \Storage::url($data['wedding_data']->cover_image) }}" alt="wedding background">
                 <div
                     class="text-background-wedding text-white d-flex flex-column align-items-center justify-content-center">
                     <img src="{{ asset('assets/themes/A001/img/grafis_tengah_putih.png') }}" alt="grafis"
@@ -214,7 +214,7 @@
             <div class="line-story"></div>
             @foreach ($data['stories'] as $story)
                 <div class="row justify-content-{{ $loop->index % 2 == 0 ? 'start' : 'end' }} mb-5">
-                    <div class="content content1 text-white position-relative">
+                    <div class="content content{{ $loop->index % 2 == 0 ? '1' : '2' }} text-white position-relative">
                         <div class="icon-content d-flex align-items-center justify-content-center">
                             <i class="fa-solid fa-heart " style="color: #ffffff;"></i>
                         </div>
@@ -304,25 +304,60 @@
                             </select>
                         </div>
                     </div>
-                    <div class="input-grop">
-                        <button type="submit" class="btn btn-light">Kirim</button>
+                    <div class="input-group">
+                        <button type="submit" class="btn btn-light text-center">
+                            <div class="spinner-border spinner-rsvp d-none" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                            <span class="send-text">Kirim</span>
+                        </button>
                     </div>
                 </form>
                 <div class="data-rsvp">
                     @if ($data['rsvps']->count() > 0)
                         @foreach ($data['rsvps'] as $rsvp)
-                            <div class="d-flex align-items-start justify-content-start gap-2 mb-3">
-                                <div class="image d-flex align-items-center justify-content-center text-white">
-                                    {{ substr($rsvp->name, 0, 1) }}
-                                </div>
-                                <div class="text d-flex flex-column gap-1">
-                                    <div class="mb-1 d-flex align-items-center justify-content-start gap-2">
-                                        <span class="name text-light">{{ $rsvp->name }}</span>
-                                        <span class="kehadiran text-dark">{{ $rsvp->kehadiran }}</span>
+                            <div class="position-relative mb-3">
+                                <div class="d-flex align-items-start justify-content-start gap-2 mb-3">
+                                    <div class="image d-flex align-items-center justify-content-center text-white"
+                                        style="background-color: #{{ $rsvp->bg_profile }};">
+                                        {{ strtoupper(substr($rsvp->name, 0, 1)) }}
                                     </div>
-                                    <span
-                                        class="time text-white">{{ getTimeAgo(strtotime($rsvp->created_at)) }}</span>
-                                    <span class="message text-white">{{ $rsvp->comment }}</span>
+                                    <div class="text d-flex flex-column gap-1">
+                                        <div class="mb-1 d-flex align-items-center justify-content-start gap-2">
+                                            <span class="name text-light">{{ $rsvp->name }}</span>
+                                            <span class="kehadiran text-dark">{{ $rsvp->kehadiran }}</span>
+
+                                        </div>
+                                        <span
+                                            class="time text-white">{{ getTimeAgo(strtotime($rsvp->created_at)) }}</span>
+                                        <span class="message text-white">{{ $rsvp->comment }}</span>
+                                        <span class="btn-reply" data-rsvp="{{ $rsvp->id }}">Balas</span>
+                                    </div>
+                                </div>
+                                <div class="wrapper-reply wrapper-reply{{ $rsvp->id }}">
+                                    @if ($rsvp->replyRsvps->count() > 0)
+                                        @foreach ($rsvp->replyRsvps as $reply)
+                                            <div
+                                                class="d-flex align-items-start justify-content-start gap-2 mb-3 reply-field">
+                                                <div class="image d-flex align-items-center justify-content-center text-white"
+                                                    style="background-color: #{{ $reply->bg_profile }};">
+                                                    {{ strtoupper(substr($reply->name, 0, 1)) }}
+                                                </div>
+                                                <div class="text d-flex flex-column gap-1">
+                                                    <div
+                                                        class="mb-1 d-flex align-items-center justify-content-start gap-2">
+                                                        <span class="name text-light">{{ $reply->name }}</span>
+                                                        <span
+                                                            class="kehadiran text-dark">{{ $reply->kehadiran }}</span>
+
+                                                    </div>
+                                                    <span
+                                                        class="time text-white">{{ getTimeAgo(strtotime($reply->created_at)) }}</span>
+                                                    <span class="message text-white">{{ $reply->reply }}</span>
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                    @endif
                                 </div>
                             </div>
                         @endforeach
@@ -343,162 +378,82 @@
             <div class="d-flex align-items-start justify-content-center gap-3">
                 <div
                     class="box-gif text-center bg-light shadow shadow-sm py-3 px-5 d-flex flex-column align-items-center justify-content-center">
-                    <i class="fa-solid fa-building-columns mb-2"></i>
-                    <span class="mb-4">Rekening Bank</span>
-                    <button class="btn text-white">Buka Amplop</button>
+                    <i class="fa-solid fa-gift mb-2"></i>
+                    <span class="mb-4">Amplop Digital</span>
+                    <button class="btn text-white btn-open-gift">Buka Amplop</button>
                 </div>
-                <div
-                    class="box-gif text-center bg-light shadow shadow-sm py-3 px-5 d-flex flex-column align-items-center justify-content-center">
-                    <i class="fa-solid fa-wallet mb-2"></i>
-                    <span class="mb-4">Dompet Digital</span>
-                    <button class="btn text-white">Buka Amplop</button>
-                </div>
-                <div
-                    class="box-gif text-center bg-light shadow shadow-sm py-3 px-5 d-flex flex-column align-items-center justify-content-center">
-                    <i class="fa-solid fa-house mb-2"></i>
-                    <span class="mb-4">Alamat Kado</span>
-                    <button class="btn text-white">Buka Amplop</button>
-                </div>
-            </div>
-        </div>
-        <div class="custom-shape-divider-bottom-1689220953">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
-                preserveAspectRatio="none">
-                <path
-                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-                    class="shape-fill"></path>
-            </svg>
-        </div>
-    </div>
-    <div class="popup-gift d-none">
-        <i class="fa-solid fa-xmark close-popup-rekening"></i>
-        <div class="card-data text-white">
-            <div class="text-end mb-3">
-                <img src="{{ asset('bca.png') }}" alt="logo bca" class="data-img">
-            </div>
-            <div class="d-flex flex-column align-items-start jusitfy-content-start">
-                <img src="{{ asset('chip.png') }}" alt="logo chip" class="chip-img mb-2">
-                <span class="no-rekening mb-1">0000000000</span>
-                <span class="owner mb-3">Gin Gin</span>
-                <span class="salin-btn">
-                    <i class="fa-solid fa-clipboard"></i>
-                    <span>Salin</span>
-                </span>
-            </div>
-        </div>
-        <div class="card-data text-white">
-            <div class="text-end mb-3">
-                <img src="{{ asset('bca.png') }}" alt="logo bca" class="data-img">
-            </div>
-            <div class="d-flex flex-column align-items-start jusitfy-content-start">
-                <img src="{{ asset('chip.png') }}" alt="logo chip" class="chip-img mb-2">
-                <span class="no-rekening mb-1">0000000000</span>
-                <span class="owner mb-3">Gin Gin</span>
-                <span class="salin-btn">
-                    <i class="fa-solid fa-clipboard"></i>
-                    <span>Salin</span>
-                </span>
-            </div>
-        </div>
-        <div class="card-data text-white">
-            <div class="text-end mb-3">
-                <img src="{{ asset('bca.png') }}" alt="logo bca" class="data-img">
-            </div>
-            <div class="d-flex flex-column align-items-start jusitfy-content-start">
-                <img src="{{ asset('chip.png') }}" alt="logo chip" class="chip-img mb-2">
-                <span class="no-rekening mb-1">0000000000</span>
-                <span class="owner mb-3">Gin Gin</span>
-                <span class="salin-btn">
-                    <i class="fa-solid fa-clipboard"></i>
-                    <span>Salin</span>
-                </span>
-            </div>
-        </div>
-        <div class="card-data text-white">
-            <div class="text-end mb-3">
-                <img src="{{ asset('bca.png') }}" alt="logo bca" class="data-img">
-            </div>
-            <div class="d-flex flex-column align-items-start jusitfy-content-start">
-                <img src="{{ asset('chip.png') }}" alt="logo chip" class="chip-img mb-2">
-                <span class="no-rekening mb-1">0000000000</span>
-                <span class="owner mb-3">Gin Gin</span>
-                <span class="salin-btn">
-                    <i class="fa-solid fa-clipboard"></i>
-                    <span>Salin</span>
-                </span>
             </div>
         </div>
     </div>
-    <div class="popup-gift d-none">
-        <i class="fa-solid fa-xmark close-popup-rekening"></i>
+    <div class="popup-gift d-none shadow">
+        <i class="fa-solid fa-xmark close-popup"></i>
+        @foreach ($data['dataForGifts'] as $gift)
+            <div class="card-data text-white">
+                <div class="text-end mb-3">
+                    <img src="{{ \Storage::url($gift->giftPayment->icon) }}" alt="logo" class="data-img">
+                </div>
+                <div class="d-flex flex-column align-items-start jusitfy-content-start">
+                    <img src="{{ asset('chip.png') }}" alt="logo chip" class="chip-img mb-2">
+                    <span class="no-rekening mb-1">{{ $gift->no_data }}</span>
+                    <span class="owner mb-3">{{ $gift->owner_name }}</span>
+                    <span class="salin-btn copy-gift-data" data-clipboard-text="{{ $gift->no_data }}">
+                        <span class="text-copy">
+                            <i class="fa-solid fa-clipboard"></i>
+                            Salin
+                        </span>
+                        <span class="check-copy">
+                            <i class="fa-solid fa-check check-copy"></i>
+                        </span>
+                    </span>
+                </div>
+            </div>
+        @endforeach
 
-        <div class="card-data text-white">
-            <img src="{{ asset('bca.png') }}" alt="logo bca" class="data-img mb-2">
-            <div class="d-flex flex-column align-items-start jusitfy-content-start">
-                <span class="no-rekening mb-1">0000000000</span>
-                <span class="owner mb-3">Gin Gin</span>
-                <span class="salin-btn">
-                    <i class="fa-solid fa-clipboard"></i>
-                    <span>Salin</span>
-                </span>
-            </div>
-        </div>
-        <div class="card-data text-white">
-            <img src="{{ asset('bca.png') }}" alt="logo bca" class="data-img mb-2">
-            <div class="d-flex flex-column align-items-start jusitfy-content-start">
-                <span class="no-rekening mb-1">0000000000</span>
-                <span class="owner mb-3">Gin Gin</span>
-                <span class="salin-btn">
-                    <i class="fa-solid fa-clipboard"></i>
-                    <span>Salin</span>
-                </span>
-            </div>
-        </div>
-        <div class="card-data text-white">
-            <img src="{{ asset('bca.png') }}" alt="logo bca" class="data-img mb-2">
-            <div class="d-flex flex-column align-items-start jusitfy-content-start">
-                <span class="no-rekening mb-1">0000000000</span>
-                <span class="owner mb-3">Gin Gin</span>
-                <span class="salin-btn">
-                    <i class="fa-solid fa-clipboard"></i>
-                    <span>Salin</span>
-                </span>
-            </div>
-        </div>
     </div>
-    <div class="popup-gift d-none">
-        <i class="fa-solid fa-xmark close-popup-rekening"></i>
-        <div class="card-data text-white text-center">
-            <i class="fa-solid fa-house mb-2 d-block mb-3 fs-1"></i>
-            <span class="address-gift mb-1 d-block">Nama : Gin Gin</span>
-            <span class="address-gift d-block">Alamat : Jl. Gatot Mangkupraja, Panumbangan</span>
-        </div>
+
+    {{-- !----------> POP UP <----------  --}}
+    <div class="alert align-items-center gap-2 popup-alert d-none" role="alert">
+        <i class="fa-solid fs-5 icon-popup"></i>
+        <span class="text-popup"></span>
     </div>
 
     {{-- !----------> FOOTER <----------  --}}
     <footer
-        class="container-fluid text-center p-5 d-flex flex-column align-items-center justify-content-center text-white">
+        class="container-fluid text-center p-5 d-flex flex-column align-items-center justify-content-center text-white position-relative"
+        style="background-image: url({{ \Storage::url($data['wedding_data']->cover_image) }});">
         <img src="{{ asset('assets/themes/A001/img/grafis_tengah_putih.png') }}" class="mb-3" alt="grafis">
         <p>Atas kehadiran dan doa restu Bapak/Ibu/Saudara/i sekalian, kami mengucapkan Terima Kasih.</p>
         <p>Wassalamu'alaikum Warahmatullahi Wabarakatuh.</p>
         <p>Terimakasih atas doa restunya</p>
-        <h1>Alucard & Miya</h1>
+        <h1>{{ $data['bridegroom']->male_nickname }}
+            & {{ $data['bridegroom']->female_nickname }}</h1>
 
     </footer>
 
     {{-- !----------> SAMPUL <----------  --}}
     <div class="container-fluid position-fixed top-0 left-0 bottom-0 right-0 d-flex flex-column align-items-center justify-content-center sampul-section text-white text-center"
-        style="background-image: url({{ asset('dummy/sampul_image.jpg') }});">
+        style="background-image: url({{ \Storage::url($data['wedding_data']->cover_image) }});">
         <div class="text-sampul position-relative">
             <p class="title-sampul">THE WEDDING OF</p>
-            <p class="name-bridegroom-sampul">Alucard & Miya</p>
+            <p class="name-bridegroom-sampul">{{ $data['bridegroom']->male_nickname }}
+                & {{ $data['bridegroom']->female_nickname }}</p>
             <p class="to">Kepada Yth. Bapak/Ibu/Sdr/i</p>
-            <p class="name-visitor mb-5">Lancelot</p>
+            <p class="name-visitor mb-5">{{ $data['visitorName'] }}</p>
             <div class="open-invitation text-white">
                 <i class="fa-regular fa-envelope-open"></i>
                 <span>Buka Undangan</span>
             </div>
         </div>
+    </div>
+
+    {{-- !----------> MUSIC <----------  --}}
+
+    <audio id="music-background" loop>
+        <source src="{{ \Storage::url($data['wedding_data']->music) }}" type="audio/mp3">
+
+    </audio>
+    <div class="btn-music d-flex align-items-center justify-content-center shadow">
+        <i class="fa-solid fa-pause pause-icon"></i>
     </div>
 
     {{-- !----------> SCRIPT <----------  --}}
@@ -513,11 +468,16 @@
 
     <script src="{{ asset('assets/themes/A001/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('assets/themes/A001/js/jquery.min.js') }}"></script>
-    <script src="{{ asset('assets/themes/A001/js/script.js') }}"></script>
     <script src="{{ asset('assets/themes/A001/js/fancybox.js') }}"></script>
     <script src="{{ asset('simplyCountdown/simplyCountdown.js-master/dist/simplyCountdown.min.js') }}"></script>
+    <script src="{{ asset('clipboard.js-master/dist/clipboard.min.js') }}"></script>
     <script src="{{ asset('assets/themes/A001/js/simplyCountdown.js') }}"></script>
     <script src="{{ asset('assets/themes/A001/js/rsvps.js') }}"></script>
+    <script src="{{ asset('assets/themes/A001/js/gift.js') }}"></script>
+    <script src="{{ asset('assets/themes/A001/js/clipboard.js') }}"></script>
+    <script src="{{ asset('assets/themes/A001/js/cover.js') }}"></script>
+    <script src="{{ asset('assets/themes/A001/js/music.js') }}"></script>
+
 
 
 </body>

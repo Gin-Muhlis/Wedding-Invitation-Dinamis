@@ -489,7 +489,6 @@
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background: #080808c2;
     font-size: 1rem;
     font-weight: 600;
 }
@@ -497,6 +496,17 @@
 .data-rsvp .name {
     font-size: 1rem;
     font-weight: 600;
+}
+
+.data-rsvp .btn-reply {
+    font-size: .8rem;
+    color: #080808;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.data-rsvp .btn-reply:hover {
+    text-decoration: underline;
 }
 
 .data-rsvp .kehadiran {
@@ -514,6 +524,17 @@
 
 .data-rsvprsvp .message {
     font-size: .9rem;
+}
+
+.wrapper-rsvp .spinner-border {
+    color: rgba(240, 141, 187, 1);
+    width: 17px;
+    height: 17px;
+}
+
+.reply-field {
+    position: relative;
+    left: 40px;
 }
 
 .gift-header i {
@@ -553,7 +574,7 @@
     width: clamp(300px, 100%, 420px);
     height: clamp(100vh, 100%, 100vmax);
     padding: 50px 30px;
-    background-color: #ffffff;
+    background-color: rgba(240, 141, 187, 1);
     position: fixed;
     left: 0;
     top: 0;
@@ -604,7 +625,19 @@
     cursor: pointer;
 }
 
-.close-popup-rekening {
+.card-data .salin-btn .check-copy {
+    display: none;
+}
+
+.card-data .salin-btn.check .check-copy {
+    display: inline;
+}
+
+.card-data .salin-btn.check .text-copy {
+    display: none;
+}
+
+.close-popup {
     font-size: 1.5rem;
     color: #080808;
     position: absolute;
@@ -615,8 +648,24 @@
 
 /* FOOTER */
 footer {
-    background-color: rgba(240, 141, 187, 1);
     font-family: 'Cardo', sans-serif;
+    background-position: center;
+    background-size: cover;
+}
+
+footer::after {
+    content: '';
+    background-color: rgba(240, 141, 187, .5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+}
+
+footer > * {
+    z-index: 5;
 }
 
 footer img {
@@ -633,16 +682,28 @@ footer p {
 }
 
 /* SAMPUL */
-/* body {
+body {
     overflow: hidden;
-} */
+    height: 100vh;
+}
+
+body.show {
+    height: auto;
+    overflow: auto;
+}
 
 .sampul-section {
-    display: none !important;
     z-index: 999999;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    height: 100vh;
+    transition: 1s ease-in-out;
+}
+
+.sampul-section.move {
+   height: 0;
+   overflow: hidden;
 }
 
 .sampul-section::before {
@@ -687,4 +748,26 @@ footer p {
     background: transparent;
     font-size: 1rem;
     cursor: pointer;
+}
+
+/* POPUP */
+.popup-alert {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    z-index: 99999;
+}
+
+/* MUSIC */
+.btn-music {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(240, 141, 187, 1);
+    color: #ffffff;
+    border-radius: 50%;
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    cursor: pointer;
+    z-index: 99999;
 }

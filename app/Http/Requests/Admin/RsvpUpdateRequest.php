@@ -27,6 +27,7 @@ class RsvpUpdateRequest extends FormRequest
             'name' => ['required', 'max:255', 'string'],
             'comment' => ['required', 'max:255', 'string'],
             'kehadiran' => ['required', 'in:hadir,tidak hadir'],
+            'bg_profile' => ['required', 'max:255', 'string'],
             'order_id' => ['required', 'exists:orders,id'],
         ];
     }

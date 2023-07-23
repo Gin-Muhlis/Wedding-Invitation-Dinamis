@@ -4,10 +4,10 @@
     <x-inputs.group class="col-sm-12">
         <x-inputs.text
             name="name"
-            label="Nama"
+            label="Name"
             :value="old('name', ($editing ? $rsvp->name : ''))"
             maxlength="255"
-            placeholder="Nama"
+            placeholder="Name"
             required
         ></x-inputs.text>
     </x-inputs.group>
@@ -15,7 +15,7 @@
     <x-inputs.group class="col-sm-12">
         <x-inputs.textarea
             name="comment"
-            label="Ucapan"
+            label="Comment"
             maxlength="255"
             required
             >{{ old('comment', ($editing ? $rsvp->comment : ''))
@@ -29,6 +29,17 @@
             <option value="hadir" {{ $selected == 'hadir' ? 'selected' : '' }} >Hadir</option>
             <option value="tidak hadir" {{ $selected == 'tidak hadir' ? 'selected' : '' }} >Tidak hadir</option>
         </x-inputs.select>
+    </x-inputs.group>
+
+    <x-inputs.group class="col-sm-12">
+        <x-inputs.text
+            name="bg_profile"
+            label="Background Color"
+            :value="old('bg_profile', ($editing ? $rsvp->bg_profile : ''))"
+            maxlength="255"
+            placeholder="Background Color"
+            required
+        ></x-inputs.text>
     </x-inputs.group>
 
     <x-inputs.group class="col-sm-12">

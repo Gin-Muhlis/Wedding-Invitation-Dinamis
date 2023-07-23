@@ -227,9 +227,10 @@ return [
         'edit_title' => 'Edit Rsvp',
         'show_title' => 'Tampilkan Rsvp',
         'inputs' => [
-            'name' => 'Nama',
-            'comment' => 'Ucapan',
+            'name' => 'Name',
+            'comment' => 'Comment',
             'kehadiran' => 'Kehadiran',
+            'bg_profile' => 'Background Color',
             'order_id' => 'Order',
         ],
     ],
@@ -322,6 +323,22 @@ return [
             'theme_code' => 'Kode Tema',
             'type' => 'Tipe',
             'category_id' => 'Category',
+        ],
+    ],
+
+    'balasan_rsvps' => [
+        'name' => 'Balasan RSVPS',
+        'index_title' => 'Daftar Balasan RSVPS',
+        'new_title' => 'Balasan RSVPS Baru',
+        'create_title' => 'Buat Balasan RSVPS',
+        'edit_title' => 'Edit',
+        'show_title' => 'Tampilkan Balasan RSVPS',
+        'inputs' => [
+            'name' => 'Name',
+            'reply' => 'Reply',
+            'kehadiran' => 'Kehadiran',
+            'bg_profile' => 'Bg Profile',
+            'rsvp_id' => 'Rsvp',
         ],
     ],
 

@@ -111,6 +111,12 @@ class PermissionsSeeder extends Seeder
         Permission::create(['name' => 'update websites']);
         Permission::create(['name' => 'delete websites']);
 
+        Permission::create(['name' => 'list replyrsvps']);
+        Permission::create(['name' => 'view replyrsvps']);
+        Permission::create(['name' => 'create replyrsvps']);
+        Permission::create(['name' => 'update replyrsvps']);
+        Permission::create(['name' => 'delete replyrsvps']);
+
         Permission::create(['name' => 'list weddingceremonies']);
         Permission::create(['name' => 'view weddingceremonies']);
         Permission::create(['name' => 'create weddingceremonies']);

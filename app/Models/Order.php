@@ -84,6 +84,6 @@ class Order extends Model
 
     public function rsvps()
     {
-        return $this->hasMany(Rsvp::class);
+        return $this->hasMany(Rsvp::class)->orderBy('created_at', 'desc');
     }
 }

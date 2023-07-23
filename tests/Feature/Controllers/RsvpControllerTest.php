@@ -116,6 +116,7 @@ class RsvpControllerTest extends TestCase
             'name' => $this->faker->name(),
             'comment' => $this->faker->text,
             'kehadiran' => 'hadir',
+            'bg_profile' => $this->faker->text(255),
             'order_id' => $order->id,
         ];
 

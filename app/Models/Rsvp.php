@@ -11,12 +11,23 @@ class Rsvp extends Model
     use HasFactory;
     use Searchable;
 
-    protected $fillable = ['name', 'comment', 'kehadiran', 'order_id'];
+    protected $fillable = [
+        'name',
+        'comment',
+        'kehadiran',
+        'bg_profile',
+        'order_id',
+    ];
 
     protected $searchableFields = ['*'];
 
     public function order()
     {
         return $this->belongsTo(Order::class);
+    }
+
+    public function replyRsvps()
+    {
+        return $this->hasMany(ReplyRsvp::class);
     }
 }

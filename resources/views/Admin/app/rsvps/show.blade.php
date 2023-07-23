@@ -25,6 +25,10 @@
                     <span>{{ $rsvp->kehadiran ?? '-' }}</span>
                 </div>
                 <div class="mb-4">
+                    <h5>@lang('crud.rsvp.inputs.bg_profile')</h5>
+                    <span>{{ $rsvp->bg_profile ?? '-' }}</span>
+                </div>
+                <div class="mb-4">
                     <h5>@lang('crud.rsvp.inputs.order_id')</h5>
                     <span>{{ optional($rsvp->order)->no_order ?? '-' }}</span>
                 </div>

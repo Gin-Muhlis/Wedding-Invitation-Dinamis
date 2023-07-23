@@ -54,6 +54,9 @@
                                 @lang('crud.rsvp.inputs.kehadiran')
                             </th>
                             <th class="text-left">
+                                @lang('crud.rsvp.inputs.bg_profile')
+                            </th>
+                            <th class="text-left">
                                 @lang('crud.rsvp.inputs.order_id')
                             </th>
                             <th class="text-center">
@@ -67,6 +70,7 @@
                             <td>{{ $rsvp->name ?? '-' }}</td>
                             <td>{{ $rsvp->comment ?? '-' }}</td>
                             <td>{{ $rsvp->kehadiran ?? '-' }}</td>
+                            <td>{{ $rsvp->bg_profile ?? '-' }}</td>
                             <td>
                                 {{ optional($rsvp->order)->no_order ?? '-' }}
                             </td>
@@ -114,7 +118,7 @@
                         </tr>
                         @empty
                         <tr>
-                            <td colspan="5">
+                            <td colspan="6">
                                 @lang('crud.common.no_items_found')
                             </td>
                         </tr>
@@ -122,7 +126,7 @@
                     </tbody>
                     <tfoot>
                         <tr>
-                            <td colspan="5">{!! $rsvps->render() !!}</td>
+                            <td colspan="6">{!! $rsvps->render() !!}</td>
                         </tr>
                     </tfoot>
                 </table>
