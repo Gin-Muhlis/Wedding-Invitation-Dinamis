@@ -39,7 +39,7 @@
                                                   <i class="fa-solid fa-eye"></i>
                                                   <span>Preview</span>
                                               </a>
-                                              <a href="#"
+                                              <a href="{{ route('order', \Hash::make($theme->theme_code)) }}"
                                                   class="btn text-light text-decoration-none text-white btn-theme">
                                                   <i class="fa-solid fa-cart-shopping"></i>
                                                   <span>Order</span>
@@ -62,12 +62,12 @@
                                           </div>
                                           <div
                                               class="card-body py-4 d-flex align-items-center justify-content-center gap-2 w-100">
-                                              <a href="#"
+                                              <a href="demo/{{ $theme->theme_code }}/?to=Nama Tamu"
                                                   class="btn text-light text-decoration-none text-white btn-theme">
                                                   <i class="fa-solid fa-eye"></i>
                                                   <span>Preview</span>
                                               </a>
-                                              <a href="#"
+                                              <a href="{{ route('order', \Hash::make($theme->theme_code)) }}"
                                                   class="btn text-light text-decoration-none text-white btn-theme">
                                                   <i class="fa-solid fa-cart-shopping"></i>
                                                   <span>Order</span>

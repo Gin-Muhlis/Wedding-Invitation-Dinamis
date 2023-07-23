@@ -20,6 +20,7 @@ use App\Http\Controllers\Admin\WebsiteController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\TestimonyController;
 use App\Http\Controllers\user\InvitationController;
+use App\Http\Controllers\user\OrderController as UserOrderController;
 use App\Http\Controllers\Admin\BridegroomController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\GiftPaymentController;
@@ -610,6 +611,12 @@ Route::prefix('/super/admin')
 // !USER ROUTES
 Route::get('/', [WelcomeController::class, 'index']);
 
+// demo
 Route::get('/demo/{code}', [InvitationController::class, 'demo'])->name('demo');
+// send rsvp
 Route::post('/rsvp-invitation', [InvitationController::class, 'sendRsvp']);
+// reply rsvp
 Route::post('/reply-rsvp', [InvitationController::class, 'replyRsvp']);
+// order
+Route::get('/order/{code}', [UserOrderController::class, 'order'])->name('order');
+Route::post('/order/make', [UserOrderController::class, 'make'])->name('order.make');

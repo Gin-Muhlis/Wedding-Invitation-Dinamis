@@ -80,16 +80,16 @@ function getTimeAgo($time)
     $diffTimestamp = $carbonTimestamp->diffInSeconds(Carbon::now());
 
     if ($diffTimestamp < 60) {
-        return $diffTimestamp . ' Seconds ago.';
+        return 'just now';
     } else if ($diffTimestamp < 3600) {
-        return floor($diffTimestamp / 60) . ' Minutes ago.';
+        return floor($diffTimestamp / 60) . ' minutes ago';
     } else if ($diffTimestamp < 86400) {
-        return floor($diffTimestamp / 3600) . ' Hours ago.';
+        return floor($diffTimestamp / 3600) . ' hours ago';
     } else if ($diffTimestamp < 2592000) {
-        return floor($diffTimestamp / 86400) . ' Days ago.';
+        return floor($diffTimestamp / 86400) . ' days ago';
     } else if ($diffTimestamp < 31536000) {
-        return floor($diffTimestamp / 2592000) . ' Months ago.';
+        return floor($diffTimestamp / 2592000) . ' months ago';
     } else {
-        return floor($diffTimestamp / 31536000) . ' Years ago.';
+        return floor($diffTimestamp / 31536000) . ' years ago';
     }
 }

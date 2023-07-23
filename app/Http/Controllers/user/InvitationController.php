@@ -50,7 +50,7 @@ class InvitationController extends Controller
                 $replies[] = [
                     'name' => $reply->name,
                     'kehadiran' => $reply->kehadiran,
-                    'time' => getTimeAgo($reply->created_at->toDateString()),
+                    'time' => getTimeAgo(strtotime($reply->created_at)),
                     'bg' => $reply->bg_profile,
                     'comment' => $reply->reply,
                 ];
@@ -59,7 +59,7 @@ class InvitationController extends Controller
                 'id' => $rsvp->id,
                 'name' => $rsvp->name,
                 'kehadiran' => $rsvp->kehadiran,
-                'time' => getTimeAgo($rsvp->created_at->toDateString()),
+                'time' => getTimeAgo(strtotime($rsvp->created_at)),
                 'bg' => $rsvp->bg_profile,
                 'comment' => $rsvp->comment,
                 'dataReplies' => $replies
@@ -83,7 +83,7 @@ class InvitationController extends Controller
                 'id' => $rsvp->rsvp->id,
                 'name' => $rsvp->name,
                 'kehadiran' => $rsvp->kehadiran,
-                'time' => getTimeAgo($rsvp->created_at->toDateString()),
+                'time' => getTimeAgo(strtotime($rsvp->created_at)),
                 'bg' => $rsvp->bg_profile,
                 'reply' => $rsvp->reply
             ];
