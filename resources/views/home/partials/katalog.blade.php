@@ -39,7 +39,7 @@
                                                   <i class="fa-solid fa-eye"></i>
                                                   <span>Preview</span>
                                               </a>
-                                              <a href="{{ route('order', \Hash::make($theme->theme_code)) }}"
+                                              <a href="{{ route('order', $theme->theme_code) }}"
                                                   class="btn text-light text-decoration-none text-white btn-theme">
                                                   <i class="fa-solid fa-cart-shopping"></i>
                                                   <span>Order</span>
@@ -67,7 +67,7 @@
                                                   <i class="fa-solid fa-eye"></i>
                                                   <span>Preview</span>
                                               </a>
-                                              <a href="{{ route('order', \Hash::make($theme->theme_code)) }}"
+                                              <a href="{{ route('order', $theme->theme_code) }}"
                                                   class="btn text-light text-decoration-none text-white btn-theme">
                                                   <i class="fa-solid fa-cart-shopping"></i>
                                                   <span>Order</span>

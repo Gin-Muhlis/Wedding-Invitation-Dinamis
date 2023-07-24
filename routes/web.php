@@ -619,4 +619,4 @@ Route::post('/rsvp-invitation', [InvitationController::class, 'sendRsvp']);
 Route::post('/reply-rsvp', [InvitationController::class, 'replyRsvp']);
 // order
 Route::get('/order/{code}', [UserOrderController::class, 'order'])->name('order');
-Route::post('/order/make', [UserOrderController::class, 'make'])->name('order.make');
+Route::post('/order/checkout', [UserOrderController::class, 'make'])->name('order.checkout');

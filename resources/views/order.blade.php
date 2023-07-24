@@ -34,7 +34,7 @@
                 </div>
                 <div class="col p-4 h-100">
                     <h3 class="text-white mb-4">Konfirmasi Order</h3>
-                    <form action="{{ route('order.make') }}" method="POST"
+                    <form action="{{ route('order.checkout') }}" method="POST"
                         class="row align-content-between h-100 form-order">
                         @csrf
                         <div class="col-md-6 form-group mb-3">
@@ -92,10 +92,10 @@
             $("#domain").on("input", (event) => {
                 let value = $(event.target).val()
 
-                const regex = /[^a-zA-Z&]*$/;
+                const regex = /^[a-zA-Z&]+$/;
 
                 if (!regex.test(value)) {
-                    value = value.replace("/[^a-zA-Z&]/g", '')
+                    value = value.replace(/[^a-zA-Z&]+/, '')
                 }
                 $("#domain").val(value)
             })
