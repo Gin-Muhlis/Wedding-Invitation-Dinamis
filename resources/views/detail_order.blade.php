@@ -29,9 +29,9 @@
                     <img src="{{ asset("assets/themes/{$order->theme->theme_code}/preview.png") }}" class="w-100 h-100"
                         alt="preview image">
                 </div>
-                <div class="col">
+                <div class="col py-3">
                     <h3 class="text-white mb-4">Konfirmasi Order</h3>
-                    <div class="row align-content-between h-100 form-order">
+                    <div class="row align-content-between form-order" style="height: 400px;">
                         <div class="col-md-6 form-group mb-3">
                             <label for="">No Order</label>
                             <input type="text" class="form-control" value="{{ $order->no_order }}" disabled>
@@ -57,7 +57,7 @@
                             <input type="text" class="form-control" value="{{ $order->status }}" disabled>
                         </div>
                         <div class="col-md-12">
-                            <button class="btn btn-light">Batalkan</button>
+                            <button class="btn btn-danger">Batalkan</button>
                             <button class="btn btn-light" id="pay-button">Bayar</button>
                         </div>
                     </div>
@@ -65,7 +65,6 @@
                 </div>
             </div>
         </div>
-        <div id="result-json"></div>
     </div>
 
     {{-- ---------> SCRIPTS <--------- --}}
@@ -80,7 +79,7 @@
                 // Optional
                 onSuccess: function(result) {
                     /* You may add your own js here, this is just example */
-                    document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
+                    alert('pembayaran berhasil')
                 },
                 // Optional
                 onPending: function(result) {

@@ -620,3 +620,5 @@ Route::post('/reply-rsvp', [InvitationController::class, 'replyRsvp']);
 // order
 Route::get('/order/{code}', [UserOrderController::class, 'order'])->name('order');
 Route::post('/order/checkout', [UserOrderController::class, 'make'])->name('order.checkout');
+Route::get('/order/payment/{id}', [UserOrderController::class, 'confirmation'])->name('order.confirmation');
+Route::get('/success', [UserOrderController::class, 'success'])->name('order.success');

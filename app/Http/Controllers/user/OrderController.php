@@ -9,6 +9,7 @@ use App\Models\Theme;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Faker\Core\Number;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -29,9 +30,6 @@ class OrderController extends Controller
 
     public function make(Request $request)
     {
-        if (!$this->checkIsOrder($request->domain)) {
-            return redirect()->back();
-        }
         if (!Auth::check()) {
             $user_data = [
                 'name' => $request->name,
@@ -59,9 +57,7 @@ class OrderController extends Controller
 
             $order = Order::create($order_data);
 
-            $snapToken = $this->midtransConfigure($user, $order);
-
-            return view('detail_order', compact('order', 'snapToken'));
+            return redirect()->route('order.confirmation', ['id' => $order->id]);
         } else {
             $user = Auth::user();
 
@@ -79,24 +75,20 @@ class OrderController extends Controller
 
             $order = Order::create($order_data);
 
-            $snapToken = $this->midtransConfigure($user, $order);
-
-            return view('detail_order', compact('order', 'snapToken'));
+            return redirect()->route('order.confirmation', ['id' => $order->id]);
         }
     }
 
-    private function checkIsOrder($domain)
+    public function confirmation($id)
     {
-        $order = Order::where('domain', $domain)->first();
+        $order = Order::findOrFail($id);
+        $user = $order->user;
 
-        if ($order) {
-            return false;
-        }
-
-        return true;
+        $snapToken = $this->midtransConfigure($order, $user);
+        return view('detail_order', compact('order', 'snapToken'));
     }
 
-    private function midtransConfigure($user, $order)
+    private function midtransConfigure($order, $user)
     {
         // Set your Merchant Server Key
         \Midtrans\Config::$serverKey = config('midtrans.midtrans_server_key');
@@ -122,5 +114,24 @@ class OrderController extends Controller
         $snapToken = \Midtrans\Snap::getSnapToken($params);
 
         return $snapToken;
+    }
+
+    public function callback(Request $request)
+    {
+        $server_key = config('midtrans.midtrans_server_key');
+        $hashed = hash('sha512', $request->order_id . $request->status_code . $request->gross_amount . $server_key);
+
+        if ($hashed == $request->signature_key) {
+            if ($request->transaction_status == 'capture') {
+                $order = Order::findOrFail($request->order_id);
+                $order->update(['status' => 'aktif']);
+                return redirect()->route('order.success');
+            }
+        }
+    }
+
+    public function success()
+    {
+        return view('success');
     }
 }
