@@ -10,7 +10,7 @@
             @foreach ($data_fitur as $fitur)
                 <div
                     class="col-md-2 px-2 rounded shadow-lg text-center d-flex align-items-center justify-content-center flex-col gap-2 col-fitur">
-                    <div class="fs-4 text-white">
+                    <div class="icon-field text-white">
                         {!! $fitur->icon !!}
                     </div>
                     <p class="text-white text-fitur">{{ $fitur->name }}</p>

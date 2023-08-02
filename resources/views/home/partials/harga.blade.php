@@ -4,37 +4,26 @@
         <p class="description-price">Kami memberikan harga-harga terbaik untuk anda dapat membuat undangan digital
             dengan mudah</p>
     </div>
-    <div class="row gap-5 justify-content-center">
+    <div class="row row-cols-1 row-cols-md-4 mb-3 text-center">
         @foreach ($data_category as $category)
-            <div class="col-md-3 p-0 shadow {{ strtolower($category->category) }} categories">
-                <div class="top w-100 d-flex flex-column align-items-start justify-content-start gap-3">
-                    <div class="px-4 pt-3">
-                        <h3 class="d-flex align-items-center justify-content-start gap-1 fs-4 title-category">
-                            <i class="fa-solid fa-globe" style="color: #ffffff;"></i>
-                            <span class="title-category text-white text-uppercase">{{ $category->category }}</span>
-                        </h3>
+            <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm {{ $category->category == 'Premium' ? 'price-premium' : '' }}">
+                    <div class="card-header py-3">
+                        <h4 class="my-0 fw-normal">{{ $category->category }}</h4>
                     </div>
-                    <div class="price bg-white price-{{ strtolower($category->category) }}">
-                        <p class="total-price fs-3 m-0">{{ number_format($category->price, 0, ',', '.') }}
-                            IDR</p>
-                        <span class="month fs-6">/Month</span>
+                    <div class="card-body position-relative" style="height: 400px">
+                        <h3 class="card-title pricing-card-title">Rp.
+                            {{ number_format($category->price, 0, ',', '.') }}<small
+                                class="text-body-secondary fw-light">/mo</small></h3>
+                        <ul class="list-unstyled mt-4">
+                            @foreach ($category->fiturCategories as $fitur)
+                                <li class="fs-6 mb-1">
+                                    <i class="fa-solid fa-check"></i>
+                                    {{ $fitur->name }}
+                                </li>
+                            @endforeach
+                        </ul>
                     </div>
-                    <div
-                        class="fiturs-category text-white px-4 d-flex flex-column align-items-start justify-content-start gap-1">
-                        @foreach ($category->fiturCategories as $fitur)
-                            <p class="m-0 d-flex align-items-center justify-content-start gap-1">
-                                <i class="fa-solid fa-check" style="color: #ffffff;"></i>
-                                <span>{{ $fitur->name }}</span>
-                            </p>
-                        @endforeach
-
-                    </div>
-                    <div class="line"></div>
-                </div>
-                <div class="bottom w-100 pb-4 d-flex justify-content-center">
-                    <a href="#katalog"
-                        class="text-decoration-none text-white py-2 px-4 fs-6 border border-light order-button">Order
-                        Now</a>
                 </div>
             </div>
         @endforeach

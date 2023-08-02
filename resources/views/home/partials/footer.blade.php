@@ -12,7 +12,7 @@
                  </p>
              </div>
              <div class="col-md-3 mb-4 mb-sm-0">
-                 <h3 class="text-white mb-3">Hubungi Kami</h3>
+                 <h3 class="text-white mb-3 footer-title">Hubungi Kami</h3>
                  <div class="menus d-flex flex-column align-items-start justify-content-start gap-2">
                      <p class="m-0 text-white fs-6 d-flex align-items-center jusitfy-content-start gap-1">
                          <i class="fa-solid fa-envelope" style="color: #ffffff;"></i>
@@ -29,7 +29,7 @@
                  </div>
              </div>
              <div class="col-md-3">
-                 <h3 class="text-white mb-4">Sosial Media</h3>
+                 <h3 class="text-white mb-4 footer-title">Sosial Media</h3>
                  <div class="d-flex align-items-start justify-content-start gap-4">
                      <a href="{{ $data_website->link_instagram }}" target="_blank" class="fs-4">
                          <i class="fa-brands fa-instagram" style="color: #ffffff;"></i>

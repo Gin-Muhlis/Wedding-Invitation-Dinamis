@@ -1,16 +1,44 @@
+:root {
+    --gradient-primary: radial-gradient(
+        circle farthest-corner at 10% 20%,
+        rgba(37, 145, 251, 0.98) 0.1%,
+        rgba(0, 7, 128, 1) 99.8%
+    );
+    --color-white: #ffffff;
+    --color-black: #080808;
+    --primary-color: #000780;
+}
+
 html {
     scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+@media screen and (max-width: 992px) {
+    html {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
 }
 
 /* NAVBAR */
 .brand-web {
     font-family: "Open Sans", sans-serif;
     font-weight: 700;
-    font-size: 1.1em;
+    font-size: 1.1rem;
 }
 
 .navbar {
-    z-index: 9999;
+    z-index: 999;
 }
 
 .nav-item {
@@ -18,19 +46,10 @@ html {
 }
 
 .nav-item .nav-link {
-    color: #ffffff;
-    font-family: "Open Sans", sans-serif;
+    color: var(--color-white);
     position: relative;
     display: inline-block;
-}
-
-@media screen and (max-width: 992px) {
-    .navbar-nav {
-        background-color: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(7px);
-        padding-block: 10px;
-        border-radius: 5px;
-    }
+    font-size: 1rem;
 }
 
 .nav-item .nav-link::after {
@@ -38,7 +57,7 @@ html {
     width: 100%;
     height: 3px;
     border-radius: 10px;
-    background-color: #ffffff;
+    background-color: var(--color-white);
     position: absolute;
     left: 50%;
     bottom: 0;
@@ -52,15 +71,10 @@ html {
     transform: translateX(-50%) scale(1);
     opacity: 1;
 }
-
 /* HERO */
 .hero-section {
     height: 100vh;
-    background-image: linear-gradient(
-        135deg,
-        rgb(255, 103, 222) 11.2%,
-        rgb(255, 170, 59) 91.1%
-    );
+    background-image: var(--gradient-primary);
     overflow: hidden;
 }
 
@@ -81,7 +95,7 @@ html {
 }
 
 .custom-shape-divider-bottom-1688124164 .shape-fill {
-    fill: #ffffff;
+    fill: var(--color-white);
 }
 
 .shape1 {
@@ -109,29 +123,21 @@ html {
 }
 
 .text-hero-title {
-    font-family: "Open Sans", sans-serif;
     font-weight: 700;
-    font-size: clamp(4rem, 7vmax, 8vmax);
+    font-size: 5rem;
     opacity: 0.4;
 }
 
 .text-hero-subtitle {
-    font-family: "Open Sans", sans-serif;
     font-weight: 700;
-    font-size: clamp(1em, 4vmax, 6vmax);
+    font-size: 3.5rem;
     margin-top: -25px;
-}
-
-@media screen and (max-width: 500px) {
-    .text-hero-subtitle {
-        margin-top: -20px;
-    }
 }
 
 .paragraph-hero {
     font-family: "Source Sans 3", sans-serif;
-    font-size: 1.1em;
-    color: rgb(255, 255, 255);
+    font-size: 1.2rem;
+    color: var(--color-white);
     margin-bottom: 30px;
 }
 
@@ -146,6 +152,28 @@ html {
     z-index: 9999;
     text-decoration: none;
     position: relative;
+    font-size: 1.1rem;
+}
+
+/* HERO RESPONSIVE */
+@media screen and (max-width: 768px) {
+    .shape1 {
+        top: 30%;
+    }
+
+    .shape2 {
+        top: 43%;
+    }
+
+    .shape3 {
+        top: 0;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .text-hero-subtitle {
+        margin-top: -20px;
+    }
 }
 
 /* FITUR */
@@ -154,10 +182,9 @@ html {
 .title-katalog,
 .title-testimoni,
 .title-faq {
-    font-family: "Open Sans", sans-serif;
     font-weight: 800;
-    font-size: clamp(1.5rem, 2.5vmax, 3rem);
-    color: #9336b4;
+    font-size: 2rem;
+    color: var(--primary-color);
 }
 
 .title-faq {
@@ -170,23 +197,28 @@ html {
     font-family: "Source Sans 3", sans-serif;
     margin-inline: auto;
     width: 60%;
-    font-size: clamp(0.9em, 1.2vmax, 2em);
+    font-size: 1.1rem;
     line-height: 1.7;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 992px) {
     .description-fitur,
-    .description-price {
+    .description-price,
+    .description-katalog {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .description-fitur,
+    .description-price,
+    .description-katalog {
         width: 100%;
     }
 }
 
 .col-fitur {
-    background-image: linear-gradient(
-        135deg,
-        rgb(255, 103, 222) 11.2%,
-        rgb(255, 170, 59) 91.1%
-    );
+    background-image: var(--gradient-primary);
     overflow: hidden;
     height: 100px;
     display: flex;
@@ -213,6 +245,11 @@ html {
     margin: 0;
     position: relative;
     z-index: 10;
+    font-size: 1rem;
+}
+
+.icon-field {
+    font-size: 1.4rem;
 }
 
 /* HAGRA */
@@ -224,83 +261,15 @@ html {
     justify-content: start;
     align-content: space-between;
 }
-.basic {
-    background-image: linear-gradient(
-        45deg,
-        rgb(31, 106, 136) 23.3%,
-        rgb(60, 218, 212) 84.7%
-    );
+
+.card.price-premium {
+    border: 1px solid var(--primary-color);
 }
 
-.standard {
-    background-image: linear-gradient(
-        -135deg,
-        rgb(209, 0, 116) 11.2%,
-        rgba(110, 44, 107, 1) 91.1%
-    );
-}
-
-.premium {
-    background-image: radial-gradient(
-        circle farthest-corner at 100% 20%,
-        rgba(247, 87, 0, 1) 0%,
-        rgba(249, 0, 0, 1) 90.1%
-    );
-}
-
-.order-button {
-    border-radius: 50px;
-}
-
-.price {
-    width: 80%;
-    border-radius: 0 50px 50px 0;
-    height: 90px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding-left: 1.5rem;
-    box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.1);
-}
-
-.title-category {
-    font-family: "Open Sans", sans-serif;
-    font-weight: 700;
-}
-
-.total-price {
-    font-family: "Open Sans", sans-serif;
-    font-weight: 800;
-    line-height: 1;
-}
-
-.price-basic {
-    color: rgb(60, 218, 212);
-}
-
-.price-standard {
-    color: rgb(209, 0, 116);
-}
-
-.price-premium {
-    color: rgba(247, 87, 0, 1);
-}
-
-.fiturs-category p {
-    font-size: 0.9rem;
-}
-
-.line {
-    width: 70%;
-    height: 2px;
-    border-radius: 10px;
-    background: #ffffff;
-    margin-inline: auto;
-}
-
-.button-order {
-    justify-self: end;
+.card.price-premium .card-header {
+    background-color: var(--primary-color);
+    color: var(--color-white);
+    border: 1px solid var(--primary-color);
 }
 
 /* KATALOG */
@@ -317,18 +286,18 @@ html {
 }
 
 .text-katalog {
-    color: #9336b4;
+    color: var(--primary-color);
     font-family: "Sans Source 3", sans-serif;
     font-weight: 600;
     position: relative;
-    z-index: 10;
+    font-size: 1rem;
+    z-index: 3;
 }
 
 .bg-indicators {
-    content: "";
     width: 100%;
     height: 3px;
-    background: #9336b4;
+    background: var(--primary-color);
     position: absolute;
     left: 0;
     bottom: 0;
@@ -337,7 +306,7 @@ html {
 }
 
 .btn-indicators.active .text-katalog {
-    color: #ffffff;
+    color: var(--color-white);
 }
 
 .btn-indicators.active .bg-indicators {
@@ -346,13 +315,21 @@ html {
 
 .card-header img {
     width: 100%;
-    height: 300px;
+    height: 330px;
+    object-fit: cover;
 }
 
 .btn-theme {
-    background: #9336b4;
+    background: var(--primary-color);
     border: none;
-    font-size: 0.9rem;
+    font-size: 1rem;
+    transition: transform 0.7s;
+}
+
+.btn-theme:hover {
+    background: var(--primary-color);
+    transform: scale(0.9);
+    color: var(--color-white);
 }
 
 /* TESTIMONI */
@@ -376,8 +353,8 @@ html {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: #ffffff;
-    border: 2px solid #9336b4;
+    background: var(--color-white);
+    border: 2px solid var(--primary-color);
     position: absolute;
     left: 50%;
     top: -25px;
@@ -410,7 +387,7 @@ html {
 }
 
 .review {
-    font-size: 0.9rem;
+    font-size: 1rem;
     line-height: 20px;
     margin-bottom: 0;
     -webkit-line-clamp: 4;
@@ -432,8 +409,8 @@ html {
     height: 40px;
     line-height: 40px;
     text-align: center;
-    color: #ffffff;
-    background: #9336b4;
+    color: var(--color-white);
+    background: var(--primary-color);
     border-radius: 50%;
     position: absolute;
     top: -20px;
@@ -464,6 +441,14 @@ html {
     overflow: hidden;
 }
 
+.question {
+    font-size: 1.3rem;
+}
+
+.answer {
+    font-size: 1rem;
+}
+
 .line-faq {
     height: 2px;
     border-radius: 10px;
@@ -485,19 +470,19 @@ html {
 
 /* FOOTER */
 footer {
-    background-image: linear-gradient(
-        135deg,
-        rgb(255, 103, 222) 11.2%,
-        rgb(255, 170, 59) 91.1%
-    );
+    background-image: var(--gradient-primary);
     font-family: "Source Sans 3", sans-serif;
 }
 
 .text-footer {
     margin: 0;
     font-size: 1rem;
-    color: #efefef;
+    color: var(--color-white);
     line-height: 24px;
+}
+
+.footer-title {
+    font-size: 1.6rem;
 }
 
 /* BUTTON TO TOP */
@@ -506,11 +491,7 @@ footer {
     height: 40px;
     border-radius: 50%;
     cursor: pointer;
-    background-image: linear-gradient(
-        135deg,
-        rgb(255, 103, 222) 11.2%,
-        rgb(255, 170, 59) 91.1%
-    );
+    background-image: var(--gradient-primary);
     align-items: center;
     justify-content: center;
     position: fixed;
