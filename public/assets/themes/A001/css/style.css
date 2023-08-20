@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Cardo&family=Dancing+Script:wght@400;500;700&family=Grand+Hotel&family=PT+Serif:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500;1,600&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cardo&family=Dancing+Script:wght@400;500;700&family=Grand+Hotel&family=PT+Serif:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500;1,600&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&display=swap");
 
 :root {
     --dark-text: #323232;
     --light-text: #cccccc;
 }
 
+/* HERO */
 .section-hero {
     background-image: url("../img/bg_sampul.jpg");
     background-size: cover;
@@ -29,6 +30,7 @@
 .title-hero {
     font-family: "Cardo", sans-serif;
     z-index: 10;
+    font-size: 1.2em;
 }
 
 .frame-image-hero {
@@ -56,13 +58,14 @@
 
 .bridegroom-name-hero {
     font-family: "Grand Hotel", cursive;
-    font-size: 4.5rem;
+    font-size: 4.5em;
     z-index: 10;
 }
 
 .date-wedding-hero {
     font-family: "PT Serif", serif;
     font-weight: 700;
+    font-size: 1.2em;
 }
 
 .custom-shape-divider-bottom-1689220953 {
@@ -92,11 +95,10 @@
     fill: #ffffff;
 }
 
-
 /* GREETING */
 .greeting-section {
     background-color: rgba(240, 141, 187, 1);
-    font-family: 'Cardo', sans-serif;
+    font-family: "Cardo", sans-serif;
     overflow: hidden;
     padding-block: 100px;
 }
@@ -104,18 +106,19 @@
 .greeting-section .ayat {
     width: 80%;
     margin-inline: auto;
-    font-size: 1.1rem;
+    font-size: 1.1em;
 }
 
 .greeting-section .surat {
     font-weight: 700;
+    font-size: 1.2em;
 }
 
 .greeting-section .bunga_greeting,
 .wedding-section .bunga_wedding,
 .gallery-section .bunga_gallery {
     position: absolute;
-    opacity: .2;
+    opacity: 0.2;
 }
 
 .greeting-section .bunga_kiri,
@@ -138,20 +141,19 @@
 }
 
 .bridegroom-section .salam {
-    font-family: 'Dancing Script', cursive;
+    font-family: "Dancing Script", cursive;
 }
 
 .bridegroom-section .salam-isi {
     width: 50%;
     margin-inline: auto;
-    font-family: 'Cardo', serif;
+    font-family: "Cardo", serif;
 }
-
 
 .bridegroom-data.and {
     color: rgba(240, 141, 187, 1);
     font-weight: 600;
-    font-family: 'Playfair Display', serif;
+    font-family: "Playfair Display", serif;
 }
 
 .bridegroom-image {
@@ -164,7 +166,7 @@
     top: 50%;
     transform: translate(-50%, -50%);
     width: 310px;
-    height: 480px;
+    height: 478px;
     object-fit: fill;
     filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 1));
 }
@@ -177,19 +179,19 @@
 .bridegroom-data .bridegroom-name {
     color: rgba(240, 141, 187, 1);
     border-radius: 2px;
-    border-bottom: 2px solid rgba(0,0,0,.5);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
     padding-bottom: 8px;
 }
 
 .bridegroom-datagro .bridegroom-son-text {
     font-size: 1rem;
-    font-family: 'Playfair Display', serif;
+    font-family: "Playfair Display", serif;
 }
 
 .bridegroom-data .bridegroom-parent-text {
     font-weight: 500;
     font-size: 1rem;
-    font-family: 'Cardo', sans-serif;
+    font-family: "Cardo", sans-serif;
 }
 
 .sosmed a {
@@ -213,6 +215,7 @@
     width: clamp(250px, 100%, 992px);
     border-radius: 30px;
     overflow: hidden;
+
 }
 
 .wedding-section .background-wedding {
@@ -226,13 +229,13 @@
 }
 
 .wedding-section .background-wedding::after {
-    content: '';
+    content: "";
     width: 100%;
     height: 100%;
     position: absolute;
     left: 0;
     top: 0;
-    background-color: rgba(240, 141, 187, .5);
+    background-color: rgba(240, 141, 187, 0.5);
     z-index: 19;
 }
 
@@ -245,11 +248,11 @@
 }
 
 .text-background-wedding img {
-    width: 300px;   
+    width: 300px;
 }
 
 .text-background-wedding span {
-    font-family: 'Dancing Script', cursive;
+    font-family: "Dancing Script", cursive;
     font-weight: 500;
 }
 
@@ -266,27 +269,20 @@
 }
 
 .wedding-data h2 {
-    font-family: 'Dancing Script', cursive;
+    font-family: "Dancing Script", cursive;
     color: rgba(240, 141, 187, 1);
     font-weight: 600;
 }
 
 .wedding-data .row .date,
 .wedding-data .row .time {
-    font-family: 'Cardo', sans-serif;
-}
-
-.wedding-data .countdown-item {
-    background-color: rgba(240, 141, 187, 1);
-    border-radius: 5px;
-    font-family: 'Cardo', sans-serif;
-    padding: 3px 25px;
+    font-family: "Cardo", sans-serif;
 }
 
 .wedding-data .countdown .simply-section {
     background-color: rgba(240, 141, 187, 1);
     border-radius: 5px;
-    font-family: 'Cardo', sans-serif;
+    font-family: "Cardo", sans-serif;
     padding: 3px 25px;
 }
 
@@ -323,7 +319,7 @@
 }
 
 .wedding-data .location {
-    font-family: 'Cardo', sans-serif;
+    font-family: "Cardo", sans-serif;
     width: 70%;
     margin-inline: auto;
 }
@@ -334,7 +330,7 @@
     padding: 8px 30px;
     border-radius: 20px;
     background-color: rgba(240, 141, 187, 1);
-    font-size: .9rem;
+    font-size: 0.9rem;
 }
 
 /* STORY */
@@ -348,7 +344,7 @@
     height: 90%;
     border-radius: 5px;
     background-color: rgba(240, 141, 187, 1);
-    position: absolute;;
+    position: absolute;
     left: 50%;
     top: 0;
     transform: translateX(-50%);
@@ -359,7 +355,7 @@
     border-radius: 10px;
     background-color: rgba(240, 141, 187, 1);
     padding: 20px;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 .story-section .content .image-story {
@@ -376,7 +372,7 @@
 }
 
 .story-section .content .content-text {
-    font-size: .9rem;
+    font-size: 0.9rem;
 }
 
 .story-section .content::before {
@@ -405,7 +401,7 @@
     background-color: rgba(240, 141, 187, 1);
     position: absolute;
     top: 20px;
-    font-size: 1.1rem;;
+    font-size: 1.1rem;
 }
 
 .story-section .content1 .icon-content {
@@ -427,7 +423,7 @@
 }
 
 .title-header {
-    font-family: 'Dancing Script', cursive;
+    font-family: "Dancing Script", cursive;
     font-size: 3rem;
 }
 
@@ -438,7 +434,7 @@
 .gallery-section .image-gallery {
     border: 2px solid #ffffff;
     border-radius: 5px;
-    box-shadow: 0 2px 6px rgba(255,255,255,.5);
+    box-shadow: 0 2px 6px rgba(255, 255, 255, 0.5);
     height: 300px;
     object-fit: cover;
 }
@@ -451,8 +447,8 @@
 .wrapper-rsvp {
     background-color: rgba(240, 141, 187, 1);
     border-radius: 5px;
-    box-shadow: 0 2px 6px rgba(0,0,0,.3);
-    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    font-family: "Poppins", sans-serif;
 }
 
 .wrapper-rsvp .header-form {
@@ -472,13 +468,12 @@
 
 .form-rsvp input::placeholder,
 .form-rsvp textarea::placeholder {
-    opacity: .7;
+    opacity: 0.7;
 }
 
 .form-rsvp textarea {
     height: 100px;
 }
-
 
 .wrapper-rsvp .data-rsvp {
     padding-inline: 25px;
@@ -499,7 +494,7 @@
 }
 
 .data-rsvp .btn-reply {
-    font-size: .8rem;
+    font-size: 0.8rem;
     color: #080808;
     font-weight: 600;
     cursor: pointer;
@@ -510,7 +505,7 @@
 }
 
 .data-rsvp .kehadiran {
-    font-size: .7rem;
+    font-size: 0.7rem;
     padding: 3px 7px;
     border-radius: 4px;
     background: #ffffff;
@@ -518,12 +513,12 @@
 }
 
 .data-rsvp .time {
-    font-size: .8rem;
-    opacity: .8;
+    font-size: 0.8rem;
+    opacity: 0.8;
 }
 
 .data-rsvprsvp .message {
-    font-size: .9rem;
+    font-size: 0.9rem;
 }
 
 .wrapper-rsvp .spinner-border {
@@ -542,9 +537,8 @@
     font-size: 4rem;
 }
 
-
 .gift-header p {
-    font-family: 'Cardo', sans-serif;
+    font-family: "Cardo", sans-serif;
     font-size: 1rem;
 }
 
@@ -559,7 +553,7 @@
 }
 
 .box-gif span {
-    font-family: 'Dancing Script', cursive;
+    font-family: "Dancing Script", cursive;
     font-size: 1.2rem;
     font-weight: 600;
 }
@@ -567,7 +561,7 @@
 .box-gif button {
     background-color: rgba(240, 141, 187, 1);
     border-radius: 30px !important;
-    font-size: .9rem;   
+    font-size: 0.9rem;
 }
 
 .popup-gift {
@@ -589,11 +583,11 @@
 .card-data {
     padding: 30px 20px;
     width: 320px;
-    background-image: url('../../../../pattern.jpg');
+    background-image: url("../../../../pattern.jpg");
     background-size: cover;
     background-position: center;
     border-radius: 10px;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     margin-bottom: 30px;
 }
 
@@ -612,13 +606,13 @@
 }
 
 .card-data .owner {
-    font-size: .9rem;
+    font-size: 0.9rem;
 }
 
 .card-data .salin-btn {
     padding: 2px 20px;
     border-radius: 3px;
-    font-size: .8rem;
+    font-size: 0.8rem;
     color: #080808;
     background-color: #ffffff;
     align-self: flex-end;
@@ -648,14 +642,14 @@
 
 /* FOOTER */
 footer {
-    font-family: 'Cardo', sans-serif;
+    font-family: "Cardo", sans-serif;
     background-position: center;
     background-size: cover;
 }
 
 footer::after {
-    content: '';
-    background-color: rgba(240, 141, 187, .5);
+    content: "";
+    background-color: rgba(240, 141, 187, 0.5);
     width: 100%;
     height: 100%;
     position: absolute;
@@ -702,41 +696,41 @@ body.show {
 }
 
 .sampul-section.move {
-   height: 0;
-   overflow: hidden;
+    height: 0;
+    overflow: hidden;
 }
 
 .sampul-section::before {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     z-index: 2;
-    background-color: rgba(0,0,0,.7);
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .text-sampul {
     z-index: 5;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 .text-sampul .title-sampul {
-    font-size: 1.2rem;
+    font-size: 1.2em;
 }
 
 .text-sampul .name-bridegroom-sampul {
     font-family: "Grand Hotel", cursive;
-    font-size: 6rem;
+    font-size: 6em;
 }
 
 .text-sampul .to {
-    font-size: 1rem;
+    font-size: 1em;
 }
 
 .text-sampul .name-visitor {
-    font-size: 2rem;
+    font-size: 2em;
     font-weight: 600;
 }
 
@@ -746,7 +740,7 @@ body.show {
     border-radius: 2px;
     border: 1px solid #ffffff;
     background: transparent;
-    font-size: 1rem;
+    font-size: 1em;
     cursor: pointer;
 }
 
@@ -766,8 +760,146 @@ body.show {
     color: #ffffff;
     border-radius: 50%;
     position: fixed;
-    right: 50px;
-    bottom: 50px;
+    right: 35px;
+    bottom: 35px;
     cursor: pointer;
     z-index: 99999;
+}
+
+/* !MEDIA RESPONSIVES */
+
+/* SAMPUL */
+@media screen and (max-width: 992px) {
+    .text-sampul {
+        font-size: 90%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .text-sampul {
+        font-size: 80%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .text-sampul {
+        font-size: 70%;
+    }
+}
+
+/* HERO */
+@media screen and (max-width: 768px) {
+    .frame-image-hero {
+        width: 250px;
+        height: 350px;
+    }
+
+    .frame-image-hero .frame {
+        width: 310px;
+        height: 450px;
+    }
+
+    .bridegroom-name-hero {
+        font-size: 4em;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .frame-image-hero {
+        width: 200px;
+        height: 300px;
+    }
+
+    .frame-image-hero .frame {
+        width: 250px;
+        height: 400px;
+    }
+
+    .bridegroom-name-hero {
+        font-size: 3.2em;
+    }
+
+    .title-hero {
+        font-size: 1em;
+    }
+
+    .date-wedding-hero {
+        font-size: 1em;
+    }
+}
+
+/* GREETING */
+@media screen and (max-width: 768px) {
+    .greeting-section .ayat {
+        width: 100%;
+        font-size: 1em;
+    }
+    .greeting-section .ayat {
+        font-size: 1em;
+    }
+}
+
+/* BRIDEGROOM */
+@media screen and (max-width: 768px) {
+    .bridegroom-section .salam-isi {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .bridegroom-image .frame-bridegroom {
+        width: 244px;
+        height: 384px;
+    }
+
+    .bridegroom-image .img {
+        width: 200px;
+    }
+
+    .bridegroom-data.and {
+        margin-block: 40px;
+    }
+}
+
+/* WEDDING */
+@media screen and (max-width: 768px) {
+    .wedding-section .background-wedding {
+        height: 300px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .wedding-section .background-wedding {
+        height: 250px;
+    }
+
+    .maps iframe {
+        height: 200px;
+        width: 100%;
+    }
+
+    .wedding-section .countdown-ceremony  {
+        padding-inline: 10px;
+    }
+
+    .wedding-data .countdown .simply-section {
+        padding: 3px 20px;
+    }
+
+    .wedding-data .location {
+        width: 100%;
+    }
+
+}
+
+/* FLOWER */
+@media screen and (max-width: 768px) {
+    .bridegroom-section .salam-isi {
+        width: 100%;
+    }
+    .greeting-section .bunga_greeting,
+    .wedding-section .bunga_wedding,
+    .gallery-section .bunga_gallery {
+        width: 40%;
+    }
 }

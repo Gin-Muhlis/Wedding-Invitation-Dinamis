@@ -32,7 +32,7 @@ class InvitationController extends Controller
         $data['dataForGifts'] = Gift::with('giftPayment')->where('order_id', $order->id)->get();
         $data['rsvps'] = Rsvp::with('replyRsvps')->where('order_id', $order->id)->latest()->get();
 
-        return view('invitation.' . $code_theme, compact('data'));
+        return view('invitation.' . $code_theme . '.index', compact('data'));
     }
 
     public function sendRsvp(RsvpStoreRequest $request)

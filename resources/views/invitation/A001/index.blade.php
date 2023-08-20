@@ -26,7 +26,7 @@
     {{-- !----------> HERO <----------  --}}
     <div class="position-relative text-center section-hero d-flex align-items-center justify-content-center py-5">
         <div class="container item-hero position-relative d-flex flex-column align-items-center">
-            <span class="title-hero d-inline-block fs-4 text-white mb-3 position-relative">THE WEDDING OF</span>
+            <span class="title-hero d-inline-block text-white mb-3 position-relative">THE WEDDING OF</span>
             <div class="frame-image-hero position-relative mb-3">
                 <img src="{{ asset('assets/themes/A001/img/bingkai.png') }}" alt="bingkai" class="frame">
                 <img src="{{ asset('assets/themes/A001/img/bridegroom.jpg') }}" alt="prewedding image">
@@ -36,7 +36,7 @@
             @php
                 $text_date_ceremony = makeTextDate($data['wedding_ceremony']->ceremony_date->toDateString());
             @endphp
-            <p class="date-wedding-hero text-white fs-5">
+            <p class="date-wedding-hero text-white">
                 {{ $text_date_ceremony }}
             </p>
         </div>
@@ -63,7 +63,7 @@
                 supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya diantaramu rasa kasih dan sayang.
                 Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berfikir.
             </p>
-            <p class="fs-5 text-white surat">&lpar;Q.S Ar Rum : 21&rpar;</p>
+            <p class="text-white surat">&lpar;Q.S Ar Rum : 21&rpar;</p>
         </div>
         <div class="custom-shape-divider-bottom-1689220953">
             <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
@@ -84,7 +84,7 @@
             untuk hadir dalam
             pernikahan putra/putri kami</p>
         <div class="row justify-content-center align-items-center">
-            <div class="col-md-5 d-flex align-items-center justify-content-end gap-3">
+            <div class="col-lg-5 d-flex align-items-center justify-content-end gap-3">
                 <div class="bridegroom-data">
                     <h2 class="bridegroom-name mb-3">{{ $data['bridegroom']->male_fullname }}</h2>
                     <span class="bridegroom-son-text d-inline-block mb-1">Putra dari</span>
@@ -97,10 +97,10 @@
                     <img src="{{ \Storage::url($data['wedding_data']->male_image) }}" class="img" alt="mempelai">
                 </div>
             </div>
-            <div class="col-md-1 bridegroom-data and fs-1">
+            <div class="col-lg-1 bridegroom-data and fs-1">
                 &
             </div>
-            <div class="col-md-5 d-flex align-items-center justify-content-start gap-2">
+            <div class="col-lg-5 d-flex align-items-center justify-content-start gap-2">
                 <div class="bridegroom-data order-1">
                     <h3 class="bridegroom-name mb-3">{{ $data['bridegroom']->female_fullname }}</h3>
                     <span class="bridegroom-son-text d-inline-block mb-1">Putri dari</span>
@@ -186,7 +186,6 @@
                 </div>
             </div>
             <div class="maps">
-
                 <iframe
                     src="https://maps.google.com/maps?q={{ $data['wedding_data']->wedding_coordinate }}&hl=es;z=14&amp;output=embed"
                     height="300" class="d-block w-100 mb-5"></iframe>
